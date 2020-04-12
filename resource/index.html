@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+  </head>
+  <body>
+      <div class="main">
+          <div class="left">
+
+            <div class="box">
+                <div class="box-header">
+                    Thread
+                </div>
+                <div class="box-body">
+                    <div class="box-input">
+                        <label><b>Số luồng:</b>  </label><input type="number" value="1" id="number_thread"> <br><br>
+                    </div>
+                    <div class="box-input">
+                        <label><b>T.độ senkey (s):</b>  </label><input type="number" value="1" id="sendKeys_speed">
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-header">
+                    IP
+                </div>
+                <div class="box-body">
+                    <div class="box-input">
+                        <label><b>Đổi IP sau (lượt):</b>  </label><input type="number" value="1" id="changeIpAfter"> <br><br>
+                    </div>
+
+                    <div class="box-input">
+                        <label><b>Change IP:</b>  </label>
+                        
+                        <select id="cars">
+                            <option value="volvo">Không change IP</option>
+                            <option value="saab">HMA</option>
+                            <option value="mercedes">Sockets5 (ThueMicro)</option>
+                            <option value="mercedes">Proxy</option>
+                            <option value="audi">DCom</option>
+                        </select><br>
+                        
+                    </div>
+                    <button id="test_changeIP" >Test đổi IP</button> 
+                    
+                    <input type="text" value="1.1.1.1" disabled style="width: 50%">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    Tính năng
+                </div>
+                <div class="box-body">
+                    <input type="checkbox" class="myinput" name="addCredit" id="addCredit"> <label for="addCredit">Thêm credit ads</label>
+                    
+                </div>
+            </div>
+
+          </div>
+          <div class="right">
+            <div class="box">
+               
+                <div class="box-body" style="height: 400px;">
+                    <table>
+                        <tr>
+                          <th>Firstname</th>
+                          <th>Lastname</th>
+                          <th>Savings</th>
+                        </tr>
+                        <tr>
+                          <td>Peter</td>
+                          <td>Griffin</td>
+                          <td>$100</td>
+                        </tr>
+                        <tr>
+                          <td>Lois</td>
+                          <td>Griffin</td>
+                          <td>$150</td>
+                        </tr>
+                        <tr>
+                          <td>Joe</td>
+                          <td>Swanson</td>
+                          <td>$300</td>
+                        </tr>
+                        <tr>
+                          <td>Cleveland</td>
+                          <td>Brown</td>
+                          <td>$250</td>
+                        </tr>
+                      </table>
+                </div>
+            </div>
+          </div>
+      </div>
+  </body>
+  <script>
+    require("./index.js");
+  </script>
+</html>
