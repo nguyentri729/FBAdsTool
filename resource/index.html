@@ -1,108 +1,183 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World!</title>
-    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline';"
-    />
-    <link rel="stylesheet" href="./style.css" />
 
-  </head>
-  <body>
-      <div class="main">
-          <div class="left">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World!</title>
+  <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <link rel="stylesheet" href="./style.css" />
+  <link type="text/css" rel="stylesheet" href="./assets/jsgrid.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet" />
+  <link type="text/css" rel="stylesheet" href="./assets/jsgrid-theme.min.css" />
+</head>
+<style>
+  body {
+    font-family: "Baloo Paaji 2", cursive;
+  }
+  textarea {
+    resize: none;
+    font-family: "Baloo Paaji 2";
+    height: 40px;
+    overflow:hidden
+  }
+  .text-normal {
+    color:rgb(39, 67, 99);
+  }
+  .text-error {
+    color:red;
+  }
+  .text-success {
+    color: green;
+  }
+</style>
 
-            <div class="box">
-                <div class="box-header">
-                    Thread
-                </div>
-                <div class="box-body">
-                    <div class="box-input">
-                        <label><b>Số luồng:</b>  </label><input type="number" value="1" id="number_thread"> <br><br>
-                    </div>
-                    <div class="box-input">
-                        <label><b>T.độ senkey (s):</b>  </label><input type="number" value="1" id="sendKeys_speed">
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="box-header">
-                    IP
-                </div>
-                <div class="box-body">
-                    <div class="box-input">
-                        <label><b>Đổi IP sau (lượt):</b>  </label><input type="number" value="1" id="changeIpAfter"> <br><br>
-                    </div>
-
-                    <div class="box-input">
-                        <label><b>Change IP:</b>  </label>
-                        
-                        <select id="cars">
-                            <option value="volvo">Không change IP</option>
-                            <option value="saab">HMA</option>
-                            <option value="mercedes">Sockets5 (ThueMicro)</option>
-                            <option value="mercedes">Proxy</option>
-                            <option value="audi">DCom</option>
-                        </select><br>
-                        
-                    </div>
-                    <button id="test_changeIP" >Test đổi IP</button> 
-                    
-                    <input type="text" value="1.1.1.1" disabled style="width: 50%">
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-header">
-                    Tính năng
-                </div>
-                <div class="box-body">
-                    <input type="checkbox" class="myinput" name="addCredit" id="addCredit"> <label for="addCredit">Thêm credit ads</label>
-                    
-                </div>
-            </div>
-
+<body>
+  <div class="main">
+    <div class="left">
+      <div class="box">
+        <div class="box-header">
+          Thread
+        </div>
+        <div class="box-body">
+          <div class="box-input">
+            <label><b>Số luồng:</b> </label><input type="number" value="1" id="number_thread" /> <br /><br />
           </div>
-          <div class="right">
-            <div class="box">
-               
-                <div class="box-body" style="height: 400px;">
-                    <table>
-                        <tr>
-                          <th>Firstname</th>
-                          <th>Lastname</th>
-                          <th>Savings</th>
-                        </tr>
-                        <tr>
-                          <td>Peter</td>
-                          <td>Griffin</td>
-                          <td>$100</td>
-                        </tr>
-                        <tr>
-                          <td>Lois</td>
-                          <td>Griffin</td>
-                          <td>$150</td>
-                        </tr>
-                        <tr>
-                          <td>Joe</td>
-                          <td>Swanson</td>
-                          <td>$300</td>
-                        </tr>
-                        <tr>
-                          <td>Cleveland</td>
-                          <td>Brown</td>
-                          <td>$250</td>
-                        </tr>
-                      </table>
-                </div>
-            </div>
+          <div class="box-input">
+            <label><b>T.độ senkey (s):</b> </label><input type="number" value="1" id="sendKeys_speed" />
           </div>
+        </div>
       </div>
-  </body>
-  <script>
-    require("./index.js");
-  </script>
+
+      <div class="box">
+        <div class="box-header">
+          IP
+        </div>
+        <div class="box-body">
+          <div class="box-input">
+            <label><b>Đổi IP sau (lượt):</b> </label><input type="number" value="1" id="changeIpAfter" /> <br /><br />
+          </div>
+
+          <div class="box-input">
+            <label><b>Change IP:</b> </label>
+
+            <select id="cars">
+              <option value="volvo">Không change IP</option>
+              <option value="saab">HMA</option>
+              <option value="mercedes">Sockets5 (ThueMicro)</option>
+              <option value="mercedes">Proxy</option>
+              <option value="audi">DCom</option>
+            </select><br />
+          </div>
+          <button id="sayHello">Test đổi IP</button>
+
+          <input type="text" value="1.1.1.1" disabled style="width: 50%;" />
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-header">
+          Chức năng
+        </div>
+        <div class="box-body">
+          <input type="checkbox" class="myinput" name="addCredit" id="addCredit" />
+          <label for="addCredit">Thêm credit ads</label> <br />
+
+          <input type="checkbox" class="myinput" name="chungannasdf1" id="chungannasdf1" />
+          <label for="chungannasdf1">Chức năng 1</label> <br />
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-header">
+          Điều khiển
+        </div>
+        <div class="box-body">
+          <button style="width: 100%; height: 40px;" id="start">Bắt đầu</button>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="box">
+        <div class="box-header">
+          Tùy chỉnh credit
+        </div>
+        <div class="box-body" style="height: 170x;">
+          <label><b>* List thẻ : </b></label>
+          <textarea style="width: 100%; height: 50px;" placeholder="cardName|cardNumber|cardDate|CCV"></textarea>
+
+          <label><b>Số acc/1 credit:</b> </label><input type="number" value="1" id="creditacc" />
+          <hr />
+
+          <p>Tổng số credit : <b>12</b></p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-header">
+          Danh sách clone 
+          
+        </div>
+        <div class="box-body" style="height: 400px;">
+          <button style="margin: 10px" id="paste_account">
+            Dán UID|PASS|2FA|COOKIE
+          </button>
+          <button style="margin: 10px">Copy đã chọn</button>
+          <button style="margin: 10px">Xóa đã chọn</button>
+
+
+          <div id="jsGrid" class="jsgrid" style="position: relative; height: 90%; width: 100%;">
+            <div class="jsgrid-grid-header jsgrid-header-scrollbar">
+              <table class="jsgrid-table">
+                <tbody>
+                  <tr class="jsgrid-header-row">
+                    <th class="jsgrid-header-cell "
+                      style="width: 30px;">
+                      STT
+                    </th>
+                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 50px;">
+                        <input type="checkbox"   id="checkAll" /> 
+                    </th>
+                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">
+                      Username
+                    </th>
+                    <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 100px;">
+                      Password
+                    </th>
+                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">
+                      2FA
+                    </th>
+                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">
+                      Cookie
+                    </th>
+                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 60px;">
+                      Trạng thái
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="jsgrid-grid-body" style="max-height: 300px;">
+              <table class="jsgrid-table">
+                <tbody id="lists_account">
+                  
+                </tbody>
+              </table>
+            </div>
+
+
+
+
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  window.$ = window.JQuery = require("./assets/jquery.min.js")
+  require("./index.js");
+  
+</script>
+
 </html>
