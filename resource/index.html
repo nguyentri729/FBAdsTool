@@ -24,11 +24,14 @@
   .text-normal {
     color:rgb(39, 67, 99);
   }
-  .text-error {
+  .text-danger {
     color:red;
   }
   .text-success {
     color: green;
+  }
+  .text-primary {
+    color: darkorange;
   }
 </style>
 
@@ -41,7 +44,7 @@
         </div>
         <div class="box-body">
           <div class="box-input">
-            <label><b>Số luồng:</b> </label><input type="number" value="1" id="number_thread" /> <br /><br />
+            <label><b>Số luồng:</b> </label><input type="number" id="thread_number" value=1  /> <br /><br />
           </div>
           <div class="box-input">
             <label><b>T.độ senkey (s):</b> </label><input type="number" value="1" id="sendKeys_speed" />
@@ -97,55 +100,45 @@
       </div>
     </div>
     <div class="right">
-      <div class="box">
-        <div class="box-header">
-          Tùy chỉnh credit
-        </div>
-        <div class="box-body" style="height: 170x;">
-          <label><b>* List thẻ : </b></label>
-          <textarea style="width: 100%; height: 50px;" placeholder="cardName|cardNumber|cardDate|CCV"></textarea>
-
-          <label><b>Số acc/1 credit:</b> </label><input type="number" value="1" id="creditacc" />
-          <hr />
-
-          <p>Tổng số credit : <b>12</b></p>
-        </div>
-      </div>
+      
       <div class="box">
         <div class="box-header">
           Danh sách clone 
           
         </div>
-        <div class="box-body" style="height: 400px;">
+        <div class="box-body" style="height: 600px;">
           <button style="margin: 10px" id="paste_account">
-            Dán UID|PASS|2FA|COOKIE
+            Dán account
+          </button>
+          <button style="margin: 10px" id="paste_credit">
+            Dán credit
           </button>
           <button style="margin: 10px">Copy đã chọn</button>
           <button style="margin: 10px">Xóa đã chọn</button>
 
 
-          <div id="jsGrid" class="jsgrid" style="position: relative; height: 90%; width: 100%;">
+          <div id="jsGrid" class="jsgrid" style="position: relative; width: 100%;">
             <div class="jsgrid-grid-header jsgrid-header-scrollbar">
               <table class="jsgrid-table">
-                <tbody>
+                <tbody id="headerTable">
                   <tr class="jsgrid-header-row">
-                    <th class="jsgrid-header-cell "
-                      style="width: 30px;">
+                    <th class="jsgrid-header-cell jsgrid-align-center"
+                      style="width: 10px;">
                       STT
                     </th>
-                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 50px;">
+                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 20px;">
                         <input type="checkbox"   id="checkAll" /> 
                     </th>
-                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">
-                      Username
+                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 50px;">
+                      Email
                     </th>
-                    <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 100px;">
+                    <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 50px;">
                       Password
                     </th>
-                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">
+                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 50px;">
                       2FA
                     </th>
-                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 100px;">
+                    <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 50px;">
                       Cookie
                     </th>
                     <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 60px;">
@@ -155,7 +148,7 @@
                 </tbody>
               </table>
             </div>
-            <div class="jsgrid-grid-body" style="max-height: 300px;">
+            <div class="jsgrid-grid-body" style="max-height: 500px;">
               <table class="jsgrid-table">
                 <tbody id="lists_account">
                   
