@@ -4,11 +4,26 @@ sayBtn = document.getElementById("sayHello");
 var dem = 0;
 var isCredit = false; //using add credit
 var list_credit;
+
+
+//Options change 
+$('#addCredit:first').change(function() {
+  
+  
+  if (!$(this)[0].checked) {
+    isCredit = false;
+    list_credit = null;
+    $('#paste_credit').hide()
+  }else{
+    $('#paste_credit').show()
+  }
+  
+})
+
 $('#paste_credit').click(function() {
   list_credit = clipboard.readText().split("\n");
   $(this).html(`Thêm credit (${list_credit.length})`)
   isCredit = true
-
 
   $('#headerTable').html(`
   <tr class="jsgrid-header-row">
@@ -70,7 +85,6 @@ $('#paste_account').click(function () {
       break;
     }
     
-
     //check creadit
     if (isCredit) {
       var moreOptions = `
@@ -79,6 +93,8 @@ $('#paste_account').click(function () {
                   ${optionsHTML}
               </select>
           </td>`
+    }else{
+      var moreOptions = ''
     }
 
     //show list account
@@ -146,8 +162,8 @@ $('#lists_account input[type="checkbox"]').on("click", function () {
   }
 });
 
-$("#start").click(async function () {
-
+$("#start").click(async function (e) {
+  
   //Max of thread 
   const numberThread = parseInt($("#thread_number")[0].value);
  

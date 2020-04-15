@@ -4,8 +4,10 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.select import Select
+import random, string
+
 import time
-import requests
 import requests
 class autofb:
     def __init__(self):
@@ -32,8 +34,6 @@ class autofb:
                     })
                 except:
                     print('')
-
-
             return True
         if type == 'account':
             emailInput = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.ID, "email")))
@@ -65,10 +65,12 @@ class autofb:
         return self.checkLogin
     def checkLogin(self):
         try:
-            self.driver.get('https://www.facebook.com/')
-            userNav = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.ID, "userNav")))
+            self.driver.get('https://www.facebook.com/profile.php')
+            #divdata-click="profile_icon"
+            userNav = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@data-click='profile_icon']")))
             return True
-        except:
+        except errorShow:
+            #print(errorShow)
             return False  
     def addCredit(self, creditCard):
         self.driver.get('https://www.facebook.com/ads/manager/account_settings/account_billing/')
@@ -98,6 +100,62 @@ class autofb:
         webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
         
         time.sleep(4)
+    def addAds(self):
+        #add ads  
+        self.driver.get('https://www.facebook.com/ads/manager/account_settings/information/')
+        changeMoney = WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Thay đổi đơn vị tiền tệ')]")))
+        changeMoney.click()
+
+        enterButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='currency']")))
+
+        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.ENTER).perform()
+        time.sleep(3)
+        self.driver.execute_script("document.getElementsByClassName('_54nh')[16].click(); ")
+        
+
+        time.sleep(3)
+        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+        
+        time.sleep(3)
+
+        afterClick = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='jazoest']")))
+        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+        
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "_50f7")))
+        
+        
+        time.sleep(2)
+        #enter new ads
+        self.driver.get('https://www.facebook.com/ads/manager/account_settings/information/')
+
+        businessName = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='business_name']")))
+        businessName.send_keys(self.randomString(8)).perform()
+
+
+        address_street1 = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='address_street1']")))
+        address_street1.send_keys(self.randomString(8)).perform()
+
+        address_city = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='address_city']")))
+        address_city.send_keys(self.randomString(8)).perform()
+        
+        address_state = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='address_state']")))
+        address_state.send_keys(self.randomString(8)).perform()
+        
+        self.driver.execute_script("document.getElementsByClassName('_1f')[0].click()setTimeout(function(){document.getElementsByClassName('_3leq')[235].click()},2000)")
+
+        time.sleep(3)
+        cm_settings_page_save_button = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='cm_settings_page_save_button']")))
+        cm_settings_page_save_button.click()
+
+
+        # time.sleep(2)
+        # #afterClick = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Lúc khác')]")))
+        # webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.ENTER).perform()
+        # #afterClick.click()
+
     def quit(self):
         self.driver.stop_client()
         self.driver.close()
+    def randomString(self, stringLength=8):
+        letters = string.ascii_lowercase
+        return ''.join(random.choice(letters) for i in range(stringLength))

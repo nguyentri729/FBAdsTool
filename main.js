@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain, shell } = require("electron");
-require("electron-reload")(__dirname);
+//require("electron-reload")(__dirname);
 const { exec } = require("child_process");
 
 function createWindow() {

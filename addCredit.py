@@ -18,11 +18,12 @@ for index in range(1, len(sys.argv)):
         account = json.loads(message)
 fb = autofb()
 
-fb.login(account, 'cookie')
+fb.login(account, 'account')
 if fb.checkLogin():
-    fb.addAds()
+    fb.addCredit(creditCard)
     print('success')
 else:
     print('error')
-    
+fb.quit()
+
 time.sleep(10000)
