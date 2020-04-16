@@ -125,7 +125,7 @@ class autofb:
         
         
         time.sleep(2)
-        enter new ads
+        # enter new ads
         self.driver.get('https://www.facebook.com/ads/manager/account_settings/information/')
 
         businessName = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='business_name']")))
@@ -148,7 +148,7 @@ class autofb:
         cm_settings_page_save_button.click()
 
 
-
+        time.sleep(5)
         #buoc tiep theo ne 
         self.driver.get('https://www.facebook.com/ads/manager/account_settings/account_billing/')
         #wait button show
