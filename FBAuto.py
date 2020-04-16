@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 import random, string
-
+import re
 import time
 import requests
 class autofb:
@@ -125,33 +125,74 @@ class autofb:
         
         
         time.sleep(2)
-        #enter new ads
+        enter new ads
         self.driver.get('https://www.facebook.com/ads/manager/account_settings/information/')
 
         businessName = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='business_name']")))
-        businessName.send_keys(self.randomString(8)).perform()
+        businessName.send_keys(self.randomString(8))
 
 
         address_street1 = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='address_street1']")))
-        address_street1.send_keys(self.randomString(8)).perform()
+        address_street1.send_keys(self.randomString(8))
 
         address_city = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='address_city']")))
-        address_city.send_keys(self.randomString(8)).perform()
+        address_city.send_keys(self.randomString(8))
         
         address_state = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='address_state']")))
-        address_state.send_keys(self.randomString(8)).perform()
+        address_state.send_keys(self.randomString(8))
         
-        self.driver.execute_script("document.getElementsByClassName('_1f')[0].click()setTimeout(function(){document.getElementsByClassName('_3leq')[235].click()},2000)")
-
+        self.driver.execute_script("document.getElementsByClassName('_1f')[0].click();setTimeout(function(){document.getElementsByClassName('_3leq')[235].click()},2000)")
         time.sleep(3)
+
         cm_settings_page_save_button = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='cm_settings_page_save_button']")))
         cm_settings_page_save_button.click()
 
 
-        # time.sleep(2)
-        # #afterClick = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Lúc khác')]")))
-        # webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.ENTER).perform()
-        # #afterClick.click()
+
+        #buoc tiep theo ne 
+        self.driver.get('https://www.facebook.com/ads/manager/account_settings/account_billing/')
+        #wait button show
+        addCreditButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='cm_add_pm_button']")))
+        addCreditButton.click()
+        
+        
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "new_direct_debit_v2_title")))
+        
+        self.driver.execute_script("document.getElementById('new_direct_debit_v2_title').click();setTimeout(function(){document.getElementsByClassName('layerConfirm')[0].click()},3000)")
+        
+        fakeData = self.fakeIT()
+
+        account_holder_name = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='account_holder_name']")))
+        account_holder_name.send_keys(fakeData['name'])
+
+
+        bankAccountNumber = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='bankAccountNumber']")))
+        bankAccountNumber.send_keys(fakeData['iban'])
+
+        routing_number = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='routing_number']")))
+        routing_number.send_keys(fakeData['bic'])
+
+        # addCreditButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@value='1']")))
+        # addCreditButton.click()
+        street = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='street']")))
+        street.send_keys(fakeData['address'])
+
+        city = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='city']")))
+        city.send_keys(fakeData['city'])
+
+        zipCode = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='zip']")))
+        zipCode.send_keys(fakeData['zipcode'])
+
+
+        approval = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='approval']")))
+        approval.send_keys(Keys.SPACE)
+
+        addButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "AdsPaymentsDirectDebitButton")))
+        addButton.click()
+
+        
+        
+       
 
     def quit(self):
         self.driver.stop_client()
@@ -159,3 +200,27 @@ class autofb:
     def randomString(self, stringLength=8):
         letters = string.ascii_lowercase
         return ''.join(random.choice(letters) for i in range(stringLength))
+    def fakeIT(self):
+        ibanRegex = r'title="Click To Copy">(.*)</span></span> \(<a href="#"'
+        bicRegex = r'<th scope="row">BIC</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
+        nameRegex =  r'<th scope="row">Name</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
+        addressRegex =  r'<th scope="row">Address</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
+        cityRegex =  r'<th scope="row">City</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
+        zipRegex =  r'<th scope="row">Postcode</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
+        req = requests.get('https://fake-it.ws/it/')
+        
+        iban = re.findall(ibanRegex, req.text)[0]
+        bic = re.findall(bicRegex, req.text)[0]
+        name = re.findall(nameRegex, req.text)[0]
+        address = re.findall(addressRegex, req.text)[0]
+        city = re.findall(cityRegex, req.text)[0]
+        zipcode = re.findall(zipRegex, req.text)[0]
+
+        return({
+            'name': name,
+            'address': address,
+            'city': city,
+            'zipcode': zipcode,
+            'bic': bic,
+            'iban': iban
+        })
