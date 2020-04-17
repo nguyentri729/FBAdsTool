@@ -58,7 +58,7 @@
         </div>
         <div class="box-body">
           <div class="box-input">
-            <label><b>Đổi IP sau (lượt):</b> </label><input type="number" value="1" id="changeIpAfter" /> <br /><br />
+            <label><b>Đổi IP sau </b>:</b> </label><input type="number" value="1" id="changeIpAfter" /> <br /><br />
           </div>
 
           <div class="box-input">
@@ -75,7 +75,7 @@
           </div>
           <textarea style="width: 100%; display: none;" placeholder="proxy list" id="proxy_list"></textarea>
           <button id="sayTestChangeIP">Test đổi IP</button>
-
+          <p> <b>Tiến trình</b> : <span id="changeIPStatus"></span></p>
           
         </div>
       </div>
@@ -123,15 +123,15 @@
         <div class="box-body" style="text-align: center;">
           
           
-          <button style="width: 100%; height: 40px;" id="start">Bắt đầu</button>
+          <button style="width: 100%; height: 40px; background-color: greenyellow;" id="start"><b>Bắt đầu</b></button>
           <hr />
-          <p style="color: darkgreen;">success: <span id="count_success">0</span></p><p style="color: red;">fail: <span id="count_fail">0</span></p>
-          <p style="color: darkviolet;">total: <span id="total">0</span></p>
+          <button style="width: 100%; height: 40px;" id="reset">Reset</button> <hr>
+          <p style="color: darkgreen; display: inline;">success: <span id="count_success">0</span> | </p><p style="color: red; display: inline;">fail: <span id="count_fail">0</span> |</p>
+          <p style="color: darkviolet; display: inline;">total: <span id="total">0</span></p>
         </div>
       </div>
     </div>
     <div class="right">
-      
       <div class="box">
         <div class="box-header">
           Danh sách clone 
@@ -149,6 +149,8 @@
           <button style="margin: 10px" id="copy_success">Copy success</button>
 
           <button style="margin: 10px" id="delete_selected">Xóa đã chọn</button>
+
+
 
           <div id="jsGrid" class="jsgrid" style="position: relative; width: 100%;">
             <div class="jsgrid-grid-header jsgrid-header-scrollbar">
@@ -193,7 +195,7 @@
 
 
           </div>
-
+          
           
         </div>
       </div>

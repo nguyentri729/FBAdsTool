@@ -2,16 +2,8 @@ const { app, BrowserWindow, ipcMain, shell } = require("electron");
 require("electron-reload")(__dirname);
 const { exec } = require("child_process");
 const fs = require('fs')
-const readFile = function() {
-  let countriesOptions = fs.readFileSync('countriesOptions.txt')
-  let moneyTypeOpions = fs.readFileSync('moneyTypeOpions.txt')
-  let timeZoneOptions = fs.readFileSync('timeZoneOptions.txt')
-  ipcMain.emit('countriesOptions', countriesOptions)
-  ipcMain.emit('moneyTypeOpions', moneyTypeOpions)
-  ipcMain.emit('timeZoneOptions', timeZoneOptions)
-}
-
-function createWindow() {
+const axios = require('axios')
+async function createWindow() {
   const win = new BrowserWindow({
     width: 1000,
     height: 800,
@@ -19,8 +11,22 @@ function createWindow() {
       nodeIntegration: true,
     },
   });
+
+  
   // and load the index.html of the app.
-  win.loadFile("./resource/index.html");
+  const key = fs.readFileSync('key.txt')
+  try {
+    const result = await axios.get('https://jickmeaz.000webhostapp.com/checkKeys.php')
+    console.log(result.data, typeof result.data)
+    if (result.data.trim() == 'success') {
+        win.loadFile("./resource/index.html");
+    }else{
+      win.loadFile("./resource/active.html");
+    }
+    
+  } catch (error) {
+      win.loadFile("./resource/active.html");
+  }
   // win.loadURL("http://http://localhost:3000/")
 
   // Open the DevTools.
@@ -45,15 +51,12 @@ app.on("activate", () => {
 });
 
 
-
-
 //handle event
 ipcMain.on("GET_CONTRIES_OPTIONS", (event, arg) => {
     let data = fs.readFileSync('countriesOptions.txt', "utf8")
     //console.log()
     event.reply('GET_CONTRIES_OPTIONS', data)
 });
-
 
 
 ipcMain.on("GET_MONEYTYPE_OPTIONS", (event, arg) => {
@@ -70,9 +73,19 @@ ipcMain.on("GET_TIMEZONES_OPTIONS", (event, arg) => {
 });
 
 
-ipcMain.on("TEST_CHANGE_IP", (event, arg)=> {
-
+ipcMain.on("TEST_CHANGE_IP_PROXY", (event, arg)=> {
   exec(`${__dirname}/\\buildAction.exe${(arg.length > 0) ? ' -proxy ' +arg+'' : ' '} -test`);  
+})
+
+
+ipcMain.on("CHANGE_IP_DCOM", async (event, arg)=> {
+  exec(`${__dirname}/\\resetDcom.bat`, function(err, stdout, stderr) {
+    event.reply('CALL_BACK_CHANGE_DCOM', JSON.stringify({
+      err,
+      stdout,
+      stderr
+    }))
+  })
 })
 
 
@@ -83,6 +96,7 @@ ipcMain.on("CALL_ACTION", async (event, arg) => {
   const callPythonFile = function () {
     return exec(`${__dirname}/\\buildAction.exe ${account.data}`);
   };
+
 
   const proc = callPythonFile();
   proc.stdout.on("data", function (data) {

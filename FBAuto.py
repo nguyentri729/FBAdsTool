@@ -248,7 +248,6 @@ class autofb:
     def randomString(self, stringLength=8):
         letters = string.ascii_lowercase
         return ''.join(random.choice(letters) for i in range(stringLength))
-
     def fakeIT(self):
         ibanRegex = r'title="Click To Copy">(.*)</span></span> \(<a href="#"'
         bicRegex = r'<th scope="row">BIC</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'

@@ -1,20 +1,33 @@
 const { ipcRenderer, clipboard } = require("electron");
-sayBtn = document.getElementById("sayHello");
+const {getCurrentWindow, globalShortcut, dialog} = require('electron').remote;
+
+var reload = ()=>{
+  getCurrentWindow().reload()
+}
+
+globalShortcut.register('F5', reload);
+globalShortcut.register('CommandOrControl+R', reload);
+// here is the fix bug #3778, if you know alternative ways, please write them
+window.addEventListener('beforeunload', ()=>{
+  globalShortcut.unregister('F5', reload);
+  globalShortcut.unregister('CommandOrControl+R', reload);
+})
+$('#reset').click(function() {
+  reload()
+})
 
 var dem = 0;
 var isCredit = false; //using add credit
 var list_credit;
 var listProxy;
-const getProxy = function() {
+const getProxy = function () {
   //console.log( get proxy )
   try {
-    
-    return listProxy[Math.floor(Math.random() * listProxy.length)]
+    return listProxy[Math.floor(Math.random() * listProxy.length)];
   } catch (error) {
-    return ''
+    return "";
   }
-  
-}
+};
 //Options change
 $("#addCredit:first").change(function () {
   if (!$(this)[0].checked) {
@@ -26,28 +39,51 @@ $("#addCredit:first").change(function () {
   }
 });
 
-$('#sayTestChangeIP').click(function() {
-  
-  ipcRenderer.send('TEST_CHANGE_IP', getProxy())
-})
-
-
-
-$('#proxy_list').change(function(e) {
-    listProxy = e.target.value.split('\n')
-    console.log(listProxy)
-})
-//option change
-$("#change_ip_select").change(function(e) {
-  const value = e.target.value
-  
-  if (value == 'proxy') {
-    $('#proxy_list').show()
-  }else{
-    $('#proxy_list').hide()
+$("#sayTestChangeIP").click(function () {
+  switch ($("#change_ip_select")[0].value) {
+    case "proxy":
+      ipcRenderer.send("TEST_CHANGE_IP_PROXY", getProxy());
+      break;
+    case "dcom":
+      ipcRenderer.send("CHANGE_IP_DCOM", "test");
+      break;
+    default:
+      break;
   }
-})
+});
 
+ipcRenderer.on("CALL_BACK_CHANGE_DCOM", function (event, arg) {
+  try {
+    arg = JSON.parse(arg);
+    const regex = /[error]/;
+    if (arg.err || regex.test(arg.stdout)) {
+      $("#changeIPStatus").html(
+        `<span style="color: red;">Reset IP lỗi</span>`
+      );
+    } else {
+      $("#changeIPStatus").html(
+        '<span style="color: green">Reset IP success !</span>'
+      );
+    }
+  } catch (error) {
+    console.log(error);
+    $("#changeIPStatus").html('<span style="color: red">unknown error</span>');
+  }
+});
+$("#proxy_list").change(function (e) {
+  listProxy = e.target.value.split("\n");
+  console.log(listProxy);
+});
+//option change
+$("#change_ip_select").change(function (e) {
+  const value = e.target.value;
+
+  if (value == "proxy") {
+    $("#proxy_list").show();
+  } else {
+    $("#proxy_list").hide();
+  }
+});
 
 $("#copy_selected").click(function () {
   let checkedInput = $('#lists_account input[type="checkbox"]:checked:enabled');
@@ -62,17 +98,18 @@ $("#copy_selected").click(function () {
       "|" +
       $("#tr_" + id + " textarea")[2].value +
       "|" +
-      $("#tr_" + id + " textarea")[3].value + "\n";
+      $("#tr_" + id + " textarea")[3].value +
+      "\n";
   }
-  clipboard.writeText(data)
-  alert('Copy thành công')
+  clipboard.writeText(data);
+  alert("Copy thành công");
 });
 $("#delete_selected").click(function () {
   let checkedInput = $('#lists_account input[type="checkbox"]:checked:enabled');
   for (let index = 0; index < checkedInput.length; index++) {
     const input = checkedInput[index];
     const id = $(input).attr("tr-id");
-    $('#tr_' + id + '').remove()
+    $("#tr_" + id + "").remove();
   }
 });
 $("#createAccountAds:first").change(function () {
@@ -88,28 +125,29 @@ $("#createAccountAds:first").change(function () {
   }
 });
 
-$('#copy_success').click(function() {
-  const statusLists = $('.status')
-  let data = ''
-  
+$("#copy_success").click(function () {
+  const statusLists = $(".status");
+  let data = "";
+
   for (let index = 0; index < statusLists.length; index++) {
     const status = statusLists[index];
-    
-    if ($(status).text().trim() == 'Thành công') {
-      const tr_id = $(status).attr('tr-id')
+
+    if ($(status).text().trim() == "Thành công") {
+      const tr_id = $(status).attr("tr-id");
       data +=
-      $("#tr_" + tr_id + " textarea")[0].value +
-      "|" +
-      $("#tr_" + tr_id + " textarea")[1].value +
-      "|" +
-      $("#tr_" + tr_id + " textarea")[2].value +
-      "|" +
-      $("#tr_" + tr_id + " textarea")[3].value + "\n";
+        $("#tr_" + tr_id + " textarea")[0].value +
+        "|" +
+        $("#tr_" + tr_id + " textarea")[1].value +
+        "|" +
+        $("#tr_" + tr_id + " textarea")[2].value +
+        "|" +
+        $("#tr_" + tr_id + " textarea")[3].value +
+        "\n";
     }
   }
-  clipboard.writeText(data)
-  alert('Copy thành công !')
-})
+  clipboard.writeText(data);
+  alert("Copy thành công !");
+});
 
 $("#paste_credit").click(function () {
   list_credit = clipboard.readText().split("\n");
@@ -257,7 +295,7 @@ $("#start").click(async function (e) {
   try {
     //Max of thread
     const numberThread = parseInt($("#thread_number")[0].value);
-
+    const numberChangeIP = parseInt($("#changeIpAfter")[0].value);
     let listInputChecked = $('#lists_account input[type="checkbox"]:checked');
 
     //set waiting
@@ -271,8 +309,9 @@ $("#start").click(async function (e) {
     }
 
     var checkThread = 0;
+    var checkChangeIP = 0;
     $("#total").html(listInputChecked.length);
-
+    var proxyIP = getProxy();
     for (let index = 0; index < listInputChecked.length; index++) {
       const input = listInputChecked[index];
       const tr_id = $(input).attr("tr-id");
@@ -310,11 +349,44 @@ $("#start").click(async function (e) {
         } `;
       }
 
-      if ($('#change_ip_select')[0].value == 'proxy') {
-        moreString += ' -proxy '+ getProxy()
+      //set status
+      $("#status_" + tr_id)
+        .html("Đang chạy...")
+        .attr("class", "text-normal");
+
+      $("#tr_" + tr_id).attr("class", "");
+      //when max thread
+      checkThread++;
+      checkChangeIP++;
+      //check change IP
+      if (checkChangeIP >= numberChangeIP) {
+        //change IP with dcom
+        switch ($("#change_ip_select")[0].value) {
+          case "dcom":
+            $("#changeIPStatus").html("Đang reset Dcom");
+            ipcRenderer.send("CHANGE_IP_DCOM", "");
+            await new Promise(function (resolve, reject) {
+              //wait callback_action
+              ipcRenderer.on("CALL_BACK_CHANGE_DCOM", function (event, arg) {
+                console.log("data change dcom", arg);
+                resolve("");
+              });
+              setTimeout(() => {
+                reject("fail");
+              }, 300000);
+            });
+            break;
+          case "proxy":
+            $("#changeIPStatus").html("Proxy : " + proxyIP);
+            moreString += " -proxy " + proxyIP;
+            proxyIP = getProxy();
+            break;
+          default:
+            break;
+        }
+        checkChangeIP = 0;
       }
-      
-      
+
       //send request for main
       ipcRenderer.send(
         "CALL_ACTION",
@@ -324,15 +396,7 @@ $("#start").click(async function (e) {
         })
       );
 
-      //set status
-      $("#status_" + tr_id)
-        .html("Đang chạy...")
-        .attr("class", "text-normal");
-
-      $("#tr_" + tr_id).attr("class", "");
-      //when max thread
-      checkThread++;
-
+      //check thread
       if (checkThread >= numberThread) {
         await new Promise(function (resolve, reject) {
           var count = 0;
@@ -357,10 +421,11 @@ $("#start").click(async function (e) {
                     .html("Thất bại <br><small>" + arg.data.msg + "</small>");
                 }
                 if (arg.data.cookie) {
-                  $('#cookie_input_'+arg.index+'')[0].value = arg.data.cookie
+                  $("#cookie_input_" + arg.index + "")[0].value =
+                    arg.data.cookie;
                 }
               } catch (error) {
-                console.log(error)
+                console.log(error);
                 $("#status_" + arg.index)
                   .attr("class", "text-danger")
                   .html("Thất bại <br><small>unknown</small>");
@@ -380,7 +445,6 @@ $("#start").click(async function (e) {
             reject("fail");
           }, 300000);
         });
-        
         checkThread = 0;
       }
     }
