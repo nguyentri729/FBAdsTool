@@ -1,111 +1,94 @@
 Afghanistan
-Aland Islands
+Ai Cập
 Albania
 Algeria
-American Samoa
 Andorra
 Angola
 Anguilla
-Antarctica
 Antigua
 Argentina
 Armenia
 Aruba
-Australia
-Austria
 Azerbaijan
+Ba Lan
+Bahamas
 Bahrain
 Bangladesh
 Barbados
 Belarus
-Belgium
 Belize
 Benin
 Bermuda
 Bhutan
 Bolivia
-Bonaire, Sint Eustatius and Saba
-Bosnia and Herzegovina
+Bonaire, Sint Eustatius và Saba
+Bosnia và Herzegovina
 Botswana
-Bouvet Island
 Brazil
-British Indian Ocean Territory
-British Virgin Islands
 Brunei
 Bulgaria
 Burkina Faso
 Burundi
-Cambodia
+Bỉ
+Bồ Đào Nha
+Bờ Biển Ngà
 Cameroon
+Campuchia
 Canada
 Cape Verde
-Cayman Islands
-Central African Republic
 Chad
 Chile
-China
-Christmas Island
-Cocos (Keeling) Islands
 Colombia
 Comoros
-Cook Islands
 Costa Rica
 Croatia
 Curaçao
-Cyprus
-Czech Republic
-Côte d'Ivoire
-Democratic Republic of the Congo
-Denmark
+Các Tiểu vương quốc Ả Rập Thống nhất
+Các tiểu đảo xa của Hoa Kỳ
+Cộng hòa Trung Phi
+Cộng hòa Congo
+Cộng hòa Dominica
+Cộng hòa Dân chủ Congo
+Cộng hòa Séc
+Cộng hòa Togo
 Djibouti
 Dominica
-Dominican Republic
 Ecuador
-Egypt
 El Salvador
-Equatorial Guinea
 Eritrea
 Estonia
 Ethiopia
-Falkland Islands
-Faroe Islands
-Federated States of Micronesia
 Fiji
-Finland
-France
-French Guiana
-French Polynesia
-French Southern Territories
 Gabon
-Georgia
-Germany
+Gambia
 Ghana
 Gibraltar
-Greece
 Greenland
 Grenada
+Gruzia
 Guadeloupe
 Guam
 Guatemala
 Guernsey
+Guiana thuộc Pháp
 Guinea
+Guinea Xích đạo
 Guinea-Bissau
 Guyana
 Haiti
-Heard Island and McDonald Islands
+Hoa Kỳ
 Honduras
-Hong Kong
 Hungary
+Hy Lạp
+Hà Lan
+Hàn Quốc
+Hồng Kông
 Iceland
-India
 Indonesia
 Iraq
 Ireland
-Isle Of Man
 Israel
-Italy
 Jamaica
-Japan
 Jersey
 Jordan
 Kazakhstan
@@ -114,16 +97,19 @@ Kiribati
 Kosovo
 Kuwait
 Kyrgyzstan
-Laos
 Latvia
-Lebanon
 Lesotho
+Li Băng
 Liberia
-Libya
 Liechtenstein
 Lithuania
+Liên bang Micronesia
 Luxembourg
-Macau
+Lybia
+Lào
+Lãnh thổ Ấn Độ Dương thuộc Anh
+Ma Cao
+Ma-rốc
 Macedonia
 Madagascar
 Malawi
@@ -131,7 +117,6 @@ Malaysia
 Maldives
 Mali
 Malta
-Marshall Islands
 Martinique
 Mauritania
 Mauritius
@@ -139,26 +124,27 @@ Mayotte
 Mexico
 Moldova
 Monaco
-Mongolia
 Montenegro
 Montserrat
-Morocco
 Mozambique
 Myanmar
+Mông Cổ
+Na Uy
+Nam Cực
+Nam Phi
+Nam Sudan
 Namibia
 Nauru
 Nepal
-Netherlands
 Netherlands Antilles
 New Caledonia
 New Zealand
+Nga
+Nhật Bản
 Nicaragua
 Niger
 Nigeria
 Niue
-Norfolk Island
-Northern Mariana Islands
-Norway
 Oman
 Pakistan
 Palau
@@ -167,27 +153,39 @@ Panama
 Papua New Guinea
 Paraguay
 Peru
-Philippines
+Philippin
+Pháp
+Phần Lan
 Pitcairn
-Poland
-Portugal
+Polynesia thuộc Pháp
 Puerto Rico
 Qatar
-Republic of the Congo
+Quần đảo Aland
+Quần đảo Bắc Mariana
+Quần đảo Cayman
+Quần đảo Cocos (Keeling)
+Quần đảo Cook
+Quần đảo Falkland
+Quần đảo Faroe
+Quần đảo Marshall
+Quần đảo Nam Georgia và Nam Sandwich
+Quần đảo Solomon
+Quần đảo Turks và Caicos
+Quần đảo Virgin thuộc Anh
+Quần đảo Virgin thuộc Mỹ
 Romania
-Russia
 Rwanda
 Réunion
 Saint Barthélemy
 Saint Helena
-Saint Kitts and Nevis
+Saint Kitts và Nevis
 Saint Martin
-Saint Pierre and Miquelon
-Saint Vincent and the Grenadines
+Saint Pierre và Miquelon
+Saint Vincent và Grenadines
 Samoa
+Samoa thuộc Mỹ
 San Marino
-Sao Tome and Principe
-Saudi Arabia
+Sao Tome và Principe
 Senegal
 Serbia
 Seychelles
@@ -196,51 +194,53 @@ Singapore
 Sint Maarten
 Slovakia
 Slovenia
-Solomon Islands
 Somalia
-South Africa
-South Georgia and the South Sandwich Islands
-South Korea
-South Sudan
-Spain
 Sri Lanka
 St. Lucia
 Suriname
-Svalbard and Jan Mayen
+Svalbard và Jan Mayen
 Swaziland
-Sweden
-Switzerland
-Taiwan
+Síp
 Tajikistan
 Tanzania
-Thailand
-The Bahamas
-The Gambia
-Timor-Leste
-Togo
+Thành Vatican
+Thái Lan
+Thổ Nhĩ Kỳ
+Thụy Sỹ
+Thụy Điển
 Tokelau
 Tonga
-Trinidad and Tobago
+Trinidad và Tobago
+Trung Quốc
 Tunisia
-Turkey
 Turkmenistan
-Turks and Caicos Islands
 Tuvalu
-US Virgin Islands
+Tây Ban Nha
+Tây Sahara
 Uganda
 Ukraine
-United Arab Emirates
-United Kingdom
-United States
-United States Minor Outlying Islands
 Uruguay
 Uzbekistan
 Vanuatu
-Vatican City
 Venezuela
-Vietnam
-Wallis and Futuna
-Western Sahara
+Việt Nam
+Vùng đất phía Nam thuộc Pháp
+Vương quốc Anh
+Wallis và Futuna
 Yemen
 Zambia
 Zimbabwe
+Áo
+Úc
+Ý
+Đan Mạch
+Đài Loan
+Đông Timor
+Đảo Bouvet
+Đảo Christmas
+Đảo Heard và Quần đảo McDonald
+Đảo Man
+Đảo Norfolk
+Đức
+Ả-rập Xê-út
+Ấn Độ

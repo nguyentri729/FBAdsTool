@@ -4,20 +4,19 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.proxy import Proxy, ProxyType
 import random
 import string
 import re
 import time
 import requests
 import pathlib
-
 # code by nguyentri729
 # 17/04/2020
 # auto ads facebook
 
-
 class autofb:
-    def __init__(self):
+    def __init__(self, proxyIP = ''):
         option = Options()
         option.add_argument("--disable-infobars")
         option.add_argument("start-maximized")
@@ -27,8 +26,14 @@ class autofb:
         option.add_experimental_option("prefs", {
             "profile.default_content_setting_values.notifications": 1
         })
+        capabilities = webdriver.DesiredCapabilities.CHROME
+        if proxyIP != '':
+            prox = Proxy()
+            prox.proxy_type = ProxyType.MANUAL
+            prox.ssl_proxy = proxyIP
+            prox.add_to_capabilities(capabilities)
         self.driver = webdriver.Chrome(
-            options=option, executable_path=r".\\chromedriver.exe")
+            options=option, executable_path=r".\\chromedriver.exe", desired_capabilities=capabilities)
     # Login with account
     # data (array)
     # type (string): 'account', 'cookie'
@@ -52,8 +57,12 @@ class autofb:
             passwordInput = WebDriverWait(self.driver, 5).until(
                 EC.presence_of_element_located((By.ID, "pass")))
             emailInput.send_keys(data['username'])
+            time.sleep(0.5)
             passwordInput.send_keys(data['password'])
-
+            
+           
+            time.sleep(0.2)
+            
             webdriver.ActionChains(self.driver).send_keys(Keys.ENTER).perform()
             #check 2fa
             try:
@@ -90,6 +99,12 @@ class autofb:
             return True
         except:
             return False
+    def getCookie(self):
+        cookies = self.driver.get_cookies()
+        cookieStr = ''
+        for cookie in cookies:
+            cookieStr += cookie['name'] + '=' + cookie['value'] + ";"
+        return cookieStr
 
     def addCredit(self, creditCard):
         self.driver.get(
@@ -134,20 +149,22 @@ class autofb:
                 (By.XPATH, "//a[contains(text(),'Thay đổi đơn vị tiền tệ')]")))
             changeMoney.click()
 
+            time.sleep(3)
             enterButton = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//input[@name='currency']")))
 
             webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.ENTER).perform()
-            time.sleep(3)
+            time.sleep(2)
             self.driver.execute_script("document.getElementsByClassName('_54nh')["+str(moneyTypeIndex)+"].click(); ")
-
             time.sleep(2)
             webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.ENTER).perform()
+            time.sleep(1.5)
+            self.driver.execute_script("document.getElementsByClassName('_54nh')["+str(timeIndex)+"].click()")
             time.sleep(2)
-            self.driver.execute_script("console.log(document.getElementsByClassName('_54nh')["+str(timeIndex)+"].click()) ")
+            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB).perform()
             time.sleep(2)
-            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.ENTER).perform()
-            
+            webdriver.ActionChains(self.driver).send_keys(Keys.ENTER).perform()
+            time.sleep(2)
             afterClick = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//input[@name='jazoest']")))
             webdriver.ActionChains(self.driver).send_keys(
@@ -181,7 +198,9 @@ class autofb:
             address_state.send_keys(self.randomString(8))
 
             self.driver.execute_script(
-                "document.getElementsByClassName('_1f')[0].click();setTimeout(function(){document.getElementsByClassName('_3leq')["+str(countryIndex)+"].click()},2000)")
+                "document.getElementsByClassName('_1f')[0].click();setTimeout(function(){console.log(document.getElementsByClassName('_3leq'));document.getElementsByClassName('_3leq')["+str(countryIndex)+"].click()},2000)")
+            
+            
             time.sleep(3)
 
             cm_settings_page_save_button = WebDriverWait(self.driver, 3).until(
@@ -191,54 +210,57 @@ class autofb:
             time.sleep(5)
         except:
             time.sleep(5)
+        try:
+            #buoc tiep theo ne
+            self.driver.get(
+                'https://www.facebook.com/ads/manager/account_settings/account_billing/')
+            #wait button show
+            addCreditButton = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//button[@data-testid='cm_add_pm_button']")))
+            addCreditButton.click()
 
-        #buoc tiep theo ne
-        self.driver.get(
-            'https://www.facebook.com/ads/manager/account_settings/account_billing/')
-        #wait button show
-        addCreditButton = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//button[@data-testid='cm_add_pm_button']")))
-        addCreditButton.click()
+            WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.ID, "new_direct_debit_v2_title")))
+            self.driver.execute_script(
+                "document.getElementById('new_direct_debit_v2_title').click();setTimeout(function(){document.getElementsByClassName('layerConfirm')[0].click()},3000)")
 
-        WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.ID, "new_direct_debit_v2_title")))
-        self.driver.execute_script(
-            "document.getElementById('new_direct_debit_v2_title').click();setTimeout(function(){document.getElementsByClassName('layerConfirm')[0].click()},3000)")
+            #get data from fake IT site
+            fakeData = self.fakeIT()
+            account_holder_name = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//input[@name='account_holder_name']")))
+            account_holder_name.send_keys(fakeData['name'])
 
-        #get data from fake IT site
-        fakeData = self.fakeIT()
-        account_holder_name = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//input[@name='account_holder_name']")))
-        account_holder_name.send_keys(fakeData['name'])
+            bankAccountNumber = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//input[@name='bankAccountNumber']")))
+            bankAccountNumber.send_keys(fakeData['iban'])
+            routing_number = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//input[@name='routing_number']")))
+            routing_number.send_keys(fakeData['bic'])
 
-        bankAccountNumber = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//input[@name='bankAccountNumber']")))
-        bankAccountNumber.send_keys(fakeData['iban'])
-        routing_number = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//input[@name='routing_number']")))
-        routing_number.send_keys(fakeData['bic'])
+            # addCreditButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@value='1']")))
+            # addCreditButton.click()
+            street = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//input[@name='street']")))
+            street.send_keys(fakeData['address'])
 
-        # addCreditButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@value='1']")))
-        # addCreditButton.click()
-        street = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//input[@name='street']")))
-        street.send_keys(fakeData['address'])
+            city = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//input[@name='city']")))
+            city.send_keys(fakeData['city'])
 
-        city = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//input[@name='city']")))
-        city.send_keys(fakeData['city'])
+            zipCode = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//input[@name='zip']")))
+            zipCode.send_keys(fakeData['zipcode'])
 
-        zipCode = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//input[@name='zip']")))
-        zipCode.send_keys(fakeData['zipcode'])
+            approval = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//input[@name='approval']")))
+            approval.send_keys(Keys.SPACE)
+            addButton = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.ID, "AdsPaymentsDirectDebitButton")))
+            addButton.click()
+            time.sleep(5)
+        except:
+            pass
 
-        approval = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//input[@name='approval']")))
-        approval.send_keys(Keys.SPACE)
-        addButton = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.ID, "AdsPaymentsDirectDebitButton")))
-        addButton.click()
-        time.sleep(5)
         return self.checkLogin()
 
     def quit(self):
@@ -248,7 +270,6 @@ class autofb:
     def randomString(self, stringLength=8):
         letters = string.ascii_lowercase
         return ''.join(random.choice(letters) for i in range(stringLength))
-
     def fakeIT(self):
         ibanRegex = r'title="Click To Copy">(.*)</span></span> \(<a href="#"'
         bicRegex = r'<th scope="row">BIC</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
@@ -273,15 +294,12 @@ class autofb:
             'bic': bic,
             'iban': iban
         })
-
-
-
-
 import sys
 import base64
 import json
 import time
 #enter command
+createAds = False
 for index in range(1, len(sys.argv)):
     if sys.argv[index] == '-credit': 
         message_bytes = base64.b64decode(sys.argv[index + 1])
@@ -292,33 +310,82 @@ for index in range(1, len(sys.argv)):
         message = message_bytes.decode('ascii')
         account = json.loads(message)
     #ads get params
-    if sys.argv[index] == '-createAds':
-        createAds = True
+    if sys.argv[index] == '-createAdsAccount':
+        createAdsAccount = True
     if sys.argv[index] == '-moneyIndex':
-        moneyIndex = sys.argv[index]
+        moneyIndex = sys.argv[index + 1]
     if sys.argv[index] == '-timeIndex':
-        timeIndex = sys.argv[index]
+        timeIndex = sys.argv[index + 1]
     if sys.argv[index] == '-countryIndex':
-        countryIndex = sys.argv[index]
-
-
-fb = autofb()
-fb.login(account, 'cookie')
-result = {
-    'status': 'fail',
-    'msg': 'unknown'
-}
-if fb.checkLogin():
-    x = fb.addAdsAccount(moneyTypeIndex, timeIndex, countryIndex)
-    result = {
-        'status': 'success',
-        'msg': 'add ads account success!'
-    }
+        countryIndex = sys.argv[index + 1]
+    if sys.argv[index] == '-updateCookie':
+        updateCookie = True
+    if sys.argv[index] == '-proxy':
+        proxyIP = sys.argv[index + 1]
+if proxyIP:
+    fb = autofb(proxyIP)
 else:
+    proxyIP
+def callAction(actionType = 'addAdsAccount'):
+    if actionType == 'addAdsAccount':
+        return fb.addAdsAccount(moneyIndex, timeIndex, countryIndex)
+    else:
+        return fb.addCredit(creditCard)
+if updateCookie:
+    fb.login(account, 'account')
+    if fb.checkLogin():
+        cookies = fb.getCookie()
+        result = {
+            'status': 'success',
+            'msg' : 'ok',
+            'cookie': cookies
+        }
+    else:
+        result = {
+            'status': 'fail',
+            'msg' : 'Login fail'
+        }
+    print(json.dumps(result, indent=4, sort_keys=True))
+    fb.quit()
+else:
+
     result = {
         'status': 'fail',
-        'msg': 'login fail'
+        'msg': 'connect fail ! retry '
     }
-fb.quit()
-print(json.dumps(result, indent=4, sort_keys=True))
+
+
+    try:
+        fb.login(account, 'cookie')
+        for target_list in range(0, 2):
+            if fb.checkLogin():
+                if createAdsAccount:
+                    action = callAction('addAdsAccount')
+                    if action:
+                        result = {
+                            'status': 'success',
+                            'msg': ''
+                        }
+                    else:
+                        result = {
+                            'status': 'fail',
+                            'msg': 'checkpoint'
+                        }
+                else:
+                    callAction('addCredit')
+                    result = {
+                        'status': 'success',
+                        'msg': 'action call success'
+                    }
+                break
+            else:
+                fb.login(account, 'account')
+    except:
+        result = {
+            'status': 'fail',
+            'msg': 'connect fail'
+        }
+
+    fb.quit()
+    print(json.dumps(result, indent=4, sort_keys=True))
 

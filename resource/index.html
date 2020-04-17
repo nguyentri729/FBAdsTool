@@ -64,17 +64,19 @@
           <div class="box-input">
             <label><b>Change IP:</b> </label>
 
-            <select id="cars">
-              <option value="volvo">Không change IP</option>
-              <option value="saab">HMA</option>
-              <option value="mercedes">Sockets5 (ThueMicro)</option>
-              <option value="mercedes">Proxy</option>
-              <option value="audi">DCom</option>
-            </select><br />
-          </div>
-          <button id="sayHello">Test đổi IP</button>
+            <select id="change_ip_select">
+              <option value="no_change">Không change IP</option>
 
-          <input type="text" value="1.1.1.1" disabled style="width: 50%;" />
+              <option value="proxy">Proxy</option>
+              <option value="dcom">Dcom</option>
+            </select><br />
+
+            
+          </div>
+          <textarea style="width: 100%; display: none;" placeholder="proxy list" id="proxy_list"></textarea>
+          <button id="sayTestChangeIP">Test đổi IP</button>
+
+          
         </div>
       </div>
       <div class="box">
@@ -85,8 +87,32 @@
           <input type="checkbox" class="myinput" name="addCredit" id="addCredit" />
           <label for="addCredit">Thêm credit ads</label> <br />
 
-          <input type="checkbox" class="myinput" name="chungannasdf1" id="chungannasdf1" />
-          <label for="chungannasdf1">Tạo tk quảng cáo</label> <br />
+          <input type="checkbox" class="myinput" name="createAccountAds" id="createAccountAds" />
+          <label for="createAccountAds">Tạo tk quảng cáo</label> <br />
+
+          <hr />
+          <div id="createAccountAdsOptions" style="display: none;">
+            <div class="box-input">
+              <label><b>Đ.vị Tiền:</b> </label>
+  
+              <select id="moneyTypeOptions">
+               
+              </select><br />
+            </div>
+            <div class="box-input">
+              <label><b>T.Zone:</b> </label>
+              <select id="timeZoneOptions">
+                
+              </select><br />
+            </div>
+
+            <div class="box-input">
+              <label><b>Nước:</b> </label>
+              <select id="contryOptions">
+                
+              </select><br />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -94,8 +120,13 @@
         <div class="box-header">
           Điều khiển
         </div>
-        <div class="box-body">
+        <div class="box-body" style="text-align: center;">
+          
+          
           <button style="width: 100%; height: 40px;" id="start">Bắt đầu</button>
+          <hr />
+          <p style="color: darkgreen;">success: <span id="count_success">0</span></p><p style="color: red;">fail: <span id="count_fail">0</span></p>
+          <p style="color: darkviolet;">total: <span id="total">0</span></p>
         </div>
       </div>
     </div>
@@ -113,9 +144,11 @@
           <button style="margin: 10px; display: none;" id="paste_credit">
             Dán credit
           </button>
-          <button style="margin: 10px">Copy đã chọn</button>
-          <button style="margin: 10px">Xóa đã chọn</button>
+          <button style="margin: 10px" id="copy_selected">Copy đã chọn</button>
 
+          <button style="margin: 10px" id="copy_success">Copy success</button>
+
+          <button style="margin: 10px" id="delete_selected">Xóa đã chọn</button>
 
           <div id="jsGrid" class="jsgrid" style="position: relative; width: 100%;">
             <div class="jsgrid-grid-header jsgrid-header-scrollbar">

@@ -4,28 +4,118 @@ sayBtn = document.getElementById("sayHello");
 var dem = 0;
 var isCredit = false; //using add credit
 var list_credit;
-
-
-//Options change 
-$('#addCredit:first').change(function() {
+var listProxy;
+const getProxy = function() {
+  //console.log( get proxy )
+  try {
+    return listProxy[Math.round(Math.random() * listProxy.length)]
+  } catch (error) {
+    return ''
+  }
   
-  
+}
+//Options change
+$("#addCredit:first").change(function () {
   if (!$(this)[0].checked) {
     isCredit = false;
     list_credit = null;
-    $('#paste_credit').hide()
-  }else{
-    $('#paste_credit').show()
+    $("#paste_credit").hide();
+  } else {
+    $("#paste_credit").show();
   }
-  
+});
+
+$('#sayTestChangeIP').click(function() {
+  console.log('ok ne')
+  ipcRenderer.send('TEST_CHANGE_IP', getProxy())
 })
 
-$('#paste_credit').click(function() {
-  list_credit = clipboard.readText().split("\n");
-  $(this).html(`Thêm credit (${list_credit.length})`)
-  isCredit = true
 
-  $('#headerTable').html(`
+
+$('#proxy_list').change(function(e) {
+    listProxy = e.target.value.split('\n')
+    console.log(listProxy)
+})
+//option change
+$("#change_ip_select").change(function(e) {
+  const value = e.target.value
+  
+  if (value == 'proxy') {
+    $('#proxy_list').show()
+  }else{
+    $('#proxy_list').hide()
+  }
+})
+
+
+$("#copy_selected").click(function () {
+  let checkedInput = $('#lists_account input[type="checkbox"]:checked:enabled');
+  let data = "";
+  for (let index = 0; index < checkedInput.length; index++) {
+    const input = checkedInput[index];
+    const id = $(input).attr("tr-id");
+    data +=
+      $("#tr_" + id + " textarea")[0].value +
+      "|" +
+      $("#tr_" + id + " textarea")[1].value +
+      "|" +
+      $("#tr_" + id + " textarea")[2].value +
+      "|" +
+      $("#tr_" + id + " textarea")[3].value + "\n";
+  }
+  clipboard.writeText(data)
+  alert('Copy thành công')
+});
+$("#delete_selected").click(function () {
+  let checkedInput = $('#lists_account input[type="checkbox"]:checked:enabled');
+  for (let index = 0; index < checkedInput.length; index++) {
+    const input = checkedInput[index];
+    const id = $(input).attr("tr-id");
+    $('#tr_' + id + '').remove()
+  }
+});
+$("#createAccountAds:first").change(function () {
+  if (!$(this)[0].checked) {
+    addAdsAccount = false;
+    $("#createAccountAdsOptions").hide();
+  } else {
+    ipcRenderer.send("GET_CONTRIES_OPTIONS", "");
+    ipcRenderer.send("GET_MONEYTYPE_OPTIONS", "");
+    ipcRenderer.send("GET_TIMEZONES_OPTIONS", "");
+    addAdsAccount = true;
+    $("#createAccountAdsOptions").show();
+  }
+});
+
+$('#copy_success').click(function() {
+  const statusLists = $('.status')
+  let data = ''
+  
+  for (let index = 0; index < statusLists.length; index++) {
+    const status = statusLists[index];
+    
+    if ($(status).text().trim() == 'Thành công') {
+      const tr_id = $(status).attr('tr-id')
+      data +=
+      $("#tr_" + tr_id + " textarea")[0].value +
+      "|" +
+      $("#tr_" + tr_id + " textarea")[1].value +
+      "|" +
+      $("#tr_" + tr_id + " textarea")[2].value +
+      "|" +
+      $("#tr_" + tr_id + " textarea")[3].value + "\n";
+    }
+  }
+  clipboard.writeText(data)
+  alert('Copy thành công !')
+})
+
+$("#paste_credit").click(function () {
+  list_credit = clipboard.readText().split("\n");
+  $(this).html(`Thêm credit (${list_credit.length})`);
+  isCredit = true;
+
+  $("#headerTable").html(`
   <tr class="jsgrid-header-row">
     <th class="jsgrid-header-cell jsgrid-align-center"
       style="width: 10px;">
@@ -54,24 +144,25 @@ $('#paste_credit').click(function() {
     </th>
   </tr>
 
-  `)
-})
+  `);
+});
 
-$('#paste_account').click(function () {
+$("#paste_account").click(function () {
   let list_account = clipboard.readText().split("\n");
-  $(this).html(`Dán account (${list_account.length})`)
+  $(this).html(`Dán account (${list_account.length})`);
   //check credit first
-  if(!list_credit && $('#addCredit')[0].checked) {
+  if (!list_credit && $("#addCredit")[0].checked) {
     alert("Thêm credit trước !");
-    return true
+    return true;
   }
-  
-  
+
   //handle credit && creat options
   if (isCredit) {
-    var optionsHTML = '<option value="random">Random</option>' + list_credit.map((credit, index) => {
-        return `<option value="${credit}">${credit}</option>`
-    })
+    var optionsHTML =
+      '<option value="random">Random</option>' +
+      list_credit.map((credit, index) => {
+        return `<option value="${credit}">${credit}</option>`;
+      });
   }
   for (let index = 0; index < list_account.length; index++) {
     const account = list_account[index].split("|");
@@ -84,7 +175,7 @@ $('#paste_account').click(function () {
       alert("Copy đúng định dạng \n User|Pass|2Fa|Cookie");
       break;
     }
-    
+
     //check creadit
     if (isCredit) {
       var moreOptions = `
@@ -92,9 +183,9 @@ $('#paste_account').click(function () {
               <select style="width: 100px;" id="card_${vtri}">
                   ${optionsHTML}
               </select>
-          </td>`
-    }else{
-      var moreOptions = ''
+          </td>`;
+    } else {
+      var moreOptions = "";
     }
 
     //show list account
@@ -115,12 +206,11 @@ $('#paste_account').click(function () {
           <textarea style="width: 100%;">${account[2]}</textarea>
         </td>
         <td class="jsgrid-cell jsgrid-align-center" style="width: 50px;">
-          <textarea style="width: 100%;">${account[3]}</textarea>
+          <textarea style="width: 100%;" id="cookie_input_${vtri}">${account[3]}</textarea>
         </td>
         ${moreOptions}
-        <td class="jsgrid-cell jsgrid-align-center" style="width: 60px;">
-            <b id="status_${vtri}" class="text-normal">Ready !!</b><br>
-            
+        <td class="jsgrid-cell jsgrid-align-center status" tr-id="${vtri}" style="width: 60px;">
+            <b id="status_${vtri}" class="text-normal">Ready</b><br>
         </td>
         </tr>`);
   }
@@ -163,107 +253,173 @@ $('#lists_account input[type="checkbox"]').on("click", function () {
 });
 
 $("#start").click(async function (e) {
-  
-  //Max of thread 
-  const numberThread = parseInt($("#thread_number")[0].value);
- 
-  let listInputChecked = $('#lists_account input[type="checkbox"]:checked');
+  try {
+    //Max of thread
+    const numberThread = parseInt($("#thread_number")[0].value);
 
+    let listInputChecked = $('#lists_account input[type="checkbox"]:checked');
 
-  //set waiting
-  for (let j = 0; j < listInputChecked.length; j++) {
+    //set waiting
+    for (let j = 0; j < listInputChecked.length; j++) {
       const input = listInputChecked[j];
       const tr_id = $(input).attr("tr-id");
-      $("#tr_"+tr_id).attr('class', '')
+      $("#tr_" + tr_id).attr("class", "");
       $("#status_" + tr_id)
-      .html("Đang chờ...")
-      .attr("class", "text-primary");
-  }
+        .html("Đang chờ...")
+        .attr("class", "text-primary");
+    }
 
-  var checkThread = 0;
-  for (let index = 0; index < listInputChecked.length; index++) {
-    const input = listInputChecked[index];
-    const tr_id = $(input).attr("tr-id");
-    const accountTextarea = $("#tr_" + tr_id + " textarea");
-    const account = {
-      username: accountTextarea[0].value,
-      password: accountTextarea[1].value,
-      secret: accountTextarea[2].value,
-      cookie: accountTextarea[3].value,
-    };
-    let moreString = ''
-    if($('#addCredit')[0].checked) {
-        const selectOption = $(`#tr_${tr_id} select`)[0].value
-        if (selectOption == 'random') {
-            var splitOptions = list_credit[Math.round(Math.random()*list_credit.length)].split('|')
-        }else{
-            var splitOptions = selectOption.split('|')
+    var checkThread = 0;
+    $("#total").html(listInputChecked.length);
+
+    for (let index = 0; index < listInputChecked.length; index++) {
+      const input = listInputChecked[index];
+      const tr_id = $(input).attr("tr-id");
+      const accountTextarea = $("#tr_" + tr_id + " textarea");
+      const account = {
+        username: accountTextarea[0].value,
+        password: accountTextarea[1].value,
+        secret: accountTextarea[2].value,
+        cookie: accountTextarea[3].value,
+      };
+      let moreString = "-updateCookie";
+      if ($("#addCredit")[0].checked) {
+        const selectOption = $(`#tr_${tr_id} select`)[0].value;
+        if (selectOption == "random") {
+          var splitOptions = list_credit[
+            Math.round(Math.random() * list_credit.length)
+          ].split("|");
+        } else {
+          var splitOptions = selectOption.split("|");
         }
         const cardInfo = {
           cardName: splitOptions[0],
           cardNumber: splitOptions[1],
           cardExperied: splitOptions[2],
-          ccv: splitOptions[3]
-        }
-        moreString = '-credit ' + btoa(JSON.stringify(cardInfo))
-    }
-    //send request for main
-    ipcRenderer.send(
-      "CALL_ACTION",
-      JSON.stringify({
-        index: tr_id,
-        data: `-acc ${btoa(JSON.stringify(account))} ${moreString}`,
-      })
-    );
+          ccv: splitOptions[3],
+        };
+        moreString = "-credit " + btoa(JSON.stringify(cardInfo));
+      }
 
-    //set status 
-    $("#status_" + tr_id)
-      .html("Đang chạy...")
-      .attr("class", "text-normal");
+      if ($("#createAccountAds")[0].checked) {
+        moreString = `-createAdsAccount -moneyIndex ${
+          $("#moneyTypeOptions")[0].value
+        } -timeIndex ${$("#timeZoneOptions")[0].value} -countryIndex ${
+          $("#contryOptions")[0].value
+        } `;
+      }
 
-    $("#tr_"+tr_id).attr('class', '')
-    //when max thread
-    checkThread++;
-    
+      if ($('#change_ip_select')[0].value == 'proxy') {
+        moreString += ' -proxy '+ getProxy()
+      }
+      
+      
+      //send request for main
+      ipcRenderer.send(
+        "CALL_ACTION",
+        JSON.stringify({
+          index: tr_id,
+          data: `-acc ${btoa(JSON.stringify(account))} ${moreString}`,
+        })
+      );
 
+      //set status
+      $("#status_" + tr_id)
+        .html("Đang chạy...")
+        .attr("class", "text-normal");
 
-    
-    if (checkThread >= numberThread) {
-      await new Promise(function (resolve, reject) {
-        var count = 0;
-        //wait callback_action
-        ipcRenderer.on("CALLBACK_ACTION", function (event, arg) {
-          arg = JSON.parse(arg);
-          if (arg.index) {
-            //set status
-            arg.data.trim() == "success"
-              ? $("#status_" + arg.index)
-                  .attr("class", "text-success")
-                  .html("Thành công")
-              : $("#status_" + arg.index)
+      $("#tr_" + tr_id).attr("class", "");
+      //when max thread
+      checkThread++;
+
+      if (checkThread >= numberThread) {
+        await new Promise(function (resolve, reject) {
+          var count = 0;
+          //wait callback_action
+          ipcRenderer.on("CALLBACK_ACTION", function (event, arg) {
+            arg = JSON.parse(arg);
+            console.log("data ne", arg.data);
+
+            if (arg.index) {
+              try {
+                if (arg.data.status == "success") {
+                  $("#count_success").html(
+                    parseInt($("#count_success").html()) + 1
+                  );
+                  $("#status_" + arg.index)
+                    .attr("class", "text-success")
+                    .html("Thành công");
+                } else {
+                  $("#count_fail").html(parseInt($("#count_fail").html()) + 1);
+                  $("#status_" + arg.index)
+                    .attr("class", "text-danger")
+                    .html("Thất bại <br><small>" + arg.data.msg + "</small>");
+                }
+                if (arg.data.cookie) {
+                  $('#cookie_input_'+arg.index+'')[0].value = arg.data.cookie
+                }
+              } catch (error) {
+                console.log(error)
+                $("#status_" + arg.index)
                   .attr("class", "text-danger")
-                  .html("Thất bại");
-    
-            $("#tr_"+arg.index).attr('class', 'jsgrid-row')
-    
-            console.log("index xong : ", arg.index);
-            count++;
-            if (count >= numberThread) {
-              count = 0;
-              resolve();
-              
-            }
-          }
-        });
-        setTimeout(() => {
-          reject("fail");
-        }, 100000);
-      });
-      console.log('max thread roi ne')
-      checkThread = 0;
-    }
-    
+                  .html("Thất bại <br><small>unknown</small>");
+              }
 
-    
+              $("#tr_" + arg.index).attr("class", "jsgrid-row");
+
+              console.log("index xong : ", arg.index);
+              count++;
+              if (count >= numberThread) {
+                count = 0;
+                resolve();
+              }
+            }
+          });
+          setTimeout(() => {
+            reject("fail");
+          }, 300000);
+        });
+        
+        checkThread = 0;
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+ipcRenderer.on("GET_CONTRIES_OPTIONS", function (e, arg) {
+  const contries = arg.split("\n");
+  $("#contryOptions").html("");
+  for (let index = 0; index < contries.length; index++) {
+    $("#contryOptions").append(`
+      <option value="${index + 1}" ${1 + index == 235 ? 'selected=""' : ""}>${
+      contries[index]
+    }</options>
+    `);
+  }
+});
+
+ipcRenderer.on("GET_TIMEZONES_OPTIONS", function (e, arg) {
+  const timeZone = arg.split("\n");
+  $("#timeZoneOptions").html("");
+  for (let index = 0; index < timeZone.length; index++) {
+    $("#timeZoneOptions").append(`
+      <option value="${54 + index}" ${54 + index == 436 ? 'selected=""' : ""}>${
+      timeZone[index]
+    }</options>
+    `);
+  }
+});
+
+ipcRenderer.on("GET_MONEYTYPE_OPTIONS", function (e, arg) {
+  const moneyType = arg.split("\n");
+  $("#moneyTypeOptions").html("");
+  for (let index = 0; index < moneyType.length; index++) {
+    $("#moneyTypeOptions").append(`
+      <option value="${index}" ${index == 16 ? 'selected=""' : ""}>${
+      moneyType[index]
+    }</options>
+    `);
   }
 });

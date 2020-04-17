@@ -203,8 +203,8 @@ class autofb:
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.ID, "new_direct_debit_v2_title")))
         self.driver.execute_script(
-            "document.getElementById('new_direct_debit_v2_title').click();setTimeout(function(){document.getElementsByClassName('layerConfirm')[0].click()},3000)")
-
+            "document.getElementById('new_direct_debit_v2_title').click();setTimeout(function(){console.log(document.getElementsByClassName('_3leq'));document.getElementsByClassName('layerConfirm')[0].click()},3000)")
+        
         #get data from fake IT site
         fakeData = self.fakeIT()
         account_holder_name = WebDriverWait(self.driver, 10).until(
