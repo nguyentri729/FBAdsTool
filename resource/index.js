@@ -8,7 +8,8 @@ var listProxy;
 const getProxy = function() {
   //console.log( get proxy )
   try {
-    return listProxy[Math.round(Math.random() * listProxy.length)]
+    
+    return listProxy[Math.floor(Math.random() * listProxy.length)]
   } catch (error) {
     return ''
   }
@@ -26,7 +27,7 @@ $("#addCredit:first").change(function () {
 });
 
 $('#sayTestChangeIP').click(function() {
-  console.log('ok ne')
+  
   ipcRenderer.send('TEST_CHANGE_IP', getProxy())
 })
 
@@ -287,7 +288,7 @@ $("#start").click(async function (e) {
         const selectOption = $(`#tr_${tr_id} select`)[0].value;
         if (selectOption == "random") {
           var splitOptions = list_credit[
-            Math.round(Math.random() * list_credit.length)
+            Math.floor(Math.random() * list_credit.length)
           ].split("|");
         } else {
           var splitOptions = selectOption.split("|");

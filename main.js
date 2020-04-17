@@ -71,17 +71,17 @@ ipcMain.on("GET_TIMEZONES_OPTIONS", (event, arg) => {
 
 
 ipcMain.on("TEST_CHANGE_IP", (event, arg)=> {
-  console.log('ne ne')
-  exec(`python ${__dirname}/\\testProxy.py ${arg}`);  
+
+  exec(`${__dirname}/\\buildAction.exe${(arg.length > 0) ? ' -proxy ' +arg+'' : ' '} -test`);  
 })
 
 
 ipcMain.on("CALL_ACTION", async (event, arg) => {
   const account = JSON.parse(arg);
-  console.log(`python ${__dirname}/\\test.py ${account.data}`)
+  console.log(`${__dirname}/\\buildAction.exe ${account.data}`)
   
   const callPythonFile = function () {
-    return exec(`python ${__dirname}/\\test.py ${account.data}`);
+    return exec(`${__dirname}/\\buildAction.exe ${account.data}`);
   };
 
   const proc = callPythonFile();
