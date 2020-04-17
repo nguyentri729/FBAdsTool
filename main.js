@@ -8,6 +8,7 @@ async function createWindow() {
     webPreferences: {
       nodeIntegration: true,
     },
+    icon: __dirname + '/icon.png'
   });
   win.maximize();
   win.setMenuBarVisibility(false)

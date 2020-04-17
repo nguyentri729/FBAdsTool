@@ -1,6 +1,7 @@
 {
   "name": "tool_FB",
   "version": "1.0.0",
+  "productName": "AdsTools FB",
   "description": "",
   "main": "main.js",
   "dependencies": {
