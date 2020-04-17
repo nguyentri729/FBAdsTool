@@ -22,7 +22,7 @@ class autofb:
         option.add_argument("--disable-infobars")
         option.add_argument("start-maximized")
         option.add_argument("--disable-extensions")
-        option.add_argument("window-size=200,200")
+        option.add_argument("window-size=1000,800")
         # Pass the argument 1 to allow and 2 to block
         option.add_experimental_option("prefs", {
             "profile.default_content_setting_values.notifications": 1
@@ -125,7 +125,7 @@ class autofb:
 
         time.sleep(4)
 
-    def addAdsAccount(self):
+    def addAdsAccount(self, moneyTypeIndex = '16', timeIndex = '61', countryIndex = '13'):
         try:
             #add ads
             self.driver.get(
@@ -137,18 +137,17 @@ class autofb:
             enterButton = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//input[@name='currency']")))
 
-            webdriver.ActionChains(self.driver).send_keys(
-                Keys.TAB + Keys.ENTER).perform()
+            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.ENTER).perform()
             time.sleep(3)
-            self.driver.execute_script(
-                "document.getElementsByClassName('_54nh')[16].click(); ")
+            self.driver.execute_script("document.getElementsByClassName('_54nh')["+str(moneyTypeIndex)+"].click(); ")
 
-            time.sleep(3)
-            webdriver.ActionChains(self.driver).send_keys(
-                Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
-
-            time.sleep(3)
-
+            time.sleep(2)
+            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.ENTER).perform()
+            time.sleep(2)
+            self.driver.execute_script("console.log(document.getElementsByClassName('_54nh')["+str(timeIndex)+"].click()) ")
+            time.sleep(2)
+            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+            
             afterClick = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//input[@name='jazoest']")))
             webdriver.ActionChains(self.driver).send_keys(
@@ -157,9 +156,8 @@ class autofb:
             WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.CLASS_NAME, "_50f7")))
         except:
-           
             time.sleep(2)
-        return True
+       
         time.sleep(2)
         try:
             # enter new ads
@@ -183,7 +181,7 @@ class autofb:
             address_state.send_keys(self.randomString(8))
 
             self.driver.execute_script(
-                "document.getElementsByClassName('_1f')[0].click();setTimeout(function(){document.getElementsByClassName('_3leq')[235].click()},2000)")
+                "document.getElementsByClassName('_1f')[0].click();setTimeout(function(){document.getElementsByClassName('_3leq')["+str(countryIndex)+"].click()},2000)")
             time.sleep(3)
 
             cm_settings_page_save_button = WebDriverWait(self.driver, 3).until(
@@ -275,3 +273,6 @@ class autofb:
             'bic': bic,
             'iban': iban
         })
+
+
+
