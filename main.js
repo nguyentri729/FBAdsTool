@@ -5,14 +5,13 @@ const fs = require('fs')
 const axios = require('axios')
 async function createWindow() {
   const win = new BrowserWindow({
-    width: 1000,
-    height: 800,
     webPreferences: {
       nodeIntegration: true,
     },
   });
-
-  
+  win.maximize();
+  win.setMenuBarVisibility(false)
+  win.loadFile("./resource/checking.html");
   // and load the index.html of the app.
   const key = fs.readFileSync('key.txt')
   try {
@@ -30,7 +29,8 @@ async function createWindow() {
   // win.loadURL("http://http://localhost:3000/")
 
   // Open the DevTools.
-  win.webContents.openDevTools();
+  //win.webContents.openDevTools();
+  
 }
 app.allowRendererProcessReuse = true;
 
@@ -49,6 +49,7 @@ app.on("activate", () => {
     createWindow();
   }
 });
+
 
 
 //handle event
