@@ -1,4 +1,3 @@
-
 from FBAuto import autofb
 import sys
 import base64
@@ -6,7 +5,6 @@ import json
 import time
 #enter command
 for index in range(1, len(sys.argv)):
-
     if sys.argv[index] == '-credit': 
         message_bytes = base64.b64decode(sys.argv[index + 1])
         message = message_bytes.decode('ascii')
@@ -19,10 +17,21 @@ for index in range(1, len(sys.argv)):
 fb = autofb()
 
 fb.login(account, 'cookie')
+result = {
+    'status': 'fail',
+    'msg': 'unknown'
+}
 if fb.checkLogin():
-    fb.addAds()
-    print('success')
+    x = fb.addAdsAccount()
+    result = {
+        'status': 'success',
+        'msg': 'add ads account success!'
+    }
 else:
-    print('error')
-    
-time.sleep(10000)
+    result = {
+        'status': 'fail',
+        'msg': 'login fail'
+    }
+fb.quit()
+print(json.dumps(result, indent=4, sort_keys=True))
+
