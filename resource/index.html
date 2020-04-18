@@ -40,15 +40,24 @@
     <div class="left">
       <div class="box">
         <div class="box-header">
-          Thread
+          Tùy chỉnh
         </div>
         <div class="box-body">
           <div class="box-input">
             <label><b>Số luồng:</b> </label><input type="number" id="thread_number" value=1  /> <br /><br />
           </div>
+
           <div class="box-input">
-            <label><b>T.độ senkey (s):</b> </label><input type="number" value="1" id="sendKeys_speed" />
+            <label><b>Đăng nhập:</b> </label>
+
+            <select id="login_type">
+              <option value="all">Tự động</option>
+              <option value="account">Account</option>
+              <option value="cookie">Cookie</option>
+            </select><br />
           </div>
+          <input type="checkbox" class="myinput" name="hideWindow" id="hideWindow" />
+          <label for="hideWindow">Ẩn trình duyệt</label> <br />
         </div>
       </div>
 
@@ -123,7 +132,8 @@
         <div class="box-body" style="text-align: center;">
           
           
-          <button style="width: 100%; height: 40px; background-color: greenyellow;" id="start"><b>Bắt đầu</b></button>
+          <button style="width: 100%; height: 40px; background-color: greenyellow;" id="start"><b>Bắt đầu</b></button> 
+          <button style="width: 100%; height: 40px; background-color: red; display: none;" id="stop"><b>Dừng lại</b></button>
           <hr />
           <button style="width: 100%; height: 40px;" id="reset">Reset</button> <hr>
           <p style="color: darkgreen; display: inline;">success: <span id="count_success">0</span> | </p><p style="color: red; display: inline;">fail: <span id="count_fail">0</span> |</p>

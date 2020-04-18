@@ -20,6 +20,7 @@ var dem = 0;
 var isCredit = false; //using add credit
 var list_credit;
 var listProxy;
+var stop = true;
 const getProxy = function () {
   //console.log( get proxy )
   try {
@@ -290,9 +291,17 @@ $('#lists_account input[type="checkbox"]').on("click", function () {
     $("#checkAll").prop("checked", false);
   }
 });
+$("#stop").click(function() {
+  stop = true;
+  $(this).hide()
+  $("#start").show()
+})
 
 $("#start").click(async function (e) {
   try {
+    stop = false
+    $(this).hide()
+    $("#stop").show()
     //Max of thread
     const numberThread = parseInt($("#thread_number")[0].value);
     const numberChangeIP = parseInt($("#changeIpAfter")[0].value);
@@ -312,15 +321,23 @@ $("#start").click(async function (e) {
     var checkChangeIP = 0;
     $("#total").html(listInputChecked.length);
     var proxyIP = getProxy();
+    
     for (let index = 0; index < listInputChecked.length; index++) {
+      if (stop) {
+        checkChangeIP = 0;
+        checkThread = 0;
+        break;
+      }
       const input = listInputChecked[index];
       const tr_id = $(input).attr("tr-id");
       const accountTextarea = $("#tr_" + tr_id + " textarea");
+
       const account = {
         username: accountTextarea[0].value,
         password: accountTextarea[1].value,
         secret: accountTextarea[2].value,
         cookie: accountTextarea[3].value,
+        loginType: $('#login_type')[0].value
       };
       let moreString = "-updateCookie";
       if ($("#addCredit")[0].checked) {
@@ -349,15 +366,36 @@ $("#start").click(async function (e) {
         } `;
       }
 
+      
+      //hide window options
+      if ($("#hideWindow")[0].checked){
+        moreString += '-hideWindow'
+      }
+
       //set status
       $("#status_" + tr_id)
         .html("Đang chạy...")
         .attr("class", "text-normal");
 
       $("#tr_" + tr_id).attr("class", "");
+
+
+
       //when max thread
       checkThread++;
       checkChangeIP++;
+
+
+      //send request for main
+      ipcRenderer.send(
+        "CALL_ACTION",
+        JSON.stringify({
+          index: tr_id,
+          data: `-acc ${btoa(JSON.stringify(account))} ${moreString}`,
+        })
+      );
+
+
       //check change IP
       if (checkChangeIP >= numberChangeIP) {
         //change IP with dcom
@@ -386,16 +424,6 @@ $("#start").click(async function (e) {
         }
         checkChangeIP = 0;
       }
-
-      //send request for main
-      ipcRenderer.send(
-        "CALL_ACTION",
-        JSON.stringify({
-          index: tr_id,
-          data: `-acc ${btoa(JSON.stringify(account))} ${moreString}`,
-        })
-      );
-
       //check thread
       if (checkThread >= numberThread) {
         await new Promise(function (resolve, reject) {
@@ -447,6 +475,9 @@ $("#start").click(async function (e) {
         });
         checkThread = 0;
       }
+
+
+
     }
   } catch (error) {
     console.log(error);
