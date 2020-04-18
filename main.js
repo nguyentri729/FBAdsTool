@@ -12,21 +12,8 @@ async function createWindow() {
   });
   win.maximize();
   win.setMenuBarVisibility(false)
-  win.loadFile("./resource/checking.html");
-  // and load the index.html of the app.
-  const key = fs.readFileSync('key.txt')
-  try {
-    const result = await axios.get('https://jickmeaz.000webhostapp.com/checkKeys.php')
-    console.log(result.data, typeof result.data)
-    if (result.data.trim() == 'success') {
-        win.loadFile("./resource/index.html");
-    }else{
-      win.loadFile("./resource/active.html");
-    }
-    
-  } catch (error) {
-      win.loadFile("./resource/active.html");
-  }
+ 
+  win.loadFile("./resource/index.html");
   // win.loadURL("http://http://localhost:3000/")
 
   // Open the DevTools.

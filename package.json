@@ -12,9 +12,12 @@
     "jsgrid": "^1.5.3",
     "wijmo": "^5.20201.664"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "electron-packager": "^14.2.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-packager . --overwrite",
     "start": "electron ."
   },
   "keywords": [],
