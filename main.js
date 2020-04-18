@@ -17,7 +17,7 @@ async function createWindow() {
   // win.loadURL("http://http://localhost:3000/")
 
   // Open the DevTools.
-  win.webContents.openDevTools();
+  //win.webContents.openDevTools();
  
   
 
@@ -65,7 +65,7 @@ ipcMain.on("GET_TIMEZONES_OPTIONS", (event, arg) => {
 
 
 ipcMain.on("TEST_CHANGE_IP_PROXY", (event, arg)=> {
-  exec(`${__dirname}/\\buildAction.py${(arg.length > 0) ? ' -proxy ' +arg+'' : ' '} -test`);  
+  exec(`${__dirname}/\\buildAction.exe${(arg.length > 0) ? ' -proxy ' +arg+'' : ' '} -test`);  
 })
 
 
@@ -82,10 +82,10 @@ ipcMain.on("CHANGE_IP_DCOM", async (event, arg)=> {
 
 ipcMain.on("CALL_ACTION", async (event, arg) => {
   const account = JSON.parse(arg);
-  console.log(`python ${__dirname}/\\buildAction.py ${account.data}`)
+  console.log(`${__dirname}/\\buildAction.exe ${account.data}`)
   
   const callPythonFile = function () {
-    return exec(`python ${__dirname}/\\buildAction.py ${account.data}`);
+    return exec(`${__dirname}/\\buildAction.exe ${account.data}`);
   };
 
 
