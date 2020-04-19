@@ -1,31 +1,27 @@
 const { app, BrowserWindow, ipcMain, shell } = require("electron");
 require("electron-reload")(__dirname);
 const { exec } = require("child_process");
-const fs = require('fs')
-const axios = require('axios')
+const fs = require("fs");
+const axios = require("axios");
 async function createWindow() {
   const win = new BrowserWindow({
     webPreferences: {
       nodeIntegration: true,
     },
-    icon: __dirname + '/icon.png'
+    icon: __dirname + "/icon.png",
   });
   win.maximize();
-  win.setMenuBarVisibility(false)
- 
+  win.setMenuBarVisibility(false);
+
   win.loadFile("./resource/index.html");
   // win.loadURL("http://http://localhost:3000/")
 
   // Open the DevTools.
-  //win.webContents.openDevTools();
- 
-  
-
+  win.webContents.openDevTools();
 }
 app.allowRendererProcessReuse = true;
 
 app.whenReady().then(() => {
-  
   createWindow();
 });
 
@@ -40,64 +36,69 @@ app.on("activate", () => {
   }
 });
 
-
-
 //handle event
 ipcMain.on("GET_CONTRIES_OPTIONS", (event, arg) => {
-    let data = fs.readFileSync('countriesOptions.txt', "utf8")
-    //console.log()
-    event.reply('GET_CONTRIES_OPTIONS', data)
+  let data = fs.readFileSync("countriesOptions.txt", "utf8");
+  //console.log()
+  event.reply("GET_CONTRIES_OPTIONS", data);
 });
-
 
 ipcMain.on("GET_MONEYTYPE_OPTIONS", (event, arg) => {
-  let data = fs.readFileSync('moneyTypeOpions.txt', "utf8")
+  let data = fs.readFileSync("moneyTypeOpions.txt", "utf8");
   //console.log()
-  event.reply('GET_MONEYTYPE_OPTIONS', data)
+  event.reply("GET_MONEYTYPE_OPTIONS", data);
 });
-
 
 ipcMain.on("GET_TIMEZONES_OPTIONS", (event, arg) => {
-  let data = fs.readFileSync('timeZoneOptions.txt', "utf8")
+  let data = fs.readFileSync("timeZoneOptions.txt", "utf8");
   //console.log()
-  event.reply('GET_TIMEZONES_OPTIONS', data)
+  event.reply("GET_TIMEZONES_OPTIONS", data);
 });
 
+ipcMain.on("TEST_CHANGE_IP_PROXY", (event, arg) => {
+  exec(
+    `${__dirname}/\\buildAction.exe${
+      arg.length > 0 ? " -proxy " + arg + "" : " "
+    } -test`
+  );
+});
 
-ipcMain.on("TEST_CHANGE_IP_PROXY", (event, arg)=> {
-  exec(`${__dirname}/\\buildAction.exe${(arg.length > 0) ? ' -proxy ' +arg+'' : ' '} -test`);  
-})
-
-
-ipcMain.on("CHANGE_IP_DCOM", async (event, arg)=> {
-  exec(`${__dirname}/\\resetDcom.bat`, function(err, stdout, stderr) {
-    event.reply('CALL_BACK_CHANGE_DCOM', JSON.stringify({
-      err,
-      stdout,
-      stderr
-    }))
-  })
-})
-
+ipcMain.on("CHANGE_IP_DCOM", async (event, arg) => {
+  exec(`${__dirname}/\\resetDcom.bat`, function (err, stdout, stderr) {
+    event.reply(
+      "CALL_BACK_CHANGE_DCOM",
+      JSON.stringify({
+        err,
+        stdout,
+        stderr,
+      })
+    );
+  });
+});
 
 ipcMain.on("CALL_ACTION", async (event, arg) => {
   const account = JSON.parse(arg);
-  console.log(`${__dirname}/\\buildAction.exe ${account.data}`)
-  
-  const callPythonFile = function () {
-    return exec(`${__dirname}/\\buildAction.exe ${account.data}`);
-  };
+  fs.writeFile(
+    "./logs/" + new Date().getTime().toString() + "_logs.txt",
+    `buildAction.exe ${account.data} () ${__dirname}`,
+    function (err) {
+      console.log(err);
+    }
+  );
 
+  const callPythonFile = function () {
+    return exec(`buildAction.exe ${account.data}`);
+  };
 
   const proc = callPythonFile();
   proc.stdout.on("data", function (data) {
     try {
-      data = JSON.parse(data)
+      data = JSON.parse(data);
     } catch (error) {
       data = {
-        msg: 'unknown',
-        type: 'fail'
-      }
+        msg: "unknown",
+        type: "fail",
+      };
     }
     event.reply(
       "CALLBACK_ACTION",
@@ -114,8 +115,8 @@ ipcMain.on("CALL_ACTION", async (event, arg) => {
       JSON.stringify({
         index: account.index,
         data: {
-          type: 'error',
-          msg: 'can"t connect chrome!'
+          type: "error",
+          msg: 'can"t connect chrome!',
         },
       })
     );

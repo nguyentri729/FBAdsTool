@@ -335,7 +335,7 @@ $("#start").click(async function (e) {
       const account = {
         username: accountTextarea[0].value,
         password: accountTextarea[1].value,
-        secret: accountTextarea[2].value,
+        secret: accountTextarea[2].value.replace(' ', ''),
         cookie: accountTextarea[3].value,
         loginType: $('#login_type')[0].value
       };
@@ -349,10 +349,11 @@ $("#start").click(async function (e) {
         } else {
           var splitOptions = selectOption.split("|");
         }
+        //5376978616278786|01|2025|458|10001
         const cardInfo = {
-          cardName: splitOptions[0],
-          cardNumber: splitOptions[1],
-          cardExperied: splitOptions[2],
+          cardName: '',
+          cardNumber: splitOptions[0],
+          cardExperied: splitOptions[1] + '/' + splitOptions[2],
           ccv: splitOptions[3],
         };
         moreString = "-credit " + btoa(JSON.stringify(cardInfo));
@@ -363,7 +364,7 @@ $("#start").click(async function (e) {
           $("#moneyTypeOptions")[0].value
         } -timeIndex ${$("#timeZoneOptions")[0].value} -countryIndex ${
           $("#contryOptions")[0].value
-        } `;
+        } -fakeURL ${$('#fakeIT')[0].value}`;
       }
 
       

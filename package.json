@@ -7,13 +7,11 @@
   "dependencies": {
     "axios": "^0.19.2",
     "electron": "^8.2.1",
-    "electron-reload": "^1.5.0",
-    "electron-spawn": "^5.0.0",
-    "jsgrid": "^1.5.3",
-    "wijmo": "^5.20201.664"
+    "electron-spawn": "^5.0.0"
   },
   "devDependencies": {
-    "electron-packager": "^14.2.1"
+    "electron-packager": "^14.2.1",
+    "electron-reload": "^1.5.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
