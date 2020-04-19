@@ -1,6 +1,7 @@
 {
-  "name": "EUMedia",
+  "name": "eu_media",
   "version": "1.0.0",
+  "productName": "EU Media",
   "description": "",
   "main": "main.js",
   "dependencies": {
@@ -17,21 +18,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "electron-packager . --overwrite",
-    "start": "electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
-  },
-  "build": {
-    "appID": "com.toolfb.app",
-    "productName": "EU Media",
-    "target": "NSIS",
-    "directories": {
-      "output": "build"
-    },
-    "nsis": {
-      "allowToChangeInstallationDirectory": true,
-      "oneClick": false
-    }
+    "start": "electron ."
   },
   "keywords": [],
   "author": "",

@@ -23,7 +23,7 @@ async function createWindow() {
       width: 450,
       height: 250,
       resizable: false,
-      icon: __dirname + "/icon.png",
+      icon: __dirname + "/icon.ico",
       parent: win,
     });
     activeWindow.loadFile("./resource/active.html");
@@ -36,7 +36,7 @@ const showWindow = function() {
     webPreferences: {
       nodeIntegration: true,
     },
-    icon: __dirname + "/icon.png",
+    icon: __dirname + "/icon.ico",
   });
   win.maximize();
   win.setMenuBarVisibility(false);
