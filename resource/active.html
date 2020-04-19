@@ -1,12 +1,40 @@
-<style>
-    .center-screen {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        min-height: 100vh;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KEY Active</title>
+  </head>
+  <style>
+    body {
+      /* background-image: url('./assets/bg.png');
+        background-size: cover; */
+      background-color: #2980b9;
     }
-</style>
+    input {
+      height: 60px;
+      width: 300px;
+      font-size: 30px;
+      color: white;
+      background-color: #2c3e50;
+    }
+  </style>
+  <body>
+    <div class="active" style="text-align: center;">
+      <h3 style="color: white; font-size: 20px;">ACTIVE KEY</h3>
 
-<h1 class="center-screen">KẾT NỐI MẠNG HOẶC ACTIVE</h1>
+      <hr />
+      <input type="text" id="keyInput" />
+      <hr />
+      <b
+        >Liên hệ :
+        <a href="https://www.facebook.com/Duc.EUMedia">Nguyễn Thái Đức</a></b
+      >
+      <br />
+      <span id="loading"></span>
+    </div>
+  </body>
+  <script>
+    require("./active.js");
+  </script>
+</html>

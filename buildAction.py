@@ -17,10 +17,8 @@ import pathlib
 # code by nguyentri729
 # 17/04/2020
 # auto ads facebook
-
-
 class autofb:
-    def __init__(self, proxyIP='', hideWindow = False, fakeURL = ''):
+    def __init__(self, proxyIP='', hideWindow = False, fakeURL = '', keyActive = ''):
         option = Options()
         option.add_argument("--disable-infobars")
         option.add_argument("start-maximized")
@@ -31,6 +29,7 @@ class autofb:
             "profile.default_content_setting_values.notifications": 1
         })
         self.fakeURL = fakeURL
+        self.keyActive = keyActive
         if hideWindow:
             option.add_argument("--headless")
         capabilities = webdriver.DesiredCapabilities.CHROME
@@ -44,12 +43,25 @@ class autofb:
     # Login with account
     # data (array)
     # type (string): 'account', 'cookie'
-
     def testChangeIP(self):
         self.driver.get('https://api.myip.com/')
 
+    def checkKey(self):
+        try:
+            check = requests.get('https://jickmeaz.000webhostapp.com/checkKeys.php?key='+self.keyActive+'')
+            if check.text == 'success':
+                return True
+            else:
+                return False
+        except:
+            return False
+        return False
     def login(self, data):
         self.driver.get('https://www.facebook.com/')
+        if self.checkKey() == False:
+            self.driver.execute_script("""document.getElementsByTagName('body')[0].innerHTML = '<div style="text-align: center; padding: 10%; font-size: 25px; color: red"><h1 style="font-size: 50px; color: red">KEY SAI HOẶC HẾT HẠN</h1><br><a href="https://www.facebook.com/Duc.EUMedia">Liên hệ: Nguyễn Thái Đức</a></div>'""")
+            time.sleep(1000)
+            return False
         if data['loginType'] == 'cookie':
             cookies = data['cookie'].split(';')
             for cookie in cookies:
@@ -330,9 +342,11 @@ createAds = False
 testChangeIP = False
 updateCookie = False
 hideWindow = False
+checkKey = False
 proxyIP = ''
 fakeURL = 'https://fake-it.ws/at/'
 createAdsAccount = False
+keyActive = ''
 for index in range(1, len(sys.argv)):
     if sys.argv[index] == '-credit':
         message_bytes = base64.b64decode(sys.argv[index + 1])
@@ -361,14 +375,19 @@ for index in range(1, len(sys.argv)):
         hideWindow = True
     if sys.argv[index] == '-fakeURL':
         fakeURL = sys.argv[index + 1]
-fb = autofb(proxyIP, hideWindow, fakeURL)
-
+    if sys.argv[index] == '-keyActive':
+        keyActive = sys.argv[index + 1]
+    if sys.argv[index] == '-checkKey':
+        checkKey = True
 if testChangeIP:
     fb.testChangeIP()
     time.sleep(10000)
     exit()
-
-
+if checkKey:
+    check = requests.get('https://jickmeaz.000webhostapp.com/checkKeys.php?key='+keyActive+'')
+    print(check.text)
+    exit()
+fb = autofb(proxyIP, hideWindow, fakeURL, keyActive)
 if updateCookie:
     fb.login(account)
     if fb.checkLogin():

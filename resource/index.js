@@ -29,6 +29,8 @@ const getProxy = function () {
     return "";
   }
 };
+
+
 //Options change
 $("#addCredit:first").change(function () {
   if (!$(this)[0].checked) {

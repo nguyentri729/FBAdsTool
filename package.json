@@ -1,22 +1,37 @@
 {
-  "name": "tool_FB",
+  "name": "EUMedia",
   "version": "1.0.0",
-  "productName": "AdsTools FB",
   "description": "",
   "main": "main.js",
   "dependencies": {
     "axios": "^0.19.2",
     "electron": "^8.2.1",
+    "electron-prompt": "^1.5.1",
     "electron-spawn": "^5.0.0"
   },
   "devDependencies": {
     "electron-packager": "^14.2.1",
-    "electron-reload": "^1.5.0"
+    "electron-reload": "^1.5.0",
+    "electron-builder": "^22.5.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "electron-packager . --overwrite",
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appID": "com.toolfb.app",
+    "productName": "EU Media",
+    "target": "NSIS",
+    "directories": {
+      "output": "build"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    }
   },
   "keywords": [],
   "author": "",
