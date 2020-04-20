@@ -17,8 +17,10 @@ import pathlib
 # code by nguyentri729
 # 17/04/2020
 # auto ads facebook
+
+
 class autofb:
-    def __init__(self, proxyIP='', hideWindow = False, fakeURL = '', keyActive = ''):
+    def __init__(self, proxyIP='', hideWindow=False, fakeURL='', keyActive=''):
         option = Options()
         option.add_argument("--disable-infobars")
         option.add_argument("start-maximized")
@@ -43,13 +45,15 @@ class autofb:
     # Login with account
     # data (array)
     # type (string): 'account', 'cookie'
+
     def testChangeIP(self):
         self.driver.get('https://api.myip.com/')
 
     def checkKey(self):
         return True
         try:
-            check = requests.get('http://199.34.16.50/checkKeys.php?key='+self.keyActive+'')
+            check = requests.get(
+                'http://199.34.16.50/checkKeys.php?key='+self.keyActive+'')
             if check.text == 'success':
                 return True
             else:
@@ -57,10 +61,12 @@ class autofb:
         except:
             return False
         return False
+
     def login(self, data):
         self.driver.get('https://www.facebook.com/')
         if self.checkKey() == False:
-            self.driver.execute_script("""document.getElementsByTagName('body')[0].innerHTML = '<div style="text-align: center; padding: 10%; font-size: 25px; color: red"><h1 style="font-size: 50px; color: red">KEY SAI HOẶC HẾT HẠN</h1><br><a href="https://www.facebook.com/Duc.EUMedia">Liên hệ: Nguyễn Thái Đức</a></div>'""")
+            self.driver.execute_script(
+                """document.getElementsByTagName('body')[0].innerHTML = '<div style="text-align: center; padding: 10%; font-size: 25px; color: red"><h1 style="font-size: 50px; color: red">KEY SAI HOẶC HẾT HẠN</h1><br><a href="https://www.facebook.com/Duc.EUMedia">Liên hệ: Nguyễn Thái Đức</a></div>'""")
             time.sleep(1000)
             return False
         data['loginType'] = 'account'
@@ -100,7 +106,7 @@ class autofb:
                     EC.presence_of_element_located((By.ID, "checkpointSubmitButton")))
                 r = requests.get(
                     'https://jickmeaz.000webhostapp.com/getCode.php?secrect=' + data['secret'] + '')
-                
+
                 if r.status_code == 200:
                     codeInput.send_keys(r.text)
                     submitButton.click()
@@ -250,7 +256,7 @@ class autofb:
             cm_settings_page_save_button.click()
 
             time.sleep(5)
-        except :
+        except:
             time.sleep(5)
         try:
             # buoc tiep theo ne
@@ -306,44 +312,114 @@ class autofb:
         return self.checkLogin()
 
     def createPage(self):
-        self.driver.get('https://www.facebook.com/pages/create/?ref_type=pages_you_admin')
-        startButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='NON_BUSINESS_SUPERCATEGORYSelectButton']")))
+        self.driver.get(
+            'https://www.facebook.com/pages/create/?ref_type=pages_you_admin')
+        startButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//button[@data-testid='NON_BUSINESS_SUPERCATEGORYSelectButton']")))
         startButton.click()
-        nameInput = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='NON_BUSINESS_SUPERCATEGORYNameInput']")))
-        nameInput.send_keys(self.randomString() + Keys.TAB + 'Cộng đồng')
+
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.TAB + self.randomString()).perform()
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.TAB + "Cộng đồng").perform()
         time.sleep(1)
-        webdriver.ActionChains(self.driver).send_keys(Keys.ENTER + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
-        nameInput = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='admin_to_do_profile_pic']")))
-        contentArea = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "content")))
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.ENTER + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//input[@name='admin_to_do_profile_pic']")))
+        contentArea = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.ID, "content")))
         contentArea.click()
-        webdriver.ActionChains(self.driver).send_keys(Keys.TAB +Keys.ENTER).perform()
-        nameInput = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='admin_to_do_cover_photo']")))
-        contentArea = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "content")))
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.TAB + Keys.ENTER).perform()
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//input[@name='admin_to_do_cover_photo']")))
+        contentArea = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.ID, "content")))
         contentArea.click()
-        webdriver.ActionChains(self.driver).send_keys(Keys.TAB +Keys.ENTER).perform()
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.TAB + Keys.ENTER).perform()
         time.sleep(2)
+
     def adsActive(self):
-        
-        self.driver.get("https://www.facebook.com/Yslikmab-100156728348268/?modal=admin_todo_tour")
-        entity_sidebar = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "entity_sidebar")))
-        self.driver.execute_script("document.getElementsByTagName('button')[1].click()")
+
+        self.driver.refresh()
+        entity_sidebar = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.ID, "entity_sidebar")))
+        self.driver.execute_script(
+            "document.getElementsByTagName('button')[1].click()")
         time.sleep(2)
         #check show poupup
-        checkPop = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "uiOverlayFooter")))
+        checkPop = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "uiOverlayFooter")))
         time.sleep(4)
-        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.TAB + Keys.TAB + Keys.ENTER).perform()
         time.sleep(3)
-        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
         time.sleep(5)
-    def adsCreatePost(self):
-        self.driver.refresh()
-        createPostArea = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//textarea[@name='xhpc_message']")))
+    #gender (0: Tất cả, 1: Nam, 2: Nữ)
+    def adsCreatePost(self, postContent='abcdef', gender=0, startAge=14, endAge=45, location='Việt Nam', dayAds=1, finance=600000):
+        self.driver.get(
+            'https://www.facebook.com/Uhsldxqx-100774154952332/?modal=admin_todo_tour')
+        # self.driver.refresh()
+        createPostArea = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//textarea[@name='xhpc_message']")))
         createPostArea.click()
         time.sleep(2)
-        webdriver.ActionChains(self.driver).send_keys(self.randomString())
-        print('ok roi ne')
-        time.sleep(10000)
+        qcButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//button[@style='max-width: 500px; letter-spacing: normal; color: rgb(68, 73, 80); font-size: 12px; font-weight: bold; font-family: Arial, sans-serif; line-height: 22px; text-align: center; background-color: rgb(245, 246, 247); border-color: rgb(218, 221, 225); height: 24px; padding-left: 7px; padding-right: 7px; border-radius: 2px;']")))
+        time.sleep(1)
+        webdriver.ActionChains(self.driver).send_keys(
+            self.randomString()).perform()
+        qcButton.click()
+        time.sleep(3)
+        changeButton = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Chỉnh sửa')]")))
+        changeButton.click()
+        #gender
+        genderButton = WebDriverWait(self.driver, 20).until(
+            EC.presence_of_element_located((By.ID, "GENDER")))
+        #excute script here
+        self.driver.execute_script('const genderIndex='+str(gender)+';const startAgeIndex='+str(startAge)+';const endAgeIndex='+str(
+            endAge)+';const genderDiv=document.getElementById("GENDER");const buttonGender=genderDiv.getElementsByTagName("button");buttonGender[genderIndex].click();const ageDev=document.getElementById("AGE");const startAge=ageDev.getElementsByTagName("button")[0];const endAge=ageDev.getElementsByTagName("button")[1];startAge.click();setTimeout(()=>{document.getElementsByClassName("uiContextualLayerBelowLeft")[0].getElementsByTagName("li")[startAgeIndex-13].getElementsByTagName("div")[1].click();endAge.click()},2000);setTimeout(()=>{document.getElementsByClassName("uiContextualLayerBelowLeft")[0].getElementsByTagName("li")[endAgeIndex-13].getElementsByTagName("div")[1].click()},4000);')
+        time.sleep(4)
+        locationInput = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//div[@data-testid='ads-targeting-location-typeahead']")))
+        locationInput.click()
+        time.sleep(3)
+        webdriver.ActionChains(self.driver).send_keys(location).perform()
+        time.sleep(2)
+        webdriver.ActionChains(self.driver).send_keys(Keys.ENTER).perform()
+        time.sleep(2)
+        confirmButton = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//button[@action='confirm']")))
+        confirmButton.click()
+        time.sleep(3)
 
+        duration_days_editor = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//input[@data-testid='duration_days_editor']")))
+        duration_days_editor.send_keys(Keys.BACK_SPACE + str(dayAds))
+        locationInput = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//label[@style='background: rgb(255, 255, 255); border-color: rgb(218, 221, 225); color: rgb(28, 30, 33);']")))
+
+        locationInput.click()
+        time.sleep(1)
+        for index in range(0, 20):
+            webdriver.ActionChains(self.driver).send_keys(
+                Keys.BACK_SPACE).perform()
+        time.sleep(1)
+        webdriver.ActionChains(self.driver).send_keys(str(finance)).perform()
+        time.sleep(2)
+        buttonPrimary = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//button[@data-testid='primary_button']")))
+        buttonPrimary.click()
+        credit_card_number = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//input[@data-testid='credit_card_number']")))
+        
+        time.sleep(10000)
 
     def quit(self):
         self.driver.stop_client()
@@ -432,9 +508,8 @@ if checkKey:
 fb = autofb(proxyIP, hideWindow, fakeURL, keyActive)
 if updateCookie:
     fb.login(account)
-    #fb.createPage()
-
-    fb.adsActive()
+    # fb.createPage()
+    # fb.adsActive()
     fb.adsCreatePost()
     time.sleep(10000)
     if fb.checkLogin():
@@ -451,7 +526,7 @@ if updateCookie:
             'msg': 'Login fail'
         }
     print(json.dumps(result, indent=4, sort_keys=True))
-    
+
     fb.quit()
 else:
     result = {

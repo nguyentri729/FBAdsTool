@@ -1,0 +1,2 @@
+tri = 'deptrai'
+print("""tri """)

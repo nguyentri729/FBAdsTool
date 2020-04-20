@@ -101,7 +101,7 @@ ipcMain.on("CALL_ACTION", async (event, arg) => {
   const account = JSON.parse(arg);
   fs.writeFile(
     "./logs/" + new Date().getTime().toString() + "_logs.txt",
-    `buildAction.exe ${account.data} () ${__dirname}`,
+    `python buildAction.py ${account.data}`,
     function (err) {
       console.log(err);
     }
