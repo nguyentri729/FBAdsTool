@@ -11,14 +11,15 @@
     "electron-spawn": "^5.0.0"
   },
   "devDependencies": {
+    "electron-builder": "^22.5.1",
     "electron-packager": "^14.2.1",
-    "electron-reload": "^1.5.0",
-    "electron-builder": "^22.5.1"
+    "electron-reload": "^1.5.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "electron-packager . --overwrite",
-    "start": "electron ."
+    "build": "electron-packager . --icon ./icon.ico --out ./dist --overwrite",
+    "start": "electron .",
+    "package": "asar pack tool-fb/resource tool-fb/resource"
   },
   "keywords": [],
   "author": "",

@@ -1,9 +1,9 @@
 const { app, BrowserWindow, ipcMain, shell } = require("electron");
 const { exec } = require("child_process");
+
 require("electron-reload")(__dirname);
 
 const fs = require("fs");
-const axios = require("axios");
 var win;
 var activeWindow;
 var keyActive;
@@ -147,12 +147,12 @@ ipcMain.on("CALL_ACTION", async (event, arg) => {
 
 //check active keys
 ipcMain.on("CHECK_KEY", function (event, key) {
-  console.log('key ne', key);
+ // console.log('key ne', key);
  
   if (key) {
-    console.log(`python ${__dirname}\\buildAction.py -keyActive ${key} -checkKey`)
+    //console.log(`python ${__dirname}\\buildAction.py -keyActive ${key} -checkKey`)
     const callPythonFile = function () {
-      return exec(`python ${__dirname}\\buildAction.py -keyActive ${key} -checkKey`);
+      return exec(`${__dirname}\\buildAction.exe -keyActive ${key} -checkKey`);
     };
     const proc = callPythonFile()
     proc.stdout.on("data", function (data) {

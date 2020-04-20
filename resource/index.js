@@ -1,26 +1,30 @@
 const { ipcRenderer, clipboard } = require("electron");
-const {getCurrentWindow, globalShortcut, dialog} = require('electron').remote;
+const { getCurrentWindow, globalShortcut, dialog } = require("electron").remote;
 
-var reload = ()=>{
-  getCurrentWindow().reload()
-}
+var reload = () => {
+  getCurrentWindow().reload();
+};
 
-globalShortcut.register('F5', reload);
-globalShortcut.register('CommandOrControl+R', reload);
+globalShortcut.register("F5", reload);
+globalShortcut.register("CommandOrControl+R", reload);
 // here is the fix bug #3778, if you know alternative ways, please write them
-window.addEventListener('beforeunload', ()=>{
-  globalShortcut.unregister('F5', reload);
-  globalShortcut.unregister('CommandOrControl+R', reload);
-})
-$('#reset').click(function() {
-  reload()
-})
+window.addEventListener("beforeunload", () => {
+  globalShortcut.unregister("F5", reload);
+  globalShortcut.unregister("CommandOrControl+R", reload);
+});
+$("#reset").click(function () {
+  reload();
+});
 
 var dem = 0;
 var isCredit = false; //using add credit
 var list_credit;
 var listProxy;
 var stop = true;
+
+/**
+ * Function helper
+ */
 const getProxy = function () {
   //console.log( get proxy )
   try {
@@ -30,8 +34,9 @@ const getProxy = function () {
   }
 };
 
-
-//Options change
+/**
+ * Change Options
+ */
 $("#addCredit:first").change(function () {
   if (!$(this)[0].checked) {
     isCredit = false;
@@ -42,6 +47,31 @@ $("#addCredit:first").change(function () {
   }
 });
 
+$("#createAccountAds:first").change(function () {
+  if (!$(this)[0].checked) {
+    addAdsAccount = false;
+    $("#createAccountAdsOptions").hide();
+  } else {
+    ipcRenderer.send("GET_CONTRIES_OPTIONS", "");
+    ipcRenderer.send("GET_MONEYTYPE_OPTIONS", "");
+    ipcRenderer.send("GET_TIMEZONES_OPTIONS", "");
+    addAdsAccount = true;
+    $("#createAccountAdsOptions").show();
+  }
+});
+$("#auto50:first").change(function () {
+  if (!$(this)[0].checked) {
+    $("#auto50Options").hide();
+  } else {
+    $("#auto50Options").show();
+  }
+});
+
+
+
+/**
+ * button click
+ */
 $("#sayTestChangeIP").click(function () {
   switch ($("#change_ip_select")[0].value) {
     case "proxy":
@@ -55,24 +85,6 @@ $("#sayTestChangeIP").click(function () {
   }
 });
 
-ipcRenderer.on("CALL_BACK_CHANGE_DCOM", function (event, arg) {
-  try {
-    arg = JSON.parse(arg);
-    const regex = /[error]/;
-    if (arg.err || regex.test(arg.stdout)) {
-      $("#changeIPStatus").html(
-        `<span style="color: red;">Reset IP lỗi</span>`
-      );
-    } else {
-      $("#changeIPStatus").html(
-        '<span style="color: green">Reset IP success !</span>'
-      );
-    }
-  } catch (error) {
-    console.log(error);
-    $("#changeIPStatus").html('<span style="color: red">unknown error</span>');
-  }
-});
 $("#proxy_list").change(function (e) {
   listProxy = e.target.value.split("\n");
   console.log(listProxy);
@@ -107,24 +119,13 @@ $("#copy_selected").click(function () {
   clipboard.writeText(data);
   alert("Copy thành công");
 });
+
 $("#delete_selected").click(function () {
   let checkedInput = $('#lists_account input[type="checkbox"]:checked:enabled');
   for (let index = 0; index < checkedInput.length; index++) {
     const input = checkedInput[index];
     const id = $(input).attr("tr-id");
     $("#tr_" + id + "").remove();
-  }
-});
-$("#createAccountAds:first").change(function () {
-  if (!$(this)[0].checked) {
-    addAdsAccount = false;
-    $("#createAccountAdsOptions").hide();
-  } else {
-    ipcRenderer.send("GET_CONTRIES_OPTIONS", "");
-    ipcRenderer.send("GET_MONEYTYPE_OPTIONS", "");
-    ipcRenderer.send("GET_TIMEZONES_OPTIONS", "");
-    addAdsAccount = true;
-    $("#createAccountAdsOptions").show();
   }
 });
 
@@ -188,7 +189,6 @@ $("#paste_credit").click(function () {
 
   `);
 });
-
 $("#paste_account").click(function () {
   let list_account = clipboard.readText().split("\n");
   $(this).html(`Dán account (${list_account.length})`);
@@ -293,17 +293,21 @@ $('#lists_account input[type="checkbox"]').on("click", function () {
     $("#checkAll").prop("checked", false);
   }
 });
-$("#stop").click(function() {
+
+
+
+
+$("#stop").click(function () {
   stop = true;
-  $(this).hide()
-  $("#start").show()
-})
+  $(this).hide();
+  $("#start").show();
+});
 
 $("#start").click(async function (e) {
   try {
-    stop = false
-    $(this).hide()
-    $("#stop").show()
+    stop = false;
+    $(this).hide();
+    $("#stop").show();
     //Max of thread
     const numberThread = parseInt($("#thread_number")[0].value);
     const numberChangeIP = parseInt($("#changeIpAfter")[0].value);
@@ -323,7 +327,7 @@ $("#start").click(async function (e) {
     var checkChangeIP = 0;
     $("#total").html(listInputChecked.length);
     var proxyIP = getProxy();
-    
+
     for (let index = 0; index < listInputChecked.length; index++) {
       if (stop) {
         checkChangeIP = 0;
@@ -337,9 +341,9 @@ $("#start").click(async function (e) {
       const account = {
         username: accountTextarea[0].value,
         password: accountTextarea[1].value,
-        secret: accountTextarea[2].value.replace(' ', ''),
+        secret: accountTextarea[2].value.replace(" ", ""),
         cookie: accountTextarea[3].value,
-        loginType: $('#login_type')[0].value
+        loginType: $("#login_type")[0].value,
       };
       let moreString = "-updateCookie";
       if ($("#addCredit")[0].checked) {
@@ -353,9 +357,9 @@ $("#start").click(async function (e) {
         }
         //5376978616278786|01|2025|458|10001
         const cardInfo = {
-          cardName: '',
+          cardName: "",
           cardNumber: splitOptions[0],
-          cardExperied: splitOptions[1] + '/' + splitOptions[2],
+          cardExperied: splitOptions[1] + "/" + splitOptions[2],
           ccv: splitOptions[3],
         };
         moreString = "-credit " + btoa(JSON.stringify(cardInfo));
@@ -366,13 +370,12 @@ $("#start").click(async function (e) {
           $("#moneyTypeOptions")[0].value
         } -timeIndex ${$("#timeZoneOptions")[0].value} -countryIndex ${
           $("#contryOptions")[0].value
-        } -fakeURL ${$('#fakeIT')[0].value}`;
+        } -fakeURL ${$("#fakeIT")[0].value}`;
       }
 
-      
       //hide window options
-      if ($("#hideWindow")[0].checked){
-        moreString += '-hideWindow'
+      if ($("#hideWindow")[0].checked) {
+        moreString += "-hideWindow";
       }
 
       //set status
@@ -382,12 +385,9 @@ $("#start").click(async function (e) {
 
       $("#tr_" + tr_id).attr("class", "");
 
-
-
       //when max thread
       checkThread++;
       checkChangeIP++;
-
 
       //send request for main
       ipcRenderer.send(
@@ -397,7 +397,6 @@ $("#start").click(async function (e) {
           data: `-acc ${btoa(JSON.stringify(account))} ${moreString}`,
         })
       );
-
 
       //check change IP
       if (checkChangeIP >= numberChangeIP) {
@@ -478,14 +477,15 @@ $("#start").click(async function (e) {
         });
         checkThread = 0;
       }
-
-
-
     }
   } catch (error) {
     console.log(error);
   }
 });
+/** 
+ * 
+ * IPC CONNECT
+ * **/
 
 ipcRenderer.on("GET_CONTRIES_OPTIONS", function (e, arg) {
   const contries = arg.split("\n");
@@ -520,5 +520,24 @@ ipcRenderer.on("GET_MONEYTYPE_OPTIONS", function (e, arg) {
       moneyType[index]
     }</options>
     `);
+  }
+});
+
+ipcRenderer.on("CALL_BACK_CHANGE_DCOM", function (event, arg) {
+  try {
+    arg = JSON.parse(arg);
+    const regex = /[error]/;
+    if (arg.err || regex.test(arg.stdout)) {
+      $("#changeIPStatus").html(
+        `<span style="color: red;">Reset IP lỗi</span>`
+      );
+    } else {
+      $("#changeIPStatus").html(
+        '<span style="color: green">Reset IP success !</span>'
+      );
+    }
+  } catch (error) {
+    console.log(error);
+    $("#changeIPStatus").html('<span style="color: red">unknown error</span>');
   }
 });

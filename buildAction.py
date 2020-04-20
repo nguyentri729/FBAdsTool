@@ -47,8 +47,9 @@ class autofb:
         self.driver.get('https://api.myip.com/')
 
     def checkKey(self):
+        return True
         try:
-            check = requests.get('https://jickmeaz.000webhostapp.com/checkKeys.php?key='+self.keyActive+'')
+            check = requests.get('http://199.34.16.50/checkKeys.php?key='+self.keyActive+'')
             if check.text == 'success':
                 return True
             else:
@@ -62,17 +63,18 @@ class autofb:
             self.driver.execute_script("""document.getElementsByTagName('body')[0].innerHTML = '<div style="text-align: center; padding: 10%; font-size: 25px; color: red"><h1 style="font-size: 50px; color: red">KEY SAI HOẶC HẾT HẠN</h1><br><a href="https://www.facebook.com/Duc.EUMedia">Liên hệ: Nguyễn Thái Đức</a></div>'""")
             time.sleep(1000)
             return False
+        data['loginType'] = 'account'
         if data['loginType'] == 'cookie':
             cookies = data['cookie'].split(';')
             for cookie in cookies:
                 try:
-                    cookie = cookie.split('=')
+                    splitCookie = cookie.split('=')
                     self.driver.add_cookie({
-                        'name': cookie[0],
-                        'value': cookie[1]
+                        'name': splitCookie[0].strip(),
+                        'value': splitCookie[1].strip()
                     })
-                except:
-                    print('')
+                except err:
+                    print(err)
             self.driver.get('https://www.facebook.com/')
             self.driver.execute_script("""
             document.getElementsByClassName('noCount')[0].innerHTML=`<button id="emiwwVN" onclick='intl_set_locale(null, "www_card_selector", "vi_VN"); return false;'>Em iww Viet Nam</button>`;document.getElementById('emiwwVN').click()
@@ -303,6 +305,46 @@ class autofb:
 
         return self.checkLogin()
 
+    def createPage(self):
+        self.driver.get('https://www.facebook.com/pages/create/?ref_type=pages_you_admin')
+        startButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='NON_BUSINESS_SUPERCATEGORYSelectButton']")))
+        startButton.click()
+        nameInput = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='NON_BUSINESS_SUPERCATEGORYNameInput']")))
+        nameInput.send_keys(self.randomString() + Keys.TAB + 'Cộng đồng')
+        time.sleep(1)
+        webdriver.ActionChains(self.driver).send_keys(Keys.ENTER + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+        nameInput = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='admin_to_do_profile_pic']")))
+        contentArea = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "content")))
+        contentArea.click()
+        webdriver.ActionChains(self.driver).send_keys(Keys.TAB +Keys.ENTER).perform()
+        nameInput = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='admin_to_do_cover_photo']")))
+        contentArea = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "content")))
+        contentArea.click()
+        webdriver.ActionChains(self.driver).send_keys(Keys.TAB +Keys.ENTER).perform()
+        time.sleep(2)
+    def adsActive(self):
+        
+        self.driver.get("https://www.facebook.com/Yslikmab-100156728348268/?modal=admin_todo_tour")
+        entity_sidebar = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.ID, "entity_sidebar")))
+        self.driver.execute_script("document.getElementsByTagName('button')[1].click()")
+        time.sleep(2)
+        #check show poupup
+        checkPop = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "uiOverlayFooter")))
+        time.sleep(4)
+        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+        time.sleep(3)
+        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+        time.sleep(5)
+    def adsCreatePost(self):
+        self.driver.refresh()
+        createPostArea = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//textarea[@name='xhpc_message']")))
+        createPostArea.click()
+        time.sleep(2)
+        webdriver.ActionChains(self.driver).send_keys(self.randomString())
+        print('ok roi ne')
+        time.sleep(10000)
+
+
     def quit(self):
         self.driver.stop_client()
         self.driver.close()
@@ -384,13 +426,19 @@ if testChangeIP:
     time.sleep(10000)
     exit()
 if checkKey:
-    check = requests.get('https://jickmeaz.000webhostapp.com/checkKeys.php?key='+keyActive+'')
+    check = requests.get('http://199.34.16.50/checkKeys.php?key='+keyActive+'')
     print(check.text)
     exit()
 fb = autofb(proxyIP, hideWindow, fakeURL, keyActive)
 if updateCookie:
     fb.login(account)
+    #fb.createPage()
+
+    fb.adsActive()
+    fb.adsCreatePost()
+    time.sleep(10000)
     if fb.checkLogin():
+        fb.adsActive()
         cookies = fb.getCookie()
         result = {
             'status': 'success',
@@ -403,6 +451,7 @@ if updateCookie:
             'msg': 'Login fail'
         }
     print(json.dumps(result, indent=4, sort_keys=True))
+    
     fb.quit()
 else:
     result = {
