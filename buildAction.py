@@ -20,15 +20,23 @@ import pathlib
 
 
 class autofb:
-    def __init__(self, proxyIP='', hideWindow=False, fakeURL='', keyActive=''):
+    def __init__(self, proxyIP='', hideWindow=False, fakeURL='', keyActive='', postion = 'left'):
         option = Options()
         option.add_argument("--disable-infobars")
         option.add_argument("start-maximized")
         option.add_argument("--disable-extensions")
-        option.add_argument("window-size=1000,800")
+        option.add_argument("window-size=960,950")
+        option.add_argument("--disable-background-mode")
+        
+        if postion == 'left':
+            option.add_argument("--window-position=0,0")
+        else:
+            print('right')
+            option.add_argument("--window-position=960,0")
+            
         # Pass the argument 1 to allow and 2 to block
         option.add_experimental_option("prefs", {
-            "profile.default_content_setting_values.notifications": 1
+            "profile.default_content_setting_values.notifications": 2
         })
         self.fakeURL = fakeURL
         self.keyActive = keyActive
@@ -42,6 +50,7 @@ class autofb:
             prox.add_to_capabilities(capabilities)
         self.driver = webdriver.Chrome(
             options=option, executable_path=r".\\chromedriver.exe", desired_capabilities=capabilities)
+
     # Login with account
     # data (array)
     # type (string): 'account', 'cookie'
@@ -250,7 +259,7 @@ class autofb:
                 "document.getElementsByClassName('_1f')[0].click();setTimeout(function(){console.log(document.getElementsByClassName('_3leq'));document.getElementsByClassName('_3leq')["+str(countryIndex)+"].click()},2000)")
 
             time.sleep(3)
-
+            
             cm_settings_page_save_button = WebDriverWait(self.driver, 3).until(
                 EC.presence_of_element_located((By.XPATH, "//button[@data-testid='cm_settings_page_save_button']")))
             cm_settings_page_save_button.click()
@@ -353,18 +362,20 @@ class autofb:
         #check show poupup
         checkPop = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "uiOverlayFooter")))
-        time.sleep(4)
+        time.sleep(2)
         webdriver.ActionChains(self.driver).send_keys(
             Keys.TAB + Keys.TAB + Keys.ENTER).perform()
-        time.sleep(3)
+        time.sleep(2)
         webdriver.ActionChains(self.driver).send_keys(
             Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
         time.sleep(5)
+
     #gender (0: Tất cả, 1: Nam, 2: Nữ)
-    def adsCreatePost(self, postContent='abcdef', gender=0, startAge=14, endAge=45, location='Việt Nam', dayAds=1, finance=600000):
-        self.driver.get(
-            'https://www.facebook.com/Uhsldxqx-100774154952332/?modal=admin_todo_tour')
-        # self.driver.refresh()
+    def adsCreatePost(self, postContent='abcdef', gender=0, startAge=14, endAge=45, location='Việt Nam', dayAds=1, finance=600000, creditCard = '4056400172321306|04|23|222'):
+        
+        #self.driver.get('https://www.facebook.com/Gmmdhmbj-112937363720458/?modal=admin_todo_tour')
+
+        self.driver.refresh()
         createPostArea = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, "//textarea[@name='xhpc_message']")))
         createPostArea.click()
@@ -416,11 +427,81 @@ class autofb:
         buttonPrimary = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, "//button[@data-testid='primary_button']")))
         buttonPrimary.click()
-        credit_card_number = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//input[@data-testid='credit_card_number']")))
-        
-        time.sleep(10000)
 
+        try:
+            credit_card_number = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//input[@name='creditCardNumber']")))
+            #split credit credit
+            credit = creditCard.split('|')
+            time.sleep(2)
+            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.TAB + credit[0]).perform()
+            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + credit[1]).perform()
+            webdriver.ActionChains(self.driver).send_keys(credit[2]).perform()
+            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + credit[3]).perform()
+            for index in range(1, 6):
+                webdriver.ActionChains(self.driver).send_keys(Keys.TAB).perform()
+            time.sleep(1)
+            webdriver.ActionChains(self.driver).send_keys(Keys.ENTER).perform()
+        except:
+            pass
+            
+        WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH, "//input[@name='creditCardNumber']")))
+        
+        #post button click
+
+        self.driver.execute_script('const buttonList=document.getElementById("feedx_sprouts_container").getElementsByTagName("button");buttonList[buttonList.length-1].click()')
+        time.sleep(6)
+    def addMainCloneAds(self, name):
+        self.driver.get('https://www.facebook.com/ads/manager/account_settings/information/')
+        addPeople = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@style='letter-spacing: normal; color: rgb(255, 255, 255); font-size: 12px; font-weight: bold; font-family: Arial, sans-serif; line-height: 26px; text-align: center; background-color: rgb(24, 119, 242); border-color: rgb(24, 119, 242); height: 28px; padding-left: 11px; padding-right: 11px; border-radius: 2px;']")))
+        addPeople.click()
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='search_query']")))
+        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + name).perform()
+        time.sleep(2)
+        webdriver.ActionChains(self.driver).send_keys(Keys.ARROW_DOWN + Keys.ENTER + Keys.TAB + Keys.ENTER + Keys.ARROW_UP + Keys.ENTER).perform()
+        time.sleep(1)
+        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+        time.sleep(1000)
+    def addFriends(self, uid):
+        self.driver.get('https://www.facebook.com/'+uid+'')
+        try:
+            FriendRequestAdd = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "FriendRequestAdd")))
+            FriendRequestAdd.click()
+            return True
+        except:
+            return False
+    
+    def acceptFriends(self, uid):
+        self.driver.get('https://www.facebook.com/friends/requests/')
+        try:
+            requestFriendArea = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, "//div[@data-id='"+uid+"']")))
+            requestFriendArea.click()
+            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+            return True
+        except:
+            return False
+    def auto50MainAccoutAutoAction(self, uid):
+        if uid == '':
+            return False
+        self.addFriends(uid)
+        return True
+    def auto50MainAccoutAuto(self):
+        #auto 50 main auto
+        uid = self.readFileCloneID()
+        self.auto50MainAccoutAutoAction(uid)
+        while(True):
+            readFile = self.readFileCloneID()
+            if  readFile != uid:
+                uid = readFile
+                self.auto50MainAccoutAutoAction(uid)
+            time.sleep(5)
+    def auto50CloneAccountAuto(self):
+        uidMain = self.readFileMainID().split('|')
+        self.acceptFriends(uidMain[0])
+        self.createPage()
+        self.adsActive()
+        self.adsCreatePost()
+        self.addMainCloneAds(uidMain[1])
     def quit(self):
         self.driver.stop_client()
         self.driver.close()
@@ -428,7 +509,18 @@ class autofb:
     def randomString(self, stringLength=8):
         letters = string.ascii_lowercase
         return ''.join(random.choice(letters) for i in range(stringLength))
-
+    def readFileCloneID(self):
+        try:
+            f = open('auto50CloneID.txt', 'r')
+            return f.read()
+        except expression as identifier:
+            return ''
+    def readFileMainID(self):
+        try:
+            f = open('auto50MainID.txt', 'r')
+            return f.read()
+        except expression as identifier:
+            return ''
     def fakeIT(self):
         ibanRegex = r'title="Click To Copy">(.*)</span></span> \(<a href="#"'
         bicRegex = r'<th scope="row">BIC</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
@@ -461,6 +553,7 @@ testChangeIP = False
 updateCookie = False
 hideWindow = False
 checkKey = False
+auto50 = False
 proxyIP = ''
 fakeURL = 'https://fake-it.ws/at/'
 createAdsAccount = False
@@ -497,6 +590,26 @@ for index in range(1, len(sys.argv)):
         keyActive = sys.argv[index + 1]
     if sys.argv[index] == '-checkKey':
         checkKey = True
+    if sys.argv[index] == '-auto50':
+        auto50 = True 
+    if sys.argv[index] == '-auto50TypeAcc':
+        #main - clone
+        auto50TypeAcc = sys.argv[index + 1]
+
+
+#auto50 
+if auto50:
+    if auto50TypeAcc == 'main':
+        fbMain = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'left')
+        fbMain.login(account)
+        fbMain.auto50MainAccoutAuto()
+    else:
+        fbClone = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'right')
+        fbClone.login(account)
+        fbClone.auto50CloneAccountAuto()
+    exit()
+
+
 if testChangeIP:
     fb.testChangeIP()
     time.sleep(10000)
@@ -508,12 +621,7 @@ if checkKey:
 fb = autofb(proxyIP, hideWindow, fakeURL, keyActive)
 if updateCookie:
     fb.login(account)
-    # fb.createPage()
-    # fb.adsActive()
-    fb.adsCreatePost()
-    time.sleep(10000)
     if fb.checkLogin():
-        fb.adsActive()
         cookies = fb.getCookie()
         result = {
             'status': 'success',
@@ -526,8 +634,8 @@ if updateCookie:
             'msg': 'Login fail'
         }
     print(json.dumps(result, indent=4, sort_keys=True))
-
     fb.quit()
+
 else:
     result = {
         'status': 'fail',

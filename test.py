@@ -1,2 +1,1 @@
-tri = 'deptrai'
-print("""tri """)
+f.ope
