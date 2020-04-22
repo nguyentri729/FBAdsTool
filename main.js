@@ -110,7 +110,7 @@ ipcMain.on("CALL_ACTION", async (event, arg) => {
 
   const callPythonFile = function () {
     // return exec(`buildAction.exe ${account.data} -keyActive ${keyActive}`);
-    return exec(`${__dirname}\\buildAction.exe ${account.data} -keyActive ${keyActive}`);
+    return exec(`python ${__dirname}\\buildAction.py ${account.data} -keyActive ${keyActive}`);
   };
 
   const proc = callPythonFile();

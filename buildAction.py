@@ -338,9 +338,7 @@ class autofb:
             time.sleep(5)
         except:
             pass
-
-        return self.checkLogin()
-
+        
     def createPage(self):
         self.driver.get(
             'https://www.facebook.com/pages/create/?ref_type=pages_you_admin')
@@ -480,6 +478,7 @@ class autofb:
         time.sleep(6)
 
     def addMainCloneAds(self, name):
+        
         self.driver.get(
             'https://www.facebook.com/ads/manager/account_settings/information/')
         addPeople = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
@@ -496,6 +495,11 @@ class autofb:
         webdriver.ActionChains(self.driver).send_keys(
             Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
         
+        idCampRegex = r"https://www\.facebook\.com/ads/manager/account_settings/information/\?act=(.*?)&"
+        idCamp = re.findall(idCampRegex, self.driver.current_url)
+
+        self.writeFileisDone(idCamp[0])
+
 
     def addFriends(self, uid, saveActionDone = True):
         self.driver.get('https://www.facebook.com/'+uid+'')
@@ -522,52 +526,51 @@ class autofb:
             return False
 
     # import ads excel
-    def importAdsExcel(self, path=''):
-        self.driver.get('https://www.facebook.com/adsmanager/manage/campaigns')
+    def importAdsExcel(self, idCamp=''):
+        self.driver.get('https://www.facebook.com/adsmanager/manage/campaigns?act='+idCamp + '')
+        try:
+            campaign_group_tab = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//li[@data-testid='campaign_group_tab']")))
+            campaign_group_tab.click()
 
-        campaign_group_tab = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//li[@data-testid='campaign_group_tab']")))
-        campaign_group_tab.click()
+            time.sleep(1)
+            for index in range(1, 9):
+                webdriver.ActionChains(self.driver).send_keys(Keys.TAB).perform()
+                time.sleep(0.3)
+            webdriver.ActionChains(self.driver).send_keys(Keys.ENTER).perform()
+            time.sleep(1)
+            webdriver.ActionChains(self.driver).send_keys(
+                Keys.ARROW_UP + Keys.ARROW_UP + Keys.ENTER).perform()
+            uploadExcel = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+                (By.XPATH, "//input[@data-testid='import-file-input']")))
+            uploadExcel.send_keys(os.path.abspath("camp.csv"))
 
-        time.sleep(1)
-        for index in range(1, 9):
-            webdriver.ActionChains(self.driver).send_keys(Keys.TAB).perform()
-            time.sleep(0.3)
-        webdriver.ActionChains(self.driver).send_keys(Keys.ENTER).perform()
-        time.sleep(1)
-        webdriver.ActionChains(self.driver).send_keys(
-            Keys.ARROW_UP + Keys.ARROW_UP + Keys.ENTER).perform()
-        uploadExcel = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
-            (By.XPATH, "//input[@data-testid='import-file-input']")))
-        uploadExcel.send_keys(os.path.abspath("camp.csv"))
+            time.sleep(1)
+            importButton = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//button[@data-testid='import-button']")))
+            importButton.click()
 
-        time.sleep(1)
-        importButton = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//button[@data-testid='import-button']")))
-        importButton.click()
+            WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located(
+                (By.XPATH, "//div[@data-testid='import-progress-dialog']")))
+            try:
+                WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH, "//div[@data-testid='import-progress-dialog']")))
+            except:
+                pass
+            reviewButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+                (By.XPATH, "//button[@data-testid='review-changes-button']")))
+            reviewButton.click()
 
-        WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located(
-            (By.XPATH, "//div[@data-testid='import-progress-dialog']")))
-        reviewButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
-            (By.XPATH, "//button[@data-testid='review-changes-button']")))
-        reviewButton.click()
+            # label click
+            checkboxErrorPost = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+                (By.XPATH, "//label[@style='letter-spacing: normal; color: rgb(28, 30, 33); font-size: 12px; font-family: Arial, sans-serif; line-height: 16px; font-weight: normal;']")))
+            checkboxErrorPost.click()
 
-        # label click
-        checkboxErrorPost = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
-            (By.XPATH, "//label[@style='letter-spacing: normal; color: rgb(28, 30, 33); font-size: 12px; font-family: Arial, sans-serif; line-height: 16px; font-weight: normal;']")))
-        checkboxErrorPost.click()
-
-        time.sleep(1)
-        publishButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
-            (By.XPATH, "//button[@data-testid='continue-publish-button']")))
-        publishButton.click()
-        # data-testid="continue-publish-button"
-
-        # data-testid="import-progress-dialog"
-
-        # importExportButton = WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH, "//li[@data-testid='export-import-menu-item\/import-label']")))
-        # importExportButton.click()
-        
+            time.sleep(1)
+            publishButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+                (By.XPATH, "//button[@data-testid='continue-publish-button']")))
+            publishButton.click()
+        except:
+            pass
     def auto50MainAccoutAutoAction(self, uid):
         # self.importAdsExcel()
         if uid == '':
@@ -597,7 +600,7 @@ class autofb:
         while True:
             nowID = self.readFileisDone()
             if initialID != nowID:
-                self.importAdsExcel()
+                self.importAdsExcel(nowID)
                 initialID = nowID
                 break
             time.sleep(5)
@@ -605,10 +608,11 @@ class autofb:
 
     def shareAccountAdsCloneAutoAction(self, uid, name, moneyTypeIndex,timeIndex, countryIndex):
         self.acceptFriends(uid)
-        self.addMainCloneAds(name)
+        
         self.addAdsAccount(moneyTypeIndex,timeIndex, countryIndex)
-        self.writeFileisDone()
-        time.sleep(5)
+        time.sleep(3)
+        self.addMainCloneAds(name)
+        time.sleep(3)
         self.quit()
         return True
 
@@ -683,6 +687,7 @@ class autofb:
         f = open('isDone.txt', "w+")
         f.write('')
         f.close()
+
     def fakeIT(self):
 
         req = requests.get(self.fakeURL)
@@ -722,9 +727,9 @@ class autofb:
             return f.read()
         except expression as identifier:
             return ''
-    def writeFileisDone(self):
+    def writeFileisDone(self, idCamp):
         f = open('isDone.txt', "w+")
-        f.write(self.randomString())
+        f.write(idCamp)
         f.close()
 # enter command
 createAds = False
