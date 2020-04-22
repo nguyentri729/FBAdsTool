@@ -68,10 +68,15 @@ $("#auto50:first").change(function () {
 });
 
 $("#shareAccountAds:first").change(function () {
+  ipcRenderer.send("GET_CONTRIES_OPTIONS", "");
+  ipcRenderer.send("GET_MONEYTYPE_OPTIONS", "");
+  ipcRenderer.send("GET_TIMEZONES_OPTIONS", "");
   if (!$(this)[0].checked) {
     $("#shareAccountAdsOptions").hide();
+    $("#createAccountAdsOptions").hide()
   } else {
     $("#shareAccountAdsOptions").show();
+    $("#createAccountAdsOptions").show()
   }
 });
 

@@ -21,20 +21,20 @@ import os
 
 
 class autofb:
-    def __init__(self, proxyIP='', hideWindow=False, fakeURL='', keyActive='', postion = 'left'):
+    def __init__(self, proxyIP='', hideWindow=False, fakeURL='', keyActive='', postion='left'):
         option = Options()
         option.add_argument("--disable-infobars")
         option.add_argument("start-maximized")
         option.add_argument("--disable-extensions")
         option.add_argument("window-size=960,950")
         option.add_argument("--disable-background-mode")
-        
+
         if postion == 'left':
             option.add_argument("--window-position=0,0")
         else:
             print('right')
             option.add_argument("--window-position=960,0")
-            
+
         # Pass the argument 1 to allow and 2 to block
         option.add_experimental_option("prefs", {
             "profile.default_content_setting_values.notifications": 2
@@ -154,6 +154,31 @@ class autofb:
         except:
             return False
 
+    def getInfo(self, saveFile='clone'):
+        try:
+            # data-type="type_user"
+            type_user = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//li[@data-type='type_user']")))
+            uid = type_user.get_attribute('data-nav-item-id')
+            tagName = type_user.find_element_by_xpath(
+                "//a[@draggable='false']")
+            name = tagName.get_attribute('title')
+            # save file
+            if saveFile == 'main':
+                f = open('auto50MainID.txt', "w+")
+                f.write(uid + '|' + name)
+                f.close()
+            if saveFile == 'clone':
+                f = open('auto50CloneID.txt', "w+")
+                f.write(uid)
+                f.close()
+            return {
+                'uid': uid,
+                'name': name
+            }
+        except:
+            return False
+
     def getCookie(self):
         cookies = self.driver.get_cookies()
         cookieStr = ''
@@ -260,7 +285,7 @@ class autofb:
                 "document.getElementsByClassName('_1f')[0].click();setTimeout(function(){console.log(document.getElementsByClassName('_3leq'));document.getElementsByClassName('_3leq')["+str(countryIndex)+"].click()},2000)")
 
             time.sleep(3)
-            
+
             cm_settings_page_save_button = WebDriverWait(self.driver, 3).until(
                 EC.presence_of_element_located((By.XPATH, "//button[@data-testid='cm_settings_page_save_button']")))
             cm_settings_page_save_button.click()
@@ -360,7 +385,7 @@ class autofb:
         self.driver.execute_script(
             "document.getElementsByTagName('button')[1].click()")
         time.sleep(2)
-        #check show poupup
+        # check show poupup
         checkPop = WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "uiOverlayFooter")))
         time.sleep(2)
@@ -371,10 +396,10 @@ class autofb:
             Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
         time.sleep(5)
 
-    #gender (0: Tất cả, 1: Nam, 2: Nữ)
-    def adsCreatePost(self, postContent='abcdef', gender=0, startAge=14, endAge=45, location='Việt Nam', dayAds=1, finance=600000, creditCard = '4056400172321306|04|23|222'):
-        
-        #self.driver.get('https://www.facebook.com/Gmmdhmbj-112937363720458/?modal=admin_todo_tour')
+    # gender (0: Tất cả, 1: Nam, 2: Nữ)
+    def adsCreatePost(self, postContent='abcdef', gender=0, startAge=14, endAge=45, location='Việt Nam', dayAds=1, finance=600000, creditCard='4056400172321306|04|23|222'):
+
+        # self.driver.get('https://www.facebook.com/Gmmdhmbj-112937363720458/?modal=admin_todo_tour')
 
         self.driver.refresh()
         createPostArea = WebDriverWait(self.driver, 10).until(
@@ -391,10 +416,10 @@ class autofb:
         changeButton = WebDriverWait(self.driver, 20).until(
             EC.presence_of_element_located((By.XPATH, "//a[contains(text(),'Chỉnh sửa')]")))
         changeButton.click()
-        #gender
+        # gender
         genderButton = WebDriverWait(self.driver, 20).until(
             EC.presence_of_element_located((By.ID, "GENDER")))
-        #excute script here
+        # excute script here
         self.driver.execute_script('const genderIndex='+str(gender)+';const startAgeIndex='+str(startAge)+';const endAgeIndex='+str(
             endAge)+';const genderDiv=document.getElementById("GENDER");const buttonGender=genderDiv.getElementsByTagName("button");buttonGender[genderIndex].click();const ageDev=document.getElementById("AGE");const startAge=ageDev.getElementsByTagName("button")[0];const endAge=ageDev.getElementsByTagName("button")[1];startAge.click();setTimeout(()=>{document.getElementsByClassName("uiContextualLayerBelowLeft")[0].getElementsByTagName("li")[startAgeIndex-13].getElementsByTagName("div")[1].click();endAge.click()},2000);setTimeout(()=>{document.getElementsByClassName("uiContextualLayerBelowLeft")[0].getElementsByTagName("li")[endAgeIndex-13].getElementsByTagName("div")[1].click()},4000);')
         time.sleep(4)
@@ -432,133 +457,188 @@ class autofb:
         try:
             credit_card_number = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//input[@name='creditCardNumber']")))
-            #split credit credit
+            # split credit credit
             credit = creditCard.split('|')
             time.sleep(2)
-            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.TAB + credit[0]).perform()
-            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + credit[1]).perform()
+            webdriver.ActionChains(self.driver).send_keys(
+                Keys.TAB + Keys.TAB + Keys.TAB + credit[0]).perform()
+            webdriver.ActionChains(self.driver).send_keys(
+                Keys.TAB + credit[1]).perform()
             webdriver.ActionChains(self.driver).send_keys(credit[2]).perform()
-            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + credit[3]).perform()
+            webdriver.ActionChains(self.driver).send_keys(
+                Keys.TAB + credit[3]).perform()
             for index in range(1, 6):
-                webdriver.ActionChains(self.driver).send_keys(Keys.TAB).perform()
+                webdriver.ActionChains(
+                    self.driver).send_keys(Keys.TAB).perform()
             time.sleep(1)
             webdriver.ActionChains(self.driver).send_keys(Keys.ENTER).perform()
         except:
             pass
-            
-        WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH, "//input[@name='creditCardNumber']")))
-        
-        #post button click
 
-        self.driver.execute_script('const buttonList=document.getElementById("feedx_sprouts_container").getElementsByTagName("button");buttonList[buttonList.length-1].click()')
+        WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located(
+            (By.XPATH, "//input[@name='creditCardNumber']")))
+
+        # post button click
+
+        self.driver.execute_script(
+            'const buttonList=document.getElementById("feedx_sprouts_container").getElementsByTagName("button");buttonList[buttonList.length-1].click()')
         time.sleep(6)
+
     def addMainCloneAds(self, name):
-        self.driver.get('https://www.facebook.com/ads/manager/account_settings/information/')
-        addPeople = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@style='letter-spacing: normal; color: rgb(255, 255, 255); font-size: 12px; font-weight: bold; font-family: Arial, sans-serif; line-height: 26px; text-align: center; background-color: rgb(24, 119, 242); border-color: rgb(24, 119, 242); height: 28px; padding-left: 11px; padding-right: 11px; border-radius: 2px;']")))
+        self.driver.get(
+            'https://www.facebook.com/ads/manager/account_settings/information/')
+        addPeople = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//button[@style='letter-spacing: normal; color: rgb(255, 255, 255); font-size: 12px; font-weight: bold; font-family: Arial, sans-serif; line-height: 26px; text-align: center; background-color: rgb(24, 119, 242); border-color: rgb(24, 119, 242); height: 28px; padding-left: 11px; padding-right: 11px; border-radius: 2px;']")))
         addPeople.click()
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@name='search_query']")))
-        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + name).perform()
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//input[@name='search_query']")))
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.TAB + name).perform()
         time.sleep(2)
-        webdriver.ActionChains(self.driver).send_keys(Keys.ARROW_DOWN + Keys.ENTER + Keys.TAB + Keys.ENTER + Keys.ARROW_UP + Keys.ENTER).perform()
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.ARROW_DOWN + Keys.ENTER + Keys.TAB + Keys.ENTER + Keys.ARROW_UP + Keys.ENTER).perform()
         time.sleep(1)
-        webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
-        time.sleep(1000)
-    def addFriends(self, uid):
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+        
+
+    def addFriends(self, uid, saveActionDone = True):
         self.driver.get('https://www.facebook.com/'+uid+'')
         try:
-            FriendRequestAdd = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "FriendRequestAdd")))
+            FriendRequestAdd = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, "FriendRequestAdd")))
             FriendRequestAdd.click()
-            return True
         except:
-            return False  
+            self.driver.execute_script("document.getElementById('pagelet_timeline_profile_actions').getElementsByClassName('FriendRequestAdd')[0].click()")
+            pass
+
+        if saveActionDone == True:
+            self.addCloneActionDone(uid, 'ADD_FRIEND')
+
     def acceptFriends(self, uid):
         self.driver.get('https://www.facebook.com/friends/requests/')
         try:
-            requestFriendArea = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, "//div[@data-id='"+uid+"']")))
+            requestFriendArea = WebDriverWait(self.driver, 5).until(
+                EC.presence_of_element_located((By.XPATH, "//div[@data-id='"+uid+"']")))
             requestFriendArea.click()
-            webdriver.ActionChains(self.driver).send_keys(Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+            webdriver.ActionChains(self.driver).send_keys(
+                Keys.TAB + Keys.TAB + Keys.ENTER).perform()
             return True
         except:
             return False
-    
-    #import ads excel
-    def importAdsExcel(self, path = ''):
+
+    # import ads excel
+    def importAdsExcel(self, path=''):
         self.driver.get('https://www.facebook.com/adsmanager/manage/campaigns')
-        
-        campaign_group_tab = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//li[@data-testid='campaign_group_tab']")))
+
+        campaign_group_tab = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//li[@data-testid='campaign_group_tab']")))
         campaign_group_tab.click()
-        
+
         time.sleep(1)
         for index in range(1, 9):
             webdriver.ActionChains(self.driver).send_keys(Keys.TAB).perform()
             time.sleep(0.3)
         webdriver.ActionChains(self.driver).send_keys(Keys.ENTER).perform()
         time.sleep(1)
-        webdriver.ActionChains(self.driver).send_keys(Keys.ARROW_UP + Keys.ARROW_UP + Keys.ENTER).perform()
-        uploadExcel = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='import-file-input']")))
+        webdriver.ActionChains(self.driver).send_keys(
+            Keys.ARROW_UP + Keys.ARROW_UP + Keys.ENTER).perform()
+        uploadExcel = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//input[@data-testid='import-file-input']")))
         uploadExcel.send_keys(os.path.abspath("camp.csv"))
 
         time.sleep(1)
-        importButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='import-button']")))
+        importButton = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//button[@data-testid='import-button']")))
         importButton.click()
 
-        WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH, "//div[@data-testid='import-progress-dialog']")))
-        reviewButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='review-changes-button']")))
+        WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located(
+            (By.XPATH, "//div[@data-testid='import-progress-dialog']")))
+        reviewButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//button[@data-testid='review-changes-button']")))
         reviewButton.click()
-        
-        #label click
-        checkboxErrorPost = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//label[@style='letter-spacing: normal; color: rgb(28, 30, 33); font-size: 12px; font-family: Arial, sans-serif; line-height: 16px; font-weight: normal;']")))
+
+        # label click
+        checkboxErrorPost = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//label[@style='letter-spacing: normal; color: rgb(28, 30, 33); font-size: 12px; font-family: Arial, sans-serif; line-height: 16px; font-weight: normal;']")))
         checkboxErrorPost.click()
 
         time.sleep(1)
-        publishButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='continue-publish-button']")))
+        publishButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+            (By.XPATH, "//button[@data-testid='continue-publish-button']")))
         publishButton.click()
+        # data-testid="continue-publish-button"
 
-
-        #data-testid="continue-publish-button"
-
-        #data-testid="import-progress-dialog"
+        # data-testid="import-progress-dialog"
 
         # importExportButton = WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH, "//li[@data-testid='export-import-menu-item\/import-label']")))
         # importExportButton.click()
-        time.sleep(1000)
-
-
+        
     def auto50MainAccoutAutoAction(self, uid):
-        #self.importAdsExcel()
+        # self.importAdsExcel()
         if uid == '':
             return False
         self.addFriends(uid)
         return True
+
     def auto50MainAccoutAuto(self):
-        #auto 50 main auto
+        # auto 50 main auto
         uid = self.readFileCloneID()
         self.auto50MainAccoutAutoAction(uid)
         while(True):
             readFile = self.readFileCloneID()
-            if  readFile != uid:
+            if readFile != uid:
                 uid = readFile
                 self.auto50MainAccoutAutoAction(uid)
             time.sleep(5)
+
     def auto50CloneAccountAuto(self):
-        
+        return True
 
-    def shareAccountAdsMainAutoAction(self):
+    def shareAccountAdsMainAutoAction(self, uid):
+        if uid == '':
+            return False
+        self.addFriends(uid)
+        initialID = self.readFileisDone()
+        while True:
+            nowID = self.readFileisDone()
+            if initialID != nowID:
+                self.importAdsExcel()
+                initialID = nowID
+                break
+            time.sleep(5)
+        return True
 
+    def shareAccountAdsCloneAutoAction(self, uid, name):
+        self.acceptFriends(uid)
+        self.addMainCloneAds(name)
+        self.addAdsAccount()
+        self.writeFileisDone()
+        return True
 
-    #main account call actions
+    # main account call actions
     def shareAccountAdsMainAuto(self):
-        #read clone uid 
-        #and connect
+        # read clone uid
+        # and connect
         uid = self.readFileCloneID()
         self.shareAccountAdsMainAutoAction(uid)
         while(True):
             readFile = self.readFileCloneID()
-            if  readFile != uid:
+            if readFile != uid:
                 uid = readFile
                 self.shareAccountAdsMainAutoAction(uid)
             time.sleep(5)
-    
+
+    def shareAccountAdsCloneAuto(self, uid):
+        while(True):
+            readFileMainID = self.readFileMainID()
+            checkAction = self.checkCloneActionDone(uid, 'ADD_FRIEND')
+            print(checkAction)
+            if readFileMainID != '' and checkAction:
+                mainInfo = readFileMainID.split('|')
+                self.shareAccountAdsCloneAutoAction(mainInfo[0], mainInfo[1])
+                break
+            time.sleep(5)
+
     def quit(self):
         self.driver.stop_client()
         self.driver.close()
@@ -566,33 +646,71 @@ class autofb:
     def randomString(self, stringLength=8):
         letters = string.ascii_lowercase
         return ''.join(random.choice(letters) for i in range(stringLength))
+
     def readFileCloneID(self):
         try:
             f = open('auto50CloneID.txt', 'r')
             return f.read()
         except expression as identifier:
             return ''
+
     def readFileMainID(self):
         try:
             f = open('auto50MainID.txt', 'r')
             return f.read()
-        except expression as identifier:
+        except:
             return ''
+    def checkCloneActionDone(self, uid, action):
+        f = open('actionDone.txt', 'r')
+        content = f.read()
+        subContent = uid + "|"+ action
+        if subContent in content:
+            return True
+        return False
+    def addCloneActionDone(self, uid, action):
+        f = open('actionDone.txt', "w+")
+        f.write(uid + '|' + action)
+        f.close()
+    def deleteAllLogs(self):
+        f = open('actionDone.txt', "w+")
+        f.write('')
+        f.close()
+
+        f = open('auto50MainID.txt', "w+")
+        f.write('')
+        f.close()
+
+        f = open('auto50CloneID.txt', "w+")
+        f.write('')
+        f.close()
+
+        f = open('isDone.txt', "w+")
+        f.write('')
+        f.close()
     def fakeIT(self):
-        ibanRegex = r'title="Click To Copy">(.*)</span></span> \(<a href="#"'
-        bicRegex = r'<th scope="row">BIC</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
-        nameRegex = r'<th scope="row">Name</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
-        addressRegex = r'<th scope="row">Address</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
-        cityRegex = r'<th scope="row">City</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
-        zipRegex = r'<th scope="row">Postcode</th>\n<td class="copy"><span data-toggle="tooltip" data-placement="top" title="Click To Copy">(.*)</span></td>'
 
         req = requests.get(self.fakeURL)
-        iban = re.findall(ibanRegex, req.text)[0]
-        bic = re.findall(bicRegex, req.text)[0]
-        name = re.findall(nameRegex, req.text)[0]
+        regexName = (r"<th width=\"30%\">Name<\/th>\n"
+            r"					<td style=\"max-width:50px; word-wrap:break-word;\">(.*)<\/td>")
+        addressRegex = (r"<th width=\"30%\">Adresse<\/th>\n"
+            r"					<td style=\"max-width:50px; word-wrap:break-word;\">(.*)<\/td>")
+        cityRegex = (r"<th width=\"30%\">Stadt<\/th>\n"
+            r"					<td style=\"max-width:50px; word-wrap:break-word;\">(.*)<\/td>")
+        bicRegex = (r"<th width=\"30%\">BIC<\/th>\n"
+            r"					<td style=\"max-width:50px; word-wrap:break-word;\">\n						\n"
+            r"						<div class=\"row\">\n							<div class=\"col-md-8\">(.*) </div>")
+        ibanRegex = (r"					<th width=\"30%\">IBAN</th>\n"
+            r"					<td style=\"max-width:50px; word-wrap:break-word;\">\n"
+            r"						\n"
+            r"						<div class=\"row\">\n"
+            r"							\n"
+            r"							<div class=\"col-md-8\">\n(.*)<form")
+
+        name = re.findall(regexName, req.text)[0]
         address = re.findall(addressRegex, req.text)[0]
         city = re.findall(cityRegex, req.text)[0]
-        zipcode = re.findall(zipRegex, req.text)[0]
+        bic = re.findall(bicRegex, req.text)[0]
+        iban = re.findall(ibanRegex, req.text)[0]
 
         return({
             'name': name,
@@ -600,10 +718,18 @@ class autofb:
             'city': city,
             'zipcode': '43100',
             'bic': bic,
-            'iban': iban
+            'iban': iban.strip()
         })
-
-
+    def readFileisDone(self):
+        try:
+            f = open('isDone.txt', 'r')
+            return f.read()
+        except expression as identifier:
+            return ''
+    def writeFileisDone(self):
+        f = open('isDone.txt', "w+")
+        f.write(self.randomString())
+        f.close()
 # enter command
 createAds = False
 testChangeIP = False
@@ -612,10 +738,11 @@ hideWindow = False
 checkKey = False
 auto50 = False
 proxyIP = ''
-fakeURL = 'https://fake-it.ws/at/'
+fakeURL = 'https://identinator.com/?for_country=aut'
 createAdsAccount = False
-shareAccountAds = False 
+shareAccountAds = False
 keyActive = ''
+
 for index in range(1, len(sys.argv)):
     if sys.argv[index] == '-credit':
         message_bytes = base64.b64decode(sys.argv[index + 1])
@@ -649,14 +776,14 @@ for index in range(1, len(sys.argv)):
     if sys.argv[index] == '-checkKey':
         checkKey = True
     if sys.argv[index] == '-auto50':
-        auto50 = True 
+        auto50 = True
     if sys.argv[index] == '-typeAcc':
-        #main - clone
+        # main - clone
         typeAcc = sys.argv[index + 1]
     if sys.argv[index] == '-shareAccountAds':
         shareAccountAds = True
 
-#auto50 
+# auto50
 if auto50:
     if typeAcc == 'main':
         fbMain = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'left')
@@ -668,17 +795,38 @@ if auto50:
         fbClone.auto50CloneAccountAuto()
     exit()
 
-#auto50 
+# share account Ads
 if shareAccountAds:
+
+    result = {
+        'status': 'fail',
+        'msg': 'unknown error',
+    }
     if typeAcc == 'main':
         fbMain = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'left')
         fbMain.login(account)
-        
-        fbMain.auto50MainAccoutAuto()
+        fbMain.deleteAllLogs()
+        fbInfo = fbMain.getInfo('main')
+        if fbInfo:
+            fbMain.shareAccountAdsMainAuto()
+        else:
+            result['msg'] = 'login fail'
     else:
         fbClone = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'right')
         fbClone.login(account)
-        fbClone.auto50CloneAccountAuto()
+        fbInfo = fbClone.getInfo('clone')
+        print('login Info')
+        print(fbInfo)
+        if fbInfo:
+            print('here login ')
+            fbClone.shareAccountAdsCloneAuto(fbInfo['uid'])
+            # update message
+            result['status'] = 'success'
+            result['msg'] = ''
+        else:
+            result['msg'] = 'login fail'
+
+    print(json.dumps(result, indent=4, sort_keys=True))
     exit()
 
 

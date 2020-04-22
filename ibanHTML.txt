@@ -1,0 +1,1991 @@
+﻿<html><head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<title>▷ Identinator | Random fake name generator | Valid Iban Generator</title>
+		<meta name="author" content="Fake-it">
+		<meta name="publisher" content="Fake-it">
+		<meta name="copyright" content="Fake-it">
+		<meta name="description" content="Identinator | Random Fake name generator Nr. 1 | Valid Iban Generator ✅ Fake credit card generator ✅ Random username generator ✅ Random name ✅ Fake address">
+		<meta name="keywords" content="personalausweisnummer, generator, nachnamen, generator, ausweisnummer,fake namen generator, generator, fake, id, generator, personalausweis, identifikationsnummer, kreditkarten, generator, fake, kreditkartennummer, fake, email, adresse">
+		<meta http-equiv="content-language" content="de">
+		<meta name="robots" content="index, follow">
+		
+		<!-- PopAds.net Popunder Code for fake-it.to | 2018-12-01,3012997,0,0 -->
+<script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+/* Privet darkv. Each domain is 2h fox dead */
+ (function(){ var y=window;y["\x5f\x70\u006f\x70"]=[["s\u0069t\x65I\u0064",3012997],["\x6d\x69\x6eB\x69\u0064",0],["\u0070\x6f\u0070\u0075\x6ede\x72\u0073Pe\u0072\x49P",0],["d\u0065\u006cayB\u0065\x74\x77e\u0065\u006e",0],["\u0064\x65\x66\x61\x75\u006c\x74",false],["defa\x75\u006c\u0074\u0050e\u0072\u0044\u0061\u0079",0],["\u0074\u006fp\x6d\u006f\x73\x74\x4ca\u0079\u0065r",!0]];var u=["/\x2f\u00631\u002e\u0070\u006fp\x61\x64\x73\x2e\u006eet\u002fp\u006f\x70\u002e\u006a\u0073","\x2f\x2fc\u0032.\x70\u006fp\x61\x64s\x2e\u006ee\u0074\u002f\u0070\x6f\u0070\u002e\x6a\u0073","/\u002f\u0077\x77w\u002ex\u0067\u006dlmmul\x63\x69z\u002ecom\u002ff\x70\x70\u002e\u006as","\u002f\x2f\x77ww.\u0065r\x69f\x69\u0063y\x67\u0067w.\x63o\x6d\u002fx\x2e\u006a\u0073",""],x=0,h,e=function(){if(""==u[x])return;h=y["d\u006f\u0063um\u0065\u006e\x74"]["\u0063\u0072\u0065\u0061t\u0065\u0045l\x65\u006de\u006e\x74"]("\x73\x63\u0072i\u0070\x74");h["\u0074\u0079\x70e"]="\x74\u0065\x78t\u002f\x6a\x61\u0076a\x73\u0063\u0072\u0069\x70\u0074";h["\x61\x73\u0079\u006ec"]=!0;var l=y["d\u006f\x63um\u0065n\x74"]["g\x65\x74\x45\x6c\u0065\u006d\x65n\x74\u0073\x42y\x54\x61\u0067Nam\u0065"]("s\u0063\u0072\u0069\u0070\x74")[0];h["\x73r\x63"]=u[x];if(x<2){h["\x63\x72o\x73\x73O\u0072i\x67\x69n"]="a\x6e\x6f\u006e\u0079\u006d\u006f\x75\u0073";};h["\u006f\x6ee\x72\u0072\u006f\x72"]=function(){x++;e()};l["p\u0061ren\u0074No\x64\x65"]["i\x6es\u0065r\x74B\x65f\x6fr\x65"](h,l)};e()})();
+/*]]>/* */
+</script>
+
+
+		
+	<!--/.Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78236770-24"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-78236770-24');
+</script>
+
+	<!--/.Analytics -->
+
+<!--/.GOOGLE Sticky Code -->
+		
+<script>window._epn = {campaign:5338299108};</script>
+<script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
+
+<script async src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+
+ var gptAdSlots = [];
+ googletag.cmd.push(function() {
+
+   var mapping = googletag.sizeMapping().
+
+   addSize([1200, 90], [1200, 100]).
+   addSize([970, 90], [970, 100]). 
+   addSize([728, 90], [728, 100]).
+   addSize([500, 90], [500, 300]).
+   addSize([468, 90], [468, 250]).  
+   addSize([0, 0], [300, 300]).build();
+
+   var mapping2 = googletag.sizeMapping().
+
+   addSize([300, 100], [300, 600]). 
+   addSize([0, 0], [160, 600]).build();
+
+   gptAdSlots[0] = googletag.defineSlot('/162717810/DE-fake-it.to/1200x100', [1200, 100], 'ad-slot').
+       defineSizeMapping(mapping).
+       addService(googletag.pubads());
+
+   gptAdSlots[1] = googletag.defineSlot('/162717810/DE-fake-it.to/1200x100', [1200, 100], 'ad-slot1').
+       defineSizeMapping(mapping).
+       addService(googletag.pubads());
+
+   gptAdSlots[2] = googletag.defineSlot('/162717810/DE-fake-it.to/1200x100', [1200, 100], 'ad-slot2').
+       defineSizeMapping(mapping).
+       addService(googletag.pubads());
+
+   gptAdSlots[3] = googletag.defineSlot('/162717810/DE-fake-it.to/1200x100', [1200, 100], 'ad-slot3').
+       defineSizeMapping(mapping).
+       addService(googletag.pubads());
+
+   gptAdSlots[4] = googletag.defineSlot('/162717810/DE-fake-it.to/1200x100', [1200, 100], 'ad-slot4').
+       defineSizeMapping(mapping).
+       addService(googletag.pubads());
+
+   gptAdSlots[5] = googletag.defineSlot('/162717810/DE-fake-it.to/1200x100', [1200, 100], 'ad-slot5').
+       defineSizeMapping(mapping).
+       addService(googletag.pubads());
+
+   gptAdSlots[6] = googletag.defineSlot('/162717810/DE-fake-it.to/1200x100', [1200, 100], 'ad-slot6').
+       defineSizeMapping(mapping).
+       addService(googletag.pubads());
+
+   gptAdSlots[7] = googletag.defineSlot('/162717810/DE-fake-it.to/300x600', [300, 600], 'ad-slot7').
+       defineSizeMapping(mapping2).
+       addService(googletag.pubads());
+
+   gptAdSlots[8] = googletag.defineSlot('/162717810/DE-fake-it.to/300x600', [300, 600], 'ad-slot8').
+       defineSizeMapping(mapping2).
+       addService(googletag.pubads());
+
+   googletag.enableServices();
+ });
+</script>
+
+
+		
+		<!--/.GOOGLE Sticky Code -->
+
+
+<!--/.GOOGLE Sticky Code -->
+		
+		<!--/.GOOGLE ALLE SEITEN -->
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1453975364580001",
+    enable_page_level_ads: true
+  });
+</script>
+<!--/.GOOGLE ALLE SEITEN  -->
+
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78236770-24"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-78236770-24');
+</script>
+		
+
+		<!-- Ende Cookie Plugin -->
+		
+		
+		<!-- Analytics -->
+		
+		
+		
+<!-- Analytics -->
+
+<!--<link rel="stylesheet" type="text/css" href="img/style.css">-->
+<link rel="stylesheet" type="text/css" href="assets/css/themes/darkly/bootstrap.min.css" />
+<style type="text/css">
+	.navbar-brand a{
+	color: #eee !important;
+	}
+	.navbar-brand a:hover{
+	color: #22E3AC !important;
+	}
+	.tooltipped {
+    position: relative
+	}
+	.tooltipped:after {
+    position: absolute;
+    z-index: 1000000;
+    display: none;
+    padding: 5px 8px;
+    font: normal normal 11px/1.5 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: break-word;
+    white-space: pre;
+    pointer-events: none;
+    content: attr(aria-label);
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 3px;
+    -webkit-font-smoothing: subpixel-antialiased
+	}
+	.tooltipped:before {
+    position: absolute;
+    z-index: 1000001;
+    display: none;
+    width: 0;
+    height: 0;
+    color: rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    content: "";
+    border: 5px solid transparent
+	}
+	.tooltipped:hover:before,
+	.tooltipped:hover:after,
+	.tooltipped:active:before,
+	.tooltipped:active:after,
+	.tooltipped:focus:before,
+	.tooltipped:focus:after {
+    display: inline-block;
+    text-decoration: none
+	}
+	.tooltipped-multiline:hover:after,
+	.tooltipped-multiline:active:after,
+	.tooltipped-multiline:focus:after {
+    display: table-cell
+	}
+	.tooltipped-s:after,
+	.tooltipped-se:after,
+	.tooltipped-sw:after {
+    top: 100%;
+    right: 50%;
+    margin-top: 5px
+	}
+	.tooltipped-s:before,
+	.tooltipped-se:before,
+	.tooltipped-sw:before {
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    margin-right: -5px;
+    border-bottom-color: rgba(0, 0, 0, 0.8)
+	}
+	.tooltipped-se:after {
+    right: auto;
+    left: 50%;
+    margin-left: -15px
+	}
+	.tooltipped-sw:after {
+    margin-right: -15px
+	}
+	.tooltipped-n:after,
+	.tooltipped-ne:after,
+	.tooltipped-nw:after {
+    right: 50%;
+    bottom: 100%;
+    margin-bottom: 5px
+	}
+	.tooltipped-n:before,
+	.tooltipped-ne:before,
+	.tooltipped-nw:before {
+    top: -5px;
+    right: 50%;
+    bottom: auto;
+    margin-right: -5px;
+    border-top-color: rgba(0, 0, 0, 0.8)
+	}
+	.tooltipped-ne:after {
+    right: auto;
+    left: 50%;
+    margin-left: -15px
+	}
+	.tooltipped-nw:after {
+    margin-right: -15px
+	}
+	.tooltipped-s:after,
+	.tooltipped-n:after {
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%)
+	}
+	.tooltipped-w:after {
+    right: 100%;
+    bottom: 50%;
+    margin-right: 5px;
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    transform: translateY(50%)
+	}
+	.tooltipped-w:before {
+    top: 50%;
+    bottom: 50%;
+    left: -5px;
+    margin-top: -5px;
+    border-left-color: rgba(0, 0, 0, 0.8)
+	}
+	.tooltipped-e:after {
+    bottom: 50%;
+    left: 100%;
+    margin-left: 5px;
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    transform: translateY(50%)
+	}
+	.tooltipped-e:before {
+    top: 50%;
+    right: -5px;
+    bottom: 50%;
+    margin-top: -5px;
+    border-right-color: rgba(0, 0, 0, 0.8)
+	}
+	.tooltipped-multiline:after {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 250px;
+    word-break: break-word;
+    word-wrap: normal;
+    white-space: pre-line;
+    border-collapse: separate
+	}
+	.tooltipped-multiline.tooltipped-s:after,
+	.tooltipped-multiline.tooltipped-n:after {
+    right: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%)
+	}
+	.tooltipped-multiline.tooltipped-w:after,
+	.tooltipped-multiline.tooltipped-e:after {
+    right: 100%
+	}
+	@media screen and (min-width: 0\0) {
+    .tooltipped-multiline:after {
+	width: 250px
+    }
+	}
+	.tooltipped-sticky:before,
+	.tooltipped-sticky:after {
+    display: inline-block
+	}
+	.tooltipped-sticky.tooltipped-multiline:after {
+    display: table-cell
+	}
+</style>
+
+<script src="//cdn.rawgit.com/zenorocha/clipboard.js/v1.6.0/dist/clipboard.min.js"></script>
+<script
+src="//code.jquery.com/jquery-3.2.1.js"
+integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-overlaps/1.2.3/jquery.overlaps.min.js"></script>
+
+	<!--/.Taboola Sticky Code -->
+
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script> 
+	<!--/.Taboola Sticky Code -->
+	
+<body>
+	
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.php">Home</a>
+			</div>
+			
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li ><a href="infos.php">Informationen</a></li>
+					<li ><a href="partner.php">Partner</a></li>
+					<li ><a href="rechtliches.php">Rechtliches</a></li>
+					
+					
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="https://mailgen.biz"target="_blank">Fake Mail Generator</a></li>
+					
+					
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+	<div align="center"><img src="assets/img/fake-it-header.jpg" /></div>
+</center>
+<p></p>
+
+<div class="container-fluid">
+		
+<center>
+	<div><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Fake it Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1453975364580001"
+     data-ad-slot="3475221376"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+	
+	<font color="#FFF" face="verdana" size="1">Land ausw&auml;hlen </font>
+	<br />
+	<a href="?for_country=de"><img src="assets/img/de.png" alt="Deutschland" border="0" ></a>
+	<a href="?for_country=ch"><img src="assets/img/ch.png" alt="Schweiz" border="0" ></a>
+	<a href="?for_country=aut"><img src="assets/img/at.png" alt="Oesterreich" border="0" ></a>
+	<a href="?for_country=us"><img src="assets/img/us.png" alt="Usa" border="0" ></a>
+	<a href="?for_country=nl"><img src="assets/img/nl.png" alt="Deutschland" border="0" ></a>
+	<a href="?for_country=bra"><img src="assets/img/br.png" alt="Schweiz" border="0" ></a>
+	<a href="?for_country=fr"><img src="assets/img/fr.png" alt="Oesterreich" border="0" ></a>
+	<a href="?for_country=pt"><img src="assets/img/pt.png" alt="Usa" border="0" ></a>
+	<a href="?for_country=es"><img src="assets/img/es.png" alt="Usa" border="0" ></a>
+	<a href="?for_country=it"><img src="assets/img/it.png" alt="Usa" border="0"></a>
+	<a href="?for_country=ba"><img src="assets/img/ba.png" alt="Bosnia" border="0" ></a>
+	<a href="?for_country=li"><img src="assets/img/li.png" alt="Liechtenstein" border="0" ></a>
+	<a href="?for_country=lu"><img src="assets/img/lu.png" alt="Luxembourg" border="0" ></a>
+	<a href="?for_country=xk"><img src="assets/img/_Kosovo.png" alt="Kosovo" border="0" ></a>
+	<a href="?for_country=be"><img src="assets/img/be.png" alt="Belgium" border="0" ></a>
+	<a href="?for_country=bg"><img src="assets/img/bg.png" alt="Bulgaria" border="0" ></a>
+	<a href="?for_country=dk"><img src="assets/img/dk.png" alt="Denmark" border="0" ></a>
+	<a href="?for_country=gr"><img src="assets/img/gr.png" alt="Greece" border="0" ></a>
+	<a href="?for_country=pl"><img src="assets/img/pl.png" alt="Poland" border="0" ></a>
+	<a href="?for_country=tr"><img src="assets/img/tr.png" alt="Turkey" border="0" ></a>
+	<a href="?for_country=gb"><img src="assets/img/gb.png" alt="GB" border="0" ></a>
+	<a href="?for_country=se"><img src="assets/img/se.png" alt="SE" border="0" ></a>
+	<br />
+<div style="padding-top: 1%"><a href="index.php?1587554888&for_country=aut" class="btn btn-sm btn-primary">Daten generieren</a></div>
+<p></p>
+<center><big style="font-weight: bold;">We have published classic
+on https://identinator.com/ .<br>
+But: We don't develop them any further! There are a few bugs. These
+will stay! The project is free. Some of you take it for granted. But it
+is not. <span style="color: rgb(51, 255, 51);">You can
+donate here: 1CuXXQbazqxort1Sjnpcs55Y84BLpURVrJ</span><br>
+We reserve the right to take the site offline at too high a cost. Only
+regular donations receive the site. And possibly a further development.
+</big><br>
+
+<br>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Fake-it Responsive-Links -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1453975364580001"
+     data-ad-slot="6732752178"
+     data-ad-format="link"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+This tool can randomly generate valid International Bank Account Numbers (IBAN). They are valid ibans. And full fake identities with random First and Last Name, Address, Phone Number, and more!
+<b>But do not belong to real persons!</b> <br>
+<br>
+
+The IBAN uniquely identifies an account held at a bank. An IBAN is not
+replacing the national numbering systems and is also not a new bank
+account number. It is a way of representing national account numbers in
+an internationally recognised standard format. <br>
+<br>
+
+The IBAN is a series of alphanumeric characters [0-9A-Z] and starts
+with a 2 character country code (ISO 3166), followed by a 2-digit
+checksum and the Basic Bank Account Number (BBAN, ISO 13616). The BBAN
+itself consists of a bank/branch code and the account number, both with
+optional check digits. 
+<br>
+<br>
+<img alt="Iban generator"
+ src="/assets/img/iban_structure.gif"><br>
+
+<br>
+The randomly generated IBANs complies with the IBAN format as displayed
+in the table below.<br>
+The 2-digit checksum are correctly calculated but the generated BBANs
+are fictitious. The generated IBANs should only be used for testing
+purposes. For example testing e-commerce sites, testing financial
+software etc. Do not use them in any production systems. <br>
+<br>
+Note:<br>
+The randomly generated IBANs for the Netherlands have fictitious bank
+account numbers but the bank account numbers (all having 9 or 10
+digits) are elfproef valid. <br>
+<br>
+The IBAN exact structure is country specific:<br>
+<br>
+
+<table summary="" class="css-Table618px"
+ style="border: 0px none ; background-color: rgb(110, 133, 187); width: 800px; color: rgb(0, 0, 0); font-family: arial,sans-serif; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px;"
+ border="0" cellpadding="3" cellspacing="1">
+  <tbody>
+    <tr valign="middle">
+      <td class="css-TableHeader"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; font-weight: bold; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238);"
+ width="100">Country</td>
+      <td class="css-TableHeader"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; font-weight: bold; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238);"
+ width="100">Country Code</td>
+      <td class="css-TableHeader"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; font-weight: bold; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238);"
+ width="50">IBAN format</td>
+      <td class="css-TableHeader"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; font-weight: bold; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238);"
+ width="100">IBAN length</td>
+      <td class="css-TableHeader"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; font-weight: bold; color: rgb(0, 0, 0); background-color: rgb(238, 238, 238);">IBAN
+example</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Andorra</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">AD</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">AD2!n4!n4!n12!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">AD1200012030200359100100</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">United
+Arab Emirates</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">AE</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">AE2!n3!n16!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">23</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">AE070331234567890123456</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Albania</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">AL</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">AL2!n8!n16!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">28</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">AL47212110090000000235698741</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Austria</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">AT</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">AT2!n5!n11!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">20</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">AT611904300234573201</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Azerbaijan,
+Republic of</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">AZ</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">AZ2!n4!a20!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">28</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">AZ21NABZ00000000137010001944</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Bosnia
+and Herzegovina</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BA</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">BA2!n3!n3!n8!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">20</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BA391290079401028494</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Belgium</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BE</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">BE2!n3!n7!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">16</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BE68539007547034</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Bulgaria</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BG</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">BG2!n4!a4!n2!n8!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">22</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BG80BNBG96611020345678</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Bahrain</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BH</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">BH2!n4!a14!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">22</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BH67BMAG00001299123456</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Brazil</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BR</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">BR2!n8!n5!n10!n1!a1!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">29</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BR1800360305000010009795493C1</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Republic
+of Belarus</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BY</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">BY2!n4!c4!n16!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">28</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">BY13NBRB3600900000002Z00AB00</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Switzerland</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">CH</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">CH2!n5!n12!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">21</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">CH9300762011623852957</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Costa
+Rica</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">CR</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">CR2!n4!n14!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">22</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">CR05015202001026284066</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Cyprus</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">CY</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">CY2!n3!n5!n16!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">28</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">CY17002001280000001200527600</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Czech
+Republic</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">CZ</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">CZ2!n4!n6!n10!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">CZ6508000000192000145399</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Germany</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">DE</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">DE2!n8!n10!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">22</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">DE89370400440532013000</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Denmark</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">DK</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">DK2!n4!n9!n1!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">18</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">DK5000400440116243</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Dominican
+Republic</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">DO</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">DO2!n4!c20!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">28</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">DO28BAGR00000001212453611324</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Estonia</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">EE</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">EE2!n2!n2!n11!n1!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">20</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">EE382200221020145685</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Spain</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">ES</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">ES2!n4!n4!n1!n1!n10!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">ES9121000418450200051332</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Finland</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">FI</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">FI2!n3!n11</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">18</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">FI2112345600000785</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Faroe
+Islands</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">FO</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">FO2!n4!n9!n1!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">18</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">FO6264600001631634</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">France</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">FR</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">FR2!n5!n5!n11!c2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">27</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">FR1420041010050500013M02606</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">United
+Kingdom</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GB</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">GB2!n4!a6!n8!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">22</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GB29NWBK60161331926819</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Georgia</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GE</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">GE2!n2!a16!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">22</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GE29NB0000000101904917</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Gibraltar</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GI</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">GI2!n4!a15!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">23</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GI75NWBK000000007099453</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Greenland</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GL</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">GL2!n4!n9!n1!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">18</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GL8964710001000206</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Greece</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GR</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">GR2!n3!n4!n16!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">27</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GR1601101250000000012300695</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Guatemala</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GT</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">GT2!n4!c20!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">28</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">GT82TRAJ01020000001210029690</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Croatia</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">HR</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">HR2!n7!n10!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">21</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">HR1210010051863000160</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Hungary</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">HU</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">HU2!n3!n4!n1!n15!n1!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">28</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">HU42117730161111101800000000</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Ireland</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">IE</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">IE2!n4!a6!n8!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">22</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">IE29AIBK93115212345678</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Israel</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">IL</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">IL2!n3!n3!n13!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">23</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">IL620108000000099999999</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Iraq</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">IQ</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">IQ2!n4!a3!n12!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">23</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">IQ98NBIQ850123456789012</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Iceland</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">IS</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">IS2!n4!n2!n6!n10!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">26</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">IS140159260076545510730339</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Italy</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">IT</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">IT2!n1!a5!n5!n12!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">27</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">IT60X0542811101000000123456</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Jordan</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">JO</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">JO2!n4!a4!n18!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">30</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">JO94CBJO0010000000000131000302</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Kuwait</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">KW</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">KW2!n4!a22!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">30</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">KW81CBKU0000000000001234560101</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Kazakhstan</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">KZ</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">KZ2!n3!n13!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">20</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">KZ86125KZT5004100100</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Lebanon</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LB</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">LB2!n4!n20!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">28</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LB62099900000001001901229114</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Saint
+Lucia</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LC</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">LC2!n4!a24!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">32</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LC55HEMM000100010012001200023015</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Liechtenstein
+(Principality of)</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LI</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">LI2!n5!n12!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">21</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LI21088100002324013AA</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Lithuania</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LT</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">LT2!n5!n11!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">20</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LT121000011101001000</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Luxembourg</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LU</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">LU2!n3!n13!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">20</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LU280019400644750000</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Latvia</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LV</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">LV2!n4!a13!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">21</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">LV80BANK0000435195001</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Monaco</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MC</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">MC2!n5!n5!n11!c2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">27</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MC5811222000010123456789030</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Moldova</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MD</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">MD2!n2!c18!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MD24AG000225100013104168</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Montenegro</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">ME</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">ME2!n3!n13!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">22</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">ME25505000012345678951</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Macedonia</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MK</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">MK2!n3!n10!c2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">19</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MK07250120000058984</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Mauritania</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MR</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">MR2!n5!n5!n11!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">27</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MR1300020001010000123456753</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Malta</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MT</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">MT2!n4!a5!n18!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">31</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MT84MALT011000012345MTLCAST001S</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Mauritius</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MU</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">MU2!n4!a2!n2!n12!n3!n3!a</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">30</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">MU17BOMM0101101030300200000MUR</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Netherlands</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">NL</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">NL2!n4!a10!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">18</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">NL91ABNA0417164300</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Norway</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">NO</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">NO2!n4!n6!n1!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">15</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">NO9386011117947</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Pakistan</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">PK</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">PK2!n4!a16!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">PK36SCBL0000001123456702</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Poland</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">PL</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">PL2!n8!n16!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">28</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">PL61109010140000071219812874</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Palestinian
+Territory, Occupied</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">PS</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">PS2!n4!a21!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">29</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">PS92PALS000000000400123456702</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Portugal</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">PT</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">PT2!n4!n4!n11!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">25</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">PT50000201231234567890154</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Qatar</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">QA</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">QA2!n4!a21!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">29</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">QA58DOHB00001234567890ABCDEFG</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Romania</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">RO</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">RO2!n4!a16!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">RO49AAAA1B31007593840000</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Serbia</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">RS</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">RS2!n3!n13!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">22</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">RS35260005601001611379</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Saudi
+Arabia</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SA</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">SA2!n2!n18!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SA0380000000608010167519</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Seychelles</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SC</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">SC2!n4!a2!n2!n16!n3!a</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">31</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SC18SSCB11010000000000001497USD</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Sweden</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SE</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">SE2!n3!n16!n1!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SE4550000000058398257466</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Slovenia</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SI</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">SI2!n5!n8!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">19</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SI56263300012039086</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Slovak
+Republic</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SK</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">SK2!n4!n6!n10!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SK3112000000198742637541</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">San
+Marino</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SM</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">SM2!n1!a5!n5!n12!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">27</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SM86U0322509800000000270100</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Sao
+Tome And Principe</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">ST</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">ST2!n4!n4!n11!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">25</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">ST68000200010192194210112</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">El
+Salvador</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SV</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">SV2!n4!a20!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">28</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">SV62CENR00000000000000700025</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Timor-Leste</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">TL</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">TL2!n3!n14!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">23</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">TL380080012345678910157</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Tunisia</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">TN</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">TN2!n2!n3!n13!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">TN5910006035183598478831</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Turkey</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">TR</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">TR2!n5!n1!c16!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">26</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">TR330006100519786457841326</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Ukraine</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">UA</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">UA2!n6!n19!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">29</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">UA213996220000026007233566001</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Virgin
+Islands, British</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">VG</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">VG2!n4!a16!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">24</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">VG96VPVG0000012345678901</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">Republic
+of Kosovo</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">XK</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">XK2!n4!n10!n2!n</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">20</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">XK051212012345678906</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">TestCountry1</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">YY</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">YY2!n4!a8!n18!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">34</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">YY24KIHB12476423125915947930915268</td>
+    </tr>
+    <tr valign="middle">
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">TestCountry2</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">ZZ</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"
+ width="145">ZZ2!n4!a9!n18!c</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">35</td>
+      <td class="css-TableData"
+ style="font-size: 12px; font-family: arial,sans-serif; text-decoration: none; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">ZZ25VLQT382332233206588011313776421</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+The following character set representations are used in this table:<br>
+n = Digits (numeric characters 0-9)<br>
+a = Upper case letters (alphabetic characters A-Z)<br>
+c = Digits and upper case letters (0-9 and A-Z)<br>
+<br>
+The following length indications are used in this table:<br>
+mm! = fixed length<br>
+mm  = maximum length<br>
+<br>
+France also includes French Guyana (GF), French Polynesia (PF), French
+Southern Territories (TF), Guadeloupe (GP), Martinique (MQ), Mayotte
+(YT), New Caledonia (NC), Reunion (RE), Saint Barthelemy (BL), Saint
+Martin (French part) (MF), Saint Pierre et Miquelon (PM), Wallis and
+Futuna Islands (WF).
+<br>
+<br>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Fake-it - Medium Rectangle -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1453975364580001"
+     data-ad-slot="1951653186"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></center>
+
+</center>
+<style type="text/css">
+	table{
+		font-size: 13px;
+	}
+	#leftskyscraper{
+		float: left;
+		/*margin-left:-175px;*/
+		width: 130px;
+	}
+	#rightskyscraper{
+		float: right;
+		margin-right:50px;
+		margin-top:-890px;
+		width: 130px;	
+	}
+	.zwischenlayer{
+		margin-top:10px;
+		margin-bottom:10px;
+		top: 450px;
+		left:100px;
+	}
+	
+	@media (max-width: 1200px) {
+		.navbar-header {
+			float: none;
+		}
+		.navbar-left,.navbar-right {
+			float: none !important;
+		}
+		.navbar-toggle {
+			display: block;
+		}
+		.navbar-collapse {
+			border-top: 1px solid transparent;
+			box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+		}
+		.navbar-fixed-top {
+			top: 0;
+			border-width: 0 0 1px;
+		}
+		.navbar-collapse.collapse {
+			display: none!important;
+		}
+		.navbar-nav {
+			float: none!important;
+			margin-top: 7.5px;
+		}
+		.navbar-nav>li {
+			float: none;
+		}
+		.navbar-nav>li>a {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		.collapse.in{
+			display:block !important;
+		}
+	}
+	.row {
+		margin: 0 auto;
+	}
+</style><div id="leftskyscraper"><center></center></div>
+<div class="container">
+	
+	<div class="row" style="display: flex; display: -webkit-flex; flex-wrap: wrap; justify-content: center;">
+		<div class="col-md-6">
+			
+			<table class="table table-striped table-bordered table-hover table-condensed"  >
+								<tr>
+					<th width="30%">Name</th>
+					<td style="max-width:50px; word-wrap:break-word;">Luis Fellner</td>
+				</tr>
+												<tr>
+					<th width="30%">Adresse</th>
+					<td style="max-width:50px; word-wrap:break-word;">4050 77</td>
+				</tr>
+												<tr>
+					<th width="30%">Stadt</th>
+					<td style="max-width:50px; word-wrap:break-word;">9992 Traun</td>
+				</tr>
+												<tr>
+					<th width="30%">Telefon</th>
+					<td style="max-width:50px; word-wrap:break-word;">0650 2818897</td>
+				</tr>
+							</table>
+			
+			<table class="table table-striped table-bordered table-hover table-condensed" >
+								<tr>
+					<th width="30%">Geburtsdatum</th>
+					<td>27/06/1985</td>
+				</tr>
+												<tr>
+					<th width="30%">Email</th>
+					<td style="max-width:50px; word-wrap:break-word;">luis.fellner@mail.com</td>
+				</tr>
+							</table>
+			
+						
+						<table class="table table-striped table-bordered table-hover table-condensed">
+				
+				<tr>
+					<th width="30%">Bank</th>
+					<td style="max-width:50px; word-wrap:break-word;">Raiffeisen Regionalbank Achensee eGen</td>
+				</tr>
+				<tr>
+					<th width="30%">BLZ</th>
+					<td style="max-width:50px; word-wrap:break-word;">36218</td>
+				</tr>
+				<tr>
+					<th width="30%">Kontonummer</th>
+					<td style="max-width:50px; word-wrap:break-word;">87935524171</td>
+				</tr>
+				<tr>
+					<th width="30%">IBAN</th>
+					<td style="max-width:50px; word-wrap:break-word;">
+						
+						<div class="row">
+							
+							<div class="col-md-8">
+								AT103621887935524171								<form target="_blank" id="bic1" action="https://identinator.com/iban.php?iban=AT103621887935524171" method="post">
+									<input type="hidden" size="30" name="remoteiban" autocomplete="off" value="AT103621887935524171">
+									<a href="javascript:{}" onclick="document.getElementById('bic1').submit();">(Valid Check)</a>
+								</form> 
+							</div>
+							<div class="col-md-4">
+								<button class="btn btn-primary btn-xs" data-clipboard-text="AT103621887935524171">kopieren</button>
+							</div>
+							
+							
+						</div>
+						
+						
+					</td>
+				</tr>
+				<tr>
+					<th width="30%">BIC</th>
+					<td style="max-width:50px; word-wrap:break-word;">
+						
+						<div class="row">
+							<div class="col-md-8">RZTIAT22218 </div><div class="col-md-4"><button class="btn btn-primary btn-xs" data-clipboard-text="RZTIAT22218 ">kopieren</button></div>
+						</div>
+						
+						
+					</td>
+				</tr>
+				
+				
+			</table>
+						
+			<table class="table table-striped table-bordered table-hover table-condensed" >
+								<tr>
+					<th width="30%">CC.</th>
+					<td style="max-width:50px; word-wrap:break-word;">Mastercard</td>
+				</tr>
+												<tr>
+					<th width="30%">No.</th>
+					<td style="max-width:50px; word-wrap:break-word;">5232406550349540</td>
+				</tr>
+												<tr>
+					<th width="30%">CVV2</th>
+					<td style="max-width:50px; word-wrap:break-word;">602</td>
+				</tr>
+												<tr>
+					<th width="30%">Exp</th>
+					<td style="max-width:50px; word-wrap:break-word;">09/30</td>
+				</tr>
+							</table>
+			
+		</div>
+		
+		<div class="visible-xs visible-sm">
+			<div style="width: 100vw; padding-bottom: 2%"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Fake it Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1453975364580001"
+     data-ad-slot="3475221376"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+		</div>
+		</br>
+		
+		<div class="col-md-6">
+			<table class="table table-striped table-bordered table-hover table-condensed"  >
+								<tr>
+					<th width="30%">Name</th>
+					<td style="max-width:50px; word-wrap:break-word;">Lisa Achleitner</td>
+				</tr>
+												<tr>
+					<th width="30%">Adresse</th>
+					<td style="max-width:50px; word-wrap:break-word;">Schulstraße 180</td>
+				</tr>
+												<tr>
+					<th width="30%">Stadt</th>
+					<td style="max-width:50px; word-wrap:break-word;">4600 Wels</td>
+				</tr>
+												<tr>
+					<th width="30%">Telefon</th>
+					<td style="max-width:50px; word-wrap:break-word;">0677 3656576</td>
+				</tr>
+							</table>
+			
+			<table class="table table-striped table-bordered table-hover table-condensed" >
+								<tr>
+					<th width="30%">Geburtsdatum</th>
+					<td>12/04/1961</td>
+				</tr>
+												<tr>
+					<th width="30%">Email</th>
+					<td style="max-width:50px; word-wrap:break-word;">lisa.achleitner@gmx.com</td>
+				</tr>
+							</table>
+			
+						
+						<table class="table table-striped table-bordered table-hover table-condensed">
+				
+				<tr>
+					<th width="30%">Bank</th>
+					<td style="max-width:50px; word-wrap:break-word;">Raiffeisenlandesbank Oberösterreich AG</td>
+				</tr>
+				<tr>
+					<th width="30%">BLZ</th>
+					<td style="max-width:50px; word-wrap:break-word;">34000</td>
+				</tr>
+				<tr>
+					<th width="30%">Kontonummer</th>
+					<td style="max-width:50px; word-wrap:break-word;">88316252427</td>
+				</tr>
+				<tr>
+					<th width="30%">IBAN</th>
+					<td style="max-width:50px; word-wrap:break-word;">
+						<div class="row">
+							
+							<div class="col-md-8">
+								AT683400088316252427								<form target="_blank" id="bic2" action="" method="post">
+									<input type="hidden" size="30" name="remoteiban" autocomplete="off" value="AT683400088316252427">
+									<a target="_blank" href="https://identinator.com/iban.php?iban=AT683400088316252427">(Valid Check)</a>
+								</form> 
+							</div>
+							<div class="col-md-4">
+								<button class="btn btn-primary btn-xs" data-clipboard-text="AT683400088316252427">kopieren</button>
+							</div>
+							
+							
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th width="30%">BIC</th>
+					<td style="max-width:50px; word-wrap:break-word;">
+						
+						<div class="row">
+							<div class="col-md-8">RZOOAT2LXXX</div><div class="col-md-4"><button class="btn btn-primary btn-xs"  data-clipboard-text="RZOOAT2LXXX">kopieren</button></div>
+						</div>
+						
+					</td>
+				</tr>
+				
+				
+			</table>
+						
+			<table class="table table-striped table-bordered table-hover table-condensed" >
+								<tr>
+					<th width="30%">CC.</th>
+					<td style="max-width:50px; word-wrap:break-word;">Visa</td>
+				</tr>
+												<tr>
+					<th width="30%">No.</th>
+					<td style="max-width:50px; word-wrap:break-word;">4020387456718195</td>
+				</tr>
+												<tr>
+					<th width="30%">CVV2</th>
+					<td style="max-width:50px; word-wrap:break-word;">945</td>
+				</tr>
+												<tr>
+					<th width="30%">Exp</th>
+					<td style="max-width:50px; word-wrap:break-word;">12/29</td>
+				</tr>
+							</table>
+			
+		</div>
+	</div>
+	<style type="text/css">
+		.well{
+		padding:10px !important;
+		}
+		.table td{
+		padding:5px !important;
+		}
+	</style>
+	<div style="margin-top:5px;margin-bottom:5px;"><center><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Fake it Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-1453975364580001"
+     data-ad-slot="3475221376"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center></div>
+	</br>
+	<div class="well">
+		
+		<table>
+			
+			<tbody>
+				
+				
+				<tr>
+					
+					<td>
+						<b><u>Hinweise:</u></b><br>
+						
+						<ul>
+							
+							<li> Bundesstaat (in Klammern), Postleitzahl, Stadt, evtl. Stra&szlig;e und Telefonvorwahl passen zusammen.</li>
+							<li> Die Email-Adresse ist einfach aus Vorname.Nachname@Anbieter.Endung generiert. </li>
+							<li> Die Namen, sowie das Geburtsdatum sind frei generiert. Mehr Infos dazu gibts unter <a href="infos.php">Infos</a>.
+							</li>
+							<li> Infos &uuml;ber die Bankkonten/Kreditkarten gibt es unter <a href="infos.php">Infos</a>. Siehe auch <a href="rechtliches.php">Rechtliches</a>.</li>
+							
+						</ul>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+	
+</div>
+</div>
+<div id="rightskyscraper"><center></center></div>
+﻿</div>
+<center style="display: none">
+		
+	<!-- IP Counter Code for www.fake-it.cc -->
+<span id="fc-12751"></span>
+<script>
+var fcr = Math.floor(Math.random()*99999999999);
+var _fcc = _fcc || []; _fcc.push(["12751"]); _fcc.push(["trans"]);(function(){
+var fc = document.createElement("script");fc.async = true;
+fc.src = "https://www.fastcounter.de/fcount.php?rnd=" + fcr;
+var sc = document.getElementById("fc-12751");
+sc.appendChild(fc);
+})();</script>
+<noscript>
+<a href="https://www.fastcounter.de/stats/12751/dashboard" rel="nofollow" style="display: none;" target="_blank" title="Echtzeit-Counter"><img src="https://www.fastcounter.de/fcounter.php?id=12751;" alt="Echtzeit-Counter" title="Echtzeit-Counter"></a>
+</noscript>
+	<!-- IP Counter Code for www.fake-it.cc -->
+	
+	<!--/.GOOGLE Sticky Code -->
+	<div id="stickyunit">    
+<script async  src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>         
+ <!­­ example­ad­unit ­­>          <ins class="adsbygoogle"               style="display:inline­block;width:160px;height:600px"              
+ data­ad­client="ca­pub­1234"               data­ad­slot="5678"></ins>          <script>            (adsbygoogle = window.adsbygoogle || []).push({});       
+   </script>        </div> 
+<!--/.GOOGLE Sticky Code -->
+</center>
+
+<script type="text/javascript">
+	
+	function showTooltip(elem, msg) {
+		elem.setAttribute('class', 'btn btn-primary btn-xs tooltipped tooltipped-s');
+		elem.setAttribute('aria-label', msg);
+	}
+	
+	function fallbackMessage(action) {
+		var actionMsg = '';
+		var actionKey = (action === 'cut' ? 'X' : 'C');
+		if (/iPhone|iPad/i.test(navigator.userAgent)) {
+			actionMsg = 'No support :(';
+			} else if (/Mac/i.test(navigator.userAgent)) {
+			actionMsg = 'Press ⌘-' + actionKey + ' to ' + action;
+			} else {
+			actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
+		}
+		return actionMsg;
+	}
+	
+	
+	var clipboard = new Clipboard('.btn');
+	clipboard.on('success', function(e) {
+		e.clearSelection();
+		
+		showTooltip(e.trigger, 'Copied!');
+	});
+	clipboard.on('error', function(e) {
+		
+		showTooltip(e.trigger, fallbackMessage(e.action));
+	});
+	
+	
+	
+	$(document).ready(function(){
+		
+		$(window).on('resize', function(e){
+			
+			
+			var rt_content = ($(window).width() - ($('.container').offset().left + $('.container').outerWidth()));
+			var rt_rightbanner = ($(window).width() - ($('#rightskyscraper').offset().left + $('#rightskyscraper').outerWidth()));
+			
+			if( rt_content < 182.5 )
+			{
+				$('#rightskyscraper').hide();
+			}
+			else
+			{
+				
+				
+				$('#rightskyscraper').show();
+				
+				
+				
+			}
+			
+			if($('.container').offset().left > 130)
+			{
+				
+				$('#leftskyscraper').show();
+				
+				var offset = $('.container').offset().left;
+				var freespace = ($('.container').offset().left - $('#leftskyscraper').find('img')[0].width);
+				var margin = (freespace/2);
+				//$('#leftskyscraper').attr('style', 'margin-left:'+margin+'px !important');
+				//$('#leftskyscraper').css('margin-right', margin+'px');
+				
+			}
+			else
+			{
+				$('#leftskyscraper').hide();
+			}
+			
+			
+		});
+		
+		$(window).trigger('resize');
+		
+	});
+	
+</script>
+</body></html>
+		
