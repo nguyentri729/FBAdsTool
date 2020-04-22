@@ -67,7 +67,13 @@ $("#auto50:first").change(function () {
   }
 });
 
-
+$("#shareAccountAds:first").change(function () {
+  if (!$(this)[0].checked) {
+    $("#shareAccountAdsOptions").hide();
+  } else {
+    $("#shareAccountAdsOptions").show();
+  }
+});
 
 /**
  * button click

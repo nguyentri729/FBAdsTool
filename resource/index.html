@@ -107,7 +107,11 @@
 
           <input type="checkbox" class="myinput" name="auto50" id="auto50" />
           <label for="auto50">Auto 50</label> <br />
+          <input type="checkbox" class="myinput" name="shareAccountAds" id="shareAccountAds" />
+          <label for="shareAccountAds">Share TK Ads</label> <br />
+
           <hr />
+
           <div id="createAccountAdsOptions" style="display: none;">
             <div class="box-input">
               <label><b>Đ.vị Tiền:</b> </label>
@@ -147,6 +151,16 @@
             <input type="text" id="auto50_idPost" name="auto50_idPost" style="width: 100%;">
 
           </div>
+
+          <div id="shareAccountAdsOptions" style="display: none;">
+            <label for="shareAccountAds_accountMain"> <b> * Account chính: </b></label>
+            <textarea placeholder="account" name="shareAccountAds_accountMain" id="shareAccountAds_accountMain" style="width: 100%;"></textarea>
+            <label for="shareAccountAds_pathExcel"> <b> * Path Excel: </b></label>
+            <input type="text" id="shareAccountAds_pathExcel" name="shareAccountAds_pathExcel" style="width: 100%;" value="camp.csv">
+            
+          </div>
+          
+
 
         </div>
       </div>

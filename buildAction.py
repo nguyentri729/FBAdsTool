@@ -14,6 +14,7 @@ import re
 import time
 import requests
 import pathlib
+import os
 # code by nguyentri729
 # 17/04/2020
 # auto ads facebook
@@ -469,8 +470,7 @@ class autofb:
             FriendRequestAdd.click()
             return True
         except:
-            return False
-    
+            return False  
     def acceptFriends(self, uid):
         self.driver.get('https://www.facebook.com/friends/requests/')
         try:
@@ -480,7 +480,52 @@ class autofb:
             return True
         except:
             return False
+    
+    #import ads excel
+    def importAdsExcel(self, path = ''):
+        self.driver.get('https://www.facebook.com/adsmanager/manage/campaigns')
+        
+        campaign_group_tab = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//li[@data-testid='campaign_group_tab']")))
+        campaign_group_tab.click()
+        
+        time.sleep(1)
+        for index in range(1, 9):
+            webdriver.ActionChains(self.driver).send_keys(Keys.TAB).perform()
+            time.sleep(0.3)
+        webdriver.ActionChains(self.driver).send_keys(Keys.ENTER).perform()
+        time.sleep(1)
+        webdriver.ActionChains(self.driver).send_keys(Keys.ARROW_UP + Keys.ARROW_UP + Keys.ENTER).perform()
+        uploadExcel = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='import-file-input']")))
+        uploadExcel.send_keys(os.path.abspath("camp.csv"))
+
+        time.sleep(1)
+        importButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='import-button']")))
+        importButton.click()
+
+        WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH, "//div[@data-testid='import-progress-dialog']")))
+        reviewButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='review-changes-button']")))
+        reviewButton.click()
+        
+        #label click
+        checkboxErrorPost = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//label[@style='letter-spacing: normal; color: rgb(28, 30, 33); font-size: 12px; font-family: Arial, sans-serif; line-height: 16px; font-weight: normal;']")))
+        checkboxErrorPost.click()
+
+        time.sleep(1)
+        publishButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@data-testid='continue-publish-button']")))
+        publishButton.click()
+
+
+        #data-testid="continue-publish-button"
+
+        #data-testid="import-progress-dialog"
+
+        # importExportButton = WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH, "//li[@data-testid='export-import-menu-item\/import-label']")))
+        # importExportButton.click()
+        time.sleep(1000)
+
+
     def auto50MainAccoutAutoAction(self, uid):
+        #self.importAdsExcel()
         if uid == '':
             return False
         self.addFriends(uid)
@@ -496,12 +541,24 @@ class autofb:
                 self.auto50MainAccoutAutoAction(uid)
             time.sleep(5)
     def auto50CloneAccountAuto(self):
-        uidMain = self.readFileMainID().split('|')
-        self.acceptFriends(uidMain[0])
-        self.createPage()
-        self.adsActive()
-        self.adsCreatePost()
-        self.addMainCloneAds(uidMain[1])
+        
+
+    def shareAccountAdsMainAutoAction(self):
+
+
+    #main account call actions
+    def shareAccountAdsMainAuto(self):
+        #read clone uid 
+        #and connect
+        uid = self.readFileCloneID()
+        self.shareAccountAdsMainAutoAction(uid)
+        while(True):
+            readFile = self.readFileCloneID()
+            if  readFile != uid:
+                uid = readFile
+                self.shareAccountAdsMainAutoAction(uid)
+            time.sleep(5)
+    
     def quit(self):
         self.driver.stop_client()
         self.driver.close()
@@ -557,6 +614,7 @@ auto50 = False
 proxyIP = ''
 fakeURL = 'https://fake-it.ws/at/'
 createAdsAccount = False
+shareAccountAds = False 
 keyActive = ''
 for index in range(1, len(sys.argv)):
     if sys.argv[index] == '-credit':
@@ -592,16 +650,30 @@ for index in range(1, len(sys.argv)):
         checkKey = True
     if sys.argv[index] == '-auto50':
         auto50 = True 
-    if sys.argv[index] == '-auto50TypeAcc':
+    if sys.argv[index] == '-typeAcc':
         #main - clone
-        auto50TypeAcc = sys.argv[index + 1]
-
+        typeAcc = sys.argv[index + 1]
+    if sys.argv[index] == '-shareAccountAds':
+        shareAccountAds = True
 
 #auto50 
 if auto50:
-    if auto50TypeAcc == 'main':
+    if typeAcc == 'main':
         fbMain = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'left')
         fbMain.login(account)
+        fbMain.auto50MainAccoutAuto()
+    else:
+        fbClone = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'right')
+        fbClone.login(account)
+        fbClone.auto50CloneAccountAuto()
+    exit()
+
+#auto50 
+if shareAccountAds:
+    if typeAcc == 'main':
+        fbMain = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'left')
+        fbMain.login(account)
+        
         fbMain.auto50MainAccoutAuto()
     else:
         fbClone = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'right')
