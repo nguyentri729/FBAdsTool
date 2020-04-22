@@ -13,7 +13,7 @@ async function createWindow() {
   if (keyActive != '') {
     showWindow()
   
-    win.webContents.openDevTools();
+    //win.webContents.openDevTools();
   }else{
     activeWindow = new BrowserWindow({
       webPreferences: {
