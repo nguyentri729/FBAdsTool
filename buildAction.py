@@ -32,7 +32,6 @@ class autofb:
         if postion == 'left':
             option.add_argument("--window-position=0,0")
         else:
-            print('right')
             option.add_argument("--window-position=960,0")
 
         # Pass the argument 1 to allow and 2 to block
@@ -51,10 +50,6 @@ class autofb:
             prox.add_to_capabilities(capabilities)
         self.driver = webdriver.Chrome(
             options=option, executable_path=r".\\chromedriver.exe", desired_capabilities=capabilities)
-
-    # Login with account
-    # data (array)
-    # type (string): 'account', 'cookie'
 
     def testChangeIP(self):
         self.driver.get('https://api.myip.com/')
@@ -79,7 +74,7 @@ class autofb:
                 """document.getElementsByTagName('body')[0].innerHTML = '<div style="text-align: center; padding: 10%; font-size: 25px; color: red"><h1 style="font-size: 50px; color: red">KEY SAI HOẶC HẾT HẠN</h1><br><a href="https://www.facebook.com/Duc.EUMedia">Liên hệ: Nguyễn Thái Đức</a></div>'""")
             time.sleep(1000)
             return False
-        data['loginType'] = 'account'
+        
         if data['loginType'] == 'cookie':
             cookies = data['cookie'].split(';')
             for cookie in cookies:
@@ -608,11 +603,13 @@ class autofb:
             time.sleep(5)
         return True
 
-    def shareAccountAdsCloneAutoAction(self, uid, name):
+    def shareAccountAdsCloneAutoAction(self, uid, name, moneyTypeIndex,timeIndex, countryIndex):
         self.acceptFriends(uid)
         self.addMainCloneAds(name)
-        self.addAdsAccount()
+        self.addAdsAccount(moneyTypeIndex,timeIndex, countryIndex)
         self.writeFileisDone()
+        time.sleep(5)
+        self.quit()
         return True
 
     # main account call actions
@@ -628,14 +625,13 @@ class autofb:
                 self.shareAccountAdsMainAutoAction(uid)
             time.sleep(5)
 
-    def shareAccountAdsCloneAuto(self, uid):
+    def shareAccountAdsCloneAuto(self, uid, moneyTypeIndex = '12', timeIndex='61', countryIndex='13'):
         while(True):
             readFileMainID = self.readFileMainID()
             checkAction = self.checkCloneActionDone(uid, 'ADD_FRIEND')
-            print(checkAction)
             if readFileMainID != '' and checkAction:
                 mainInfo = readFileMainID.split('|')
-                self.shareAccountAdsCloneAutoAction(mainInfo[0], mainInfo[1])
+                self.shareAccountAdsCloneAutoAction(mainInfo[0], mainInfo[1], moneyTypeIndex,timeIndex, countryIndex)
                 break
             time.sleep(5)
 
@@ -813,13 +809,11 @@ if shareAccountAds:
             result['msg'] = 'login fail'
     else:
         fbClone = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'right')
+        account['loginType'] = 'account'
         fbClone.login(account)
         fbInfo = fbClone.getInfo('clone')
-        print('login Info')
-        print(fbInfo)
         if fbInfo:
-            print('here login ')
-            fbClone.shareAccountAdsCloneAuto(fbInfo['uid'])
+            fbClone.shareAccountAdsCloneAuto(fbInfo['uid'], moneyIndex, timeIndex, countryIndex)
             # update message
             result['status'] = 'success'
             result['msg'] = ''

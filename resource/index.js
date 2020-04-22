@@ -21,7 +21,7 @@ var isCredit = false; //using add credit
 var list_credit;
 var listProxy;
 var stop = true;
-
+var shareAccountAds = false;
 /**
  * Function helper
  */
@@ -67,6 +67,41 @@ $("#auto50:first").change(function () {
   }
 });
 
+$("#shareAccountAds_accountMain:first").change(function () {
+
+  
+ 
+
+  
+  try {
+    const mainAccount = $(this)[0].value.split('|')
+    const account = {
+      username: mainAccount[0],
+      password: mainAccount[1],
+      secret: mainAccount[2],
+      cookie: mainAccount[3],
+      loginType: 'account'
+    };
+    console.log(account)
+    ipcRenderer.send(
+      "CALL_ACTION",
+      JSON.stringify({
+        index: 'noIndex',
+        data: `-acc ${btoa(JSON.stringify(account))} -shareAccountAds -typeAcc main`,
+      })
+    );
+  } catch (error) {
+    console.log(error)
+    alert('Chọn đúng format acc')
+  }
+
+
+
+
+  
+})
+
+
 $("#shareAccountAds:first").change(function () {
   ipcRenderer.send("GET_CONTRIES_OPTIONS", "");
   ipcRenderer.send("GET_MONEYTYPE_OPTIONS", "");
@@ -75,6 +110,7 @@ $("#shareAccountAds:first").change(function () {
     $("#shareAccountAdsOptions").hide();
     $("#createAccountAdsOptions").hide()
   } else {
+
     $("#shareAccountAdsOptions").show();
     $("#createAccountAdsOptions").show()
   }
@@ -219,7 +255,7 @@ $("#paste_account").click(function () {
   }
   for (let index = 0; index < list_account.length; index++) {
     const account = list_account[index].split("|");
-    const vtri = ++dem;
+    
     if (
       account[1] == undefined &&
       account[2] == undefined &&
@@ -228,7 +264,7 @@ $("#paste_account").click(function () {
       alert("Copy đúng định dạng \n User|Pass|2Fa|Cookie");
       break;
     }
-
+    const vtri = ++dem;
     //check creadit
     if (isCredit) {
       var moreOptions = `
@@ -375,14 +411,26 @@ $("#start").click(async function (e) {
         };
         moreString = "-credit " + btoa(JSON.stringify(cardInfo));
       }
-
-      if ($("#createAccountAds")[0].checked) {
-        moreString = `-createAdsAccount -moneyIndex ${
-          $("#moneyTypeOptions")[0].value
-        } -timeIndex ${$("#timeZoneOptions")[0].value} -countryIndex ${
-          $("#contryOptions")[0].value
-        } -fakeURL ${$("#fakeIT")[0].value}`;
+      try {
+        if ($("#createAccountAds")[0].checked) {
+          moreString = `-createAdsAccount -moneyIndex ${
+            $("#moneyTypeOptions")[0].value
+          } -timeIndex ${$("#timeZoneOptions")[0].value} -countryIndex ${
+            $("#contryOptions")[0].value
+          } -fakeURL ${$("#fakeIT")[0].value}`;
+        }
+  
+        if ($("#shareAccountAds")[0].checked) {
+          moreString = `-shareAccountAds -typeAcc clone -moneyIndex ${
+            $("#moneyTypeOptions")[0].value
+          } -timeIndex ${$("#timeZoneOptions")[0].value} -countryIndex ${
+            $("#contryOptions")[0].value
+          } -fakeURL ${$("#fakeIT")[0].value}`;
+        }
+      } catch (error) {
+        alert('Lỗi thử lại')
       }
+      
 
       //hide window options
       if ($("#hideWindow")[0].checked) {

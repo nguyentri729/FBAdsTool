@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain, shell } = require("electron");
 const { exec } = require("child_process");
 
-require("electron-reload")(__dirname);
+// require("electron-reload")(__dirname);
 
 const fs = require("fs");
 var win;
@@ -41,6 +41,7 @@ const showWindow = function() {
   win.maximize();
   win.setMenuBarVisibility(false);
   win.loadFile("./resource/index.html");
+  //win.webContents.openDevTools();
 }
 app.allowRendererProcessReuse = true;
 app.whenReady().then(() => {
@@ -101,7 +102,7 @@ ipcMain.on("CALL_ACTION", async (event, arg) => {
   const account = JSON.parse(arg);
   fs.writeFile(
     "./logs/" + new Date().getTime().toString() + "_logs.txt",
-    `python buildAction.py ${account.data}`,
+    `buildAction.exe ${account.data}`,
     function (err) {
       console.log(err);
     }
@@ -109,7 +110,7 @@ ipcMain.on("CALL_ACTION", async (event, arg) => {
 
   const callPythonFile = function () {
     // return exec(`buildAction.exe ${account.data} -keyActive ${keyActive}`);
-    return exec(`python ${__dirname}\\buildAction.py ${account.data} -keyActive ${keyActive}`);
+    return exec(`${__dirname}\\buildAction.exe ${account.data} -keyActive ${keyActive}`);
   };
 
   const proc = callPythonFile();

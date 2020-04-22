@@ -44,56 +44,7 @@
 <body>
   <div class="main">
     <div class="left">
-      <div class="box">
-        <div class="box-header">
-          Tùy chỉnh
-        </div>
-        <div class="box-body">
-          <div class="box-input">
-            <label><b>Số luồng:</b> </label><input type="number" id="thread_number" value=1 /> <br /><br />
-          </div>
 
-          <div class="box-input">
-            <label><b>Đăng nhập:</b> </label>
-
-            <select id="login_type">
-              <option value="all">Tự động</option>
-              <option value="account">Account</option>
-              <option value="cookie">Cookie</option>
-            </select><br />
-          </div>
-          <input type="checkbox" class="myinput" name="hideWindow" id="hideWindow" />
-          <label for="hideWindow">Ẩn trình duyệt</label> <br />
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="box-header">
-          IP
-        </div>
-        <div class="box-body">
-          <div class="box-input">
-            <label><b>Đổi IP sau </b>:</b> </label><input type="number" value="1" id="changeIpAfter" /> <br /><br />
-          </div>
-
-          <div class="box-input">
-            <label><b>Change IP:</b> </label>
-
-            <select id="change_ip_select">
-              <option value="no_change">Không change IP</option>
-
-              <option value="proxy">Proxy</option>
-              <option value="dcom">Dcom</option>
-            </select><br />
-
-
-          </div>
-          <textarea style="width: 100%; display: none;" placeholder="proxy list" id="proxy_list"></textarea>
-          <button id="sayTestChangeIP">Test đổi IP</button>
-          <p> <b>Tiến trình</b> : <span id="changeIPStatus"></span></p>
-
-        </div>
-      </div>
       <div class="box">
         <div class="box-header">
           Chức năng
@@ -154,42 +105,66 @@
 
           <div id="shareAccountAdsOptions" style="display: none;">
             <label for="shareAccountAds_accountMain"> <b> * Account chính: </b></label>
-            <textarea placeholder="account" name="shareAccountAds_accountMain" id="shareAccountAds_accountMain" style="width: 100%;"></textarea>
+            <input placeholder="account" name="shareAccountAds_accountMain" id="shareAccountAds_accountMain" style="width: 100%; height: 50px;" />
             <label for="shareAccountAds_pathExcel"> <b> * Path Excel: </b></label>
-            <input type="text" id="shareAccountAds_pathExcel" name="shareAccountAds_pathExcel" style="width: 100%;" value="camp.csv">
+            <input type="text" id="shareAccountAds_pathExcel" name="shareAccountAds_pathExcel" style="width: 100%;" value="camp.csv" disabled>
 
           </div>
-          <div id="createAccountAdsOptions" style="display: none;">
-            <div class="box-input">
-              <label><b>Đ.vị Tiền:</b> </label>
-
-              <select id="moneyTypeOptions">
-
-              </select><br />
-            </div>
-            <div class="box-input">
-              <label><b>T.Zone:</b> </label>
-              <select id="timeZoneOptions">
-
-              </select><br />
-            </div>
-
-            <div class="box-input">
-              <label><b>Nước:</b> </label>
-              <select id="contryOptions">
-              </select><br />
-            </div>
-
-
-            <input type="text" style="width: 100%;" name="fakeIT" id="fakeIT" value="https://fake-it.ws/at/">
-
-
-          </div>
+          
 
 
         </div>
       </div>
+      <div class="box">
+        <div class="box-header">
+          Tùy chỉnh
+        </div>
+        <div class="box-body">
+          <div class="box-input">
+            <label><b>Số luồng:</b> </label><input type="number" id="thread_number" value=1 /> <br /><br />
+          </div>
 
+          <div class="box-input">
+            <label><b>Đăng nhập:</b> </label>
+
+            <select id="login_type">
+              <option value="all">Tự động</option>
+              <option value="account">Account</option>
+              <option value="cookie">Cookie</option>
+            </select><br />
+          </div>
+          <input type="checkbox" class="myinput" name="hideWindow" id="hideWindow" />
+          <label for="hideWindow">Ẩn trình duyệt</label> <br />
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-header">
+          IP
+        </div>
+        <div class="box-body">
+          <div class="box-input">
+            <label><b>Đổi IP sau </b>:</b> </label><input type="number" value="1" id="changeIpAfter" /> <br /><br />
+          </div>
+
+          <div class="box-input">
+            <label><b>Change IP:</b> </label>
+
+            <select id="change_ip_select">
+              <option value="no_change">Không change IP</option>
+
+              <option value="proxy">Proxy</option>
+              <option value="dcom">Dcom</option>
+            </select><br />
+
+
+          </div>
+          <textarea style="width: 100%; display: none;" placeholder="proxy list" id="proxy_list"></textarea>
+          <button id="sayTestChangeIP">Test đổi IP</button>
+          <p> <b>Tiến trình</b> : <span id="changeIPStatus"></span></p>
+
+        </div>
+      </div>
       <div class="box">
         <div class="box-header">
           Điều khiển
