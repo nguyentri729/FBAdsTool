@@ -526,7 +526,7 @@ class autofb:
             return False
 
     # import ads excel
-    def importAdsExcel(self, idCamp=''):
+    def importAdsExcel(self, idCamp='', excelPath = 'camp.csv'):
         self.driver.get('https://www.facebook.com/adsmanager/manage/campaigns?act='+idCamp + '')
         try:
             campaign_group_tab = WebDriverWait(self.driver, 10).until(
@@ -543,22 +543,21 @@ class autofb:
                 Keys.ARROW_UP + Keys.ARROW_UP + Keys.ENTER).perform()
             uploadExcel = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
                 (By.XPATH, "//input[@data-testid='import-file-input']")))
-            uploadExcel.send_keys(os.path.abspath("camp.csv"))
+            uploadExcel.send_keys(os.path.abspath(excelPath))
 
             time.sleep(1)
             importButton = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//button[@data-testid='import-button']")))
             importButton.click()
 
-            WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located(
-                (By.XPATH, "//div[@data-testid='import-progress-dialog']")))
             try:
                 WebDriverWait(self.driver, 10).until(EC.invisibility_of_element_located((By.XPATH, "//div[@data-testid='import-progress-dialog']")))
+                reviewButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+                    (By.XPATH, "//button[@data-testid='review-changes-button']")))
+                reviewButton.click()
             except:
+                self.driver.execute_script("""document.querySelector("button[data-testid='review-changes-button']")""")
                 pass
-            reviewButton = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
-                (By.XPATH, "//button[@data-testid='review-changes-button']")))
-            reviewButton.click()
 
             # label click
             checkboxErrorPost = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
@@ -572,27 +571,6 @@ class autofb:
         except:
             pass
     def auto50MainAccoutAutoAction(self, uid):
-        # self.importAdsExcel()
-        if uid == '':
-            return False
-        self.addFriends(uid)
-        return True
-
-    def auto50MainAccoutAuto(self):
-        # auto 50 main auto
-        uid = self.readFileCloneID()
-        self.auto50MainAccoutAutoAction(uid)
-        while(True):
-            readFile = self.readFileCloneID()
-            if readFile != uid:
-                uid = readFile
-                self.auto50MainAccoutAutoAction(uid)
-            time.sleep(5)
-
-    def auto50CloneAccountAuto(self):
-        return True
-
-    def shareAccountAdsMainAutoAction(self, uid):
         if uid == '':
             return False
         self.addFriends(uid)
@@ -600,7 +578,45 @@ class autofb:
         while True:
             nowID = self.readFileisDone()
             if initialID != nowID:
-                self.importAdsExcel(nowID)
+                self.importAdsExcel(nowID, pathExcel)
+                initialID = nowID
+                break
+            time.sleep(5)
+        return True
+
+    def auto50MainAccoutAuto(self, pathExcel):
+        # read clone uid
+        # and connect
+        uid = self.readFileCloneID()
+        self.auto50MainAccoutAutoAction(uid, pathExcel)
+        while(True):
+            readFile = self.readFileCloneID()
+            if readFile != uid:
+                uid = readFile
+                self.auto50MainAccoutAutoAction(uid, pathExcel)
+            time.sleep(5)
+
+    def auto50CloneAccountAuto(self, uid, credit, changeMoney):
+        while(True):
+            readFileMainID = self.readFileMainID()
+            checkAction = self.checkCloneActionDone(uid, 'ADD_FRIEND')
+            if readFileMainID != '' and checkAction:
+                mainInfo = readFileMainID.split('|')
+                self.auto50CloneAccountAutoAction(mainInfo[0], mainInfo[1], credit, changeMoney)
+                break
+            time.sleep(5)
+    def auto50CloneAccountAutoAction(self, uid, name, credit, changeMoney):
+
+        return True
+    def shareAccountAdsMainAutoAction(self, uid, pathExcel):
+        if uid == '':
+            return False
+        self.addFriends(uid)
+        initialID = self.readFileisDone()
+        while True:
+            nowID = self.readFileisDone()
+            if initialID != nowID:
+                self.importAdsExcel(nowID, pathExcel)
                 initialID = nowID
                 break
             time.sleep(5)
@@ -608,26 +624,27 @@ class autofb:
 
     def shareAccountAdsCloneAutoAction(self, uid, name, moneyTypeIndex,timeIndex, countryIndex):
         self.acceptFriends(uid)
-        
         self.addAdsAccount(moneyTypeIndex,timeIndex, countryIndex)
         time.sleep(3)
         self.addMainCloneAds(name)
-        time.sleep(3)
+        time.sleep(10)
         self.quit()
         return True
 
     # main account call actions
-    def shareAccountAdsMainAuto(self):
+    def shareAccountAdsMainAuto(self, pathExcel):
         # read clone uid
         # and connect
         uid = self.readFileCloneID()
-        self.shareAccountAdsMainAutoAction(uid)
+        self.shareAccountAdsMainAutoAction(uid, pathExcel)
         while(True):
             readFile = self.readFileCloneID()
             if readFile != uid:
                 uid = readFile
-                self.shareAccountAdsMainAutoAction(uid)
+                self.shareAccountAdsMainAutoAction(uid, pathExcel)
             time.sleep(5)
+
+
 
     def shareAccountAdsCloneAuto(self, uid, moneyTypeIndex = '12', timeIndex='61', countryIndex='13'):
         while(True):
@@ -639,6 +656,8 @@ class autofb:
                 break
             time.sleep(5)
 
+
+    
     def quit(self):
         self.driver.stop_client()
         self.driver.close()
@@ -743,7 +762,7 @@ fakeURL = 'https://identinator.com/?for_country=aut'
 createAdsAccount = False
 shareAccountAds = False
 keyActive = ''
-
+pathExcel = ''
 for index in range(1, len(sys.argv)):
     if sys.argv[index] == '-credit':
         message_bytes = base64.b64decode(sys.argv[index + 1])
@@ -779,21 +798,45 @@ for index in range(1, len(sys.argv)):
     if sys.argv[index] == '-auto50':
         auto50 = True
     if sys.argv[index] == '-typeAcc':
-        # main - clone
         typeAcc = sys.argv[index + 1]
     if sys.argv[index] == '-shareAccountAds':
         shareAccountAds = True
-
+    if sys.argv[index] == '-pathExcel':
+        pathExcel = sys.argv[index + 1]
+    if sys.argv[index] == '-auto50.changeMoney':
+        if sys.argv[index + 1] == 'true':
+            auto50ChangeMoney = True
+        else:
+            auto50ChangeMoney = False
 # auto50
 if auto50:
+    result = {
+        'status': 'fail',
+        'msg': 'unknown error',
+    }
     if typeAcc == 'main':
         fbMain = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'left')
         fbMain.login(account)
-        fbMain.auto50MainAccoutAuto()
+        fbMain.deleteAllLogs()
+        fbInfo = fbMain.getInfo('main')
+        if fbInfo:
+            fbMain.auto50MainAccoutAuto(pathExcel)
+        else:
+            result['msg'] = 'login fail'
     else:
         fbClone = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'right')
+        account['loginType'] = 'account'
         fbClone.login(account)
-        fbClone.auto50CloneAccountAuto()
+        fbInfo = fbClone.getInfo('clone')
+        if fbInfo:
+            fbClone.auto50CloneAccountAuto(fbInfo['uid'], creditCard, auto50ChangeMoney)
+            # update message
+            result['status'] = 'success'
+            result['msg'] = ''
+        else:
+            result['msg'] = 'login fail'
+
+    print(json.dumps(result, indent=4, sort_keys=True))
     exit()
 
 # share account Ads
@@ -809,7 +852,7 @@ if shareAccountAds:
         fbMain.deleteAllLogs()
         fbInfo = fbMain.getInfo('main')
         if fbInfo:
-            fbMain.shareAccountAdsMainAuto()
+            fbMain.shareAccountAdsMainAuto(pathExcel)
         else:
             result['msg'] = 'login fail'
     else:

@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain, shell } = require("electron");
 const { exec } = require("child_process");
 
-// require("electron-reload")(__dirname);
+require("electron-reload")(__dirname);
 
 const fs = require("fs");
 var win;
@@ -41,7 +41,7 @@ const showWindow = function() {
   win.maximize();
   win.setMenuBarVisibility(false);
   win.loadFile("./resource/index.html");
-  //win.webContents.openDevTools();
+  win.webContents.openDevTools();
 }
 app.allowRendererProcessReuse = true;
 app.whenReady().then(() => {

@@ -10,6 +10,7 @@
   <link type="text/css" rel="stylesheet" href="./assets/jsgrid.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet" />
   <link type="text/css" rel="stylesheet" href="./assets/jsgrid-theme.min.css" />
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 <style>
   body {
@@ -42,9 +43,9 @@
 </style>
 
 <body>
-  <div class="main">
-    <div class="left">
-
+  
+  <div class="row" style="margin: 1%;">
+    <div class="col-md-2">
       <div class="box">
         <div class="box-header">
           Chức năng
@@ -85,86 +86,45 @@
             </div>
 
 
-            <input type="text" style="width: 100%;" name="fakeIT" id="fakeIT" value="https://identinator.com/?for_country=aut">
+            <input type="text" style="width: 100%;" name="fakeIT" id="fakeIT"
+              value="https://identinator.com/?for_country=aut">
 
 
           </div>
 
           <div id="auto50Options" style="display: none;">
-            
-            <label for="auto50_mainAccount"> <b> * Account chính: </b></label>
-            <textarea placeholder="account" name="auto50_mainAccount" id="auto50_mainAccount" style="width: 100%;"></textarea>
-            <label for="auto50_card"> <b> * Credit: </b></label> <br />
-            <input type="text" id="auto50_card" name="auto50_card" placeholder="STK | NGAY | NAM | CCV |..." style="width: 100%;"><br />
-            <label for="auto50_idPage"> <b> * IP Page: </b></label>
-            <input type="text" id="auto50_idPage" name="auto50_idPage" style="width: 100%;">
-            <label for="auto50_idPost"> <b> * IP Posts: </b></label>
-            <input type="text" id="auto50_idPost" name="auto50_idPost" style="width: 100%;">
 
+            <label for="auto50_mainAccount"> <b> * Account chính: </b></label>
+            <textarea placeholder="account" name="auto50_mainAccount" id="auto50_mainAccount"
+              style="width: 100%;"></textarea>
+            <label for="auto50_card"> <b> * Credit: </b></label> <br />
+            <input type="text" id="auto50_card" name="auto50_card" placeholder="STK | NGAY | NAM | CCV |..."
+              style="width: 100%;"><br />
+            <label for="auto50_patchExcel"> <b> * Path Excel: </b></label>
+            <input type="text" id="auto50_patchExcel" name="auto50_patchExcel" style="width: 100%;" value="ads.xlsx">
+            <label for="auto50_card"> <b> * Tùy chỉnh: </b></label> <br />
+            <input type="checkbox" class="myinput" name="auto50_changeMoney" id="auto50_changeMoney" />
+            <label for="auto50_changeMoney">Đổi tiền</label> <br />
+            <button style="background-color: coral; width: 100%;color: white; height: 40px;" id="startAuto50">Chạy acc
+              chính</button>
           </div>
 
           <div id="shareAccountAdsOptions" style="display: none;">
             <label for="shareAccountAds_accountMain"> <b> * Account chính: </b></label>
-            <input placeholder="account" name="shareAccountAds_accountMain" id="shareAccountAds_accountMain" style="width: 100%; height: 50px;" />
+            <input placeholder="account" name="shareAccountAds_accountMain" id="shareAccountAds_accountMain"
+              style="width: 100%; height: 50px;" />
             <label for="shareAccountAds_pathExcel"> <b> * Path Excel: </b></label>
-            <input type="text" id="shareAccountAds_pathExcel" name="shareAccountAds_pathExcel" style="width: 100%;" value="camp.csv" disabled>
-
+            <input type="text" id="shareAccountAds_pathExcel" name="shareAccountAds_pathExcel" style="width: 100%;"
+              value="camp.csv"> <br /><br />
+            <button style="background-color: brown; width: 100%;color: white; height: 40px;" id="startShareAcc">Chạy acc
+                chính</button>
           </div>
-          
+
 
 
         </div>
       </div>
-      <div class="box">
-        <div class="box-header">
-          Tùy chỉnh
-        </div>
-        <div class="box-body">
-          <div class="box-input">
-            <label><b>Số luồng:</b> </label><input type="number" id="thread_number" value=1 /> <br /><br />
-          </div>
 
-          <div class="box-input">
-            <label><b>Đăng nhập:</b> </label>
-
-            <select id="login_type">
-              <option value="all">Tự động</option>
-              <option value="account">Account</option>
-              <option value="cookie">Cookie</option>
-            </select><br />
-          </div>
-          <input type="checkbox" class="myinput" name="hideWindow" id="hideWindow" />
-          <label for="hideWindow">Ẩn trình duyệt</label> <br />
-        </div>
-      </div>
-
-      <div class="box">
-        <div class="box-header">
-          IP
-        </div>
-        <div class="box-body">
-          <div class="box-input">
-            <label><b>Đổi IP sau </b>:</b> </label><input type="number" value="1" id="changeIpAfter" /> <br /><br />
-          </div>
-
-          <div class="box-input">
-            <label><b>Change IP:</b> </label>
-
-            <select id="change_ip_select">
-              <option value="no_change">Không change IP</option>
-
-              <option value="proxy">Proxy</option>
-              <option value="dcom">Dcom</option>
-            </select><br />
-
-
-          </div>
-          <textarea style="width: 100%; display: none;" placeholder="proxy list" id="proxy_list"></textarea>
-          <button id="sayTestChangeIP">Test đổi IP</button>
-          <p> <b>Tiến trình</b> : <span id="changeIPStatus"></span></p>
-
-        </div>
-      </div>
       <div class="box">
         <div class="box-header">
           Điều khiển
@@ -175,8 +135,8 @@
           <button style="width: 100%; height: 40px; background-color: greenyellow;" id="start"><b>Bắt đầu</b></button>
           <button style="width: 100%; height: 40px; background-color: red; display: none;" id="stop"><b>Dừng
               lại</b></button>
-          <hr />
-          <button style="width: 100%; height: 40px;" id="reset">Reset</button>
+          
+          <button style="width: 100%; height: 40px; margin-top: 10px;" id="reset">Reset</button>
           <hr>
           <p style="color: darkgreen; display: inline;">success: <span id="count_success">0</span> | </p>
           <p style="color: red; display: inline;">fail: <span id="count_fail">0</span> |</p>
@@ -184,11 +144,11 @@
         </div>
       </div>
     </div>
-    <div class="right">
+
+    <div class="col-md-8">
       <div class="box">
         <div class="box-header">
           Danh sách clone
-
         </div>
         <div class="box-body" style="height: 600px;">
           <button style="margin: 10px" id="paste_account">
@@ -253,7 +213,60 @@
       </div>
 
     </div>
-  </div>
+
+    <div class="col-md-2">
+      <div class="box">
+        <div class="box-header">
+          Tùy chỉnh
+        </div>
+        <div class="box-body">
+          <div class="box-input">
+            <label><b>Số luồng:</b> </label><input type="number" id="thread_number" value=1 /> <br /><br />
+          </div>
+          <div class="box-input">
+            <label><b>Đăng nhập:</b> </label>
+
+            <select id="login_type">
+              <option value="all">Tự động</option>
+              <option value="account">Account</option>
+              <option value="cookie">Cookie</option>
+            </select><br />
+          </div>
+          <input type="checkbox" class="myinput" name="hideWindow" id="hideWindow" />
+          <label for="hideWindow">Ẩn trình duyệt</label> <br />
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-header">
+          IP
+        </div>
+        <div class="box-body">
+          <div class="box-input">
+            <label><b>Đổi IP sau </b>:</b> </label><input type="number" value="1" id="changeIpAfter" /> <br /><br />
+          </div>
+
+          <div class="box-input">
+            <label><b>Change IP:</b> </label>
+
+            <select id="change_ip_select">
+              <option value="no_change">Không change IP</option>
+
+              <option value="proxy">Proxy</option>
+              <option value="dcom">Dcom</option>
+            </select><br />
+
+
+          </div>
+          <textarea style="width: 100%; display: none;" placeholder="proxy list" id="proxy_list"></textarea>
+          <button id="sayTestChangeIP">Test đổi IP</button>
+          <p> <b>Tiến trình</b> : <span id="changeIPStatus"></span></p>
+
+        </div>
+      </div>
+    </div>
+  
+</div>
 </body>
 <script>
   window.$ = window.JQuery = require("./assets/jquery.min.js")

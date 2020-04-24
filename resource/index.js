@@ -67,39 +67,63 @@ $("#auto50:first").change(function () {
   }
 });
 
-$("#shareAccountAds_accountMain:first").change(function () {
-
-  
- 
-
-  
+$("#startShareAcc").click(function () {
   try {
-    const mainAccount = $(this)[0].value.split('|')
+    const mainAccount = $(this)[0].value.split("|");
     const account = {
       username: mainAccount[0],
       password: mainAccount[1],
       secret: mainAccount[2],
       cookie: mainAccount[3],
-      loginType: 'account'
+      loginType: "account",
     };
-    console.log(account)
+    console.log(account);
     ipcRenderer.send(
       "CALL_ACTION",
       JSON.stringify({
-        index: 'noIndex',
-        data: `-acc ${btoa(JSON.stringify(account))} -shareAccountAds -typeAcc main`,
+        index: "noIndex",
+        data: `-acc ${btoa(
+          JSON.stringify(account)
+        )} -shareAccountAds -typeAcc main -pathExcel ${
+          $("#shareAccountAds_pathExcel")[0].value
+        }`,
       })
     );
   } catch (error) {
-    console.log(error)
-    alert('Chọn đúng format acc')
+    console.log(error);
+    alert("Chọn đúng format acc");
   }
+});
+
+$("#startAuto50").click(function (e) {
+  try {
+    const mainAccount = $(this)[0].value.split("|");
+    const account = {
+      username: mainAccount[0],
+      password: mainAccount[1],
+      secret: mainAccount[2],
+      cookie: mainAccount[3],
+      loginType: "account",
+    };
+    console.log(account);
+    ipcRenderer.send(
+      "CALL_ACTION",
+      JSON.stringify({
+        index: "noIndex",
+        data: `-acc ${btoa(
+          JSON.stringify(account)
+        )} -auto50 -typeAcc main -pathExcel ${
+          $("#auto50_patchExcel")[0].value
+        }`,
+      })
+    );
+  } catch (error) {
+    console.log(error);
+    alert("Chọn đúng format acc");
+  }
+});
 
 
-
-
-  
-})
 
 
 $("#shareAccountAds:first").change(function () {
@@ -108,11 +132,10 @@ $("#shareAccountAds:first").change(function () {
   ipcRenderer.send("GET_TIMEZONES_OPTIONS", "");
   if (!$(this)[0].checked) {
     $("#shareAccountAdsOptions").hide();
-    $("#createAccountAdsOptions").hide()
+    $("#createAccountAdsOptions").hide();
   } else {
-
     $("#shareAccountAdsOptions").show();
-    $("#createAccountAdsOptions").show()
+    $("#createAccountAdsOptions").show();
   }
 });
 
@@ -255,7 +278,7 @@ $("#paste_account").click(function () {
   }
   for (let index = 0; index < list_account.length; index++) {
     const account = list_account[index].split("|");
-    
+
     if (
       account[1] == undefined &&
       account[2] == undefined &&
@@ -341,9 +364,6 @@ $('#lists_account input[type="checkbox"]').on("click", function () {
   }
 });
 
-
-
-
 $("#stop").click(function () {
   stop = true;
   $(this).hide();
@@ -419,7 +439,7 @@ $("#start").click(async function (e) {
             $("#contryOptions")[0].value
           } -fakeURL ${$("#fakeIT")[0].value}`;
         }
-  
+
         if ($("#shareAccountAds")[0].checked) {
           moreString = `-shareAccountAds -typeAcc clone -moneyIndex ${
             $("#moneyTypeOptions")[0].value
@@ -427,10 +447,18 @@ $("#start").click(async function (e) {
             $("#contryOptions")[0].value
           } -fakeURL ${$("#fakeIT")[0].value}`;
         }
+
+        if ($("#auto50")[0].checked) {
+          //credit card
+
+          const creditCard = $("#auto50_card")[0].value.split("|");
+        
+          const changeMoney = $("#auto50_changeMoney")[0].checked ? "true" : "false"
+          moreString = `-auto50 -typeAcc clone -auto50.changeMoney ${changeMoney} -credit ${btoa(JSON.stringify(creditCard))}`;
+        }
       } catch (error) {
-        alert('Lỗi thử lại')
+        alert("Lỗi thử lại");
       }
-      
 
       //hide window options
       if ($("#hideWindow")[0].checked) {
@@ -541,8 +569,8 @@ $("#start").click(async function (e) {
     console.log(error);
   }
 });
-/** 
- * 
+/**
+ *
  * IPC CONNECT
  * **/
 
