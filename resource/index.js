@@ -15,7 +15,7 @@ window.addEventListener("beforeunload", () => {
 $("#reset").click(function () {
   reload();
 });
-
+var mainAccount;
 var dem = 0;
 var isCredit = false; //using add credit
 var list_credit;
@@ -69,7 +69,7 @@ $("#auto50:first").change(function () {
 
 $("#startShareAcc").click(function () {
   try {
-    const mainAccount = $(this)[0].value.split("|");
+    mainAccount = $('#shareAccountAds_accountMain:first')[0].value.split('|')
     const account = {
       username: mainAccount[0],
       password: mainAccount[1],
@@ -97,7 +97,7 @@ $("#startShareAcc").click(function () {
 
 $("#startAuto50").click(function (e) {
   try {
-    const mainAccount = $(this)[0].value.split("|");
+    mainAccount = $('#auto50_mainAccount:first')[0].value.split('|')
     const account = {
       username: mainAccount[0],
       password: mainAccount[1],
@@ -441,23 +441,34 @@ $("#start").click(async function (e) {
         }
 
         if ($("#shareAccountAds")[0].checked) {
+
+        
+
           moreString = `-shareAccountAds -typeAcc clone -moneyIndex ${
             $("#moneyTypeOptions")[0].value
           } -timeIndex ${$("#timeZoneOptions")[0].value} -countryIndex ${
             $("#contryOptions")[0].value
-          } -fakeURL ${$("#fakeIT")[0].value}`;
+          } -fakeURL ${$("#fakeIT")[0].value} -mainID ${mainAccount[0]} -numberThread ${checkThread} -totalThread ${numberThread}`;
         }
 
         if ($("#auto50")[0].checked) {
           //credit card
 
           const creditCard = $("#auto50_card")[0].value.split("|");
-        
+          const cardInfo = {
+            cardName: "",
+            cardNumber: creditCard[0],
+            cardExperied: creditCard[1] + "/" + creditCard[2],
+            ccv: creditCard[3],
+            zipCode: creditCard[4]
+          };
+
           const changeMoney = $("#auto50_changeMoney")[0].checked ? "true" : "false"
-          moreString = `-auto50 -typeAcc clone -auto50.changeMoney ${changeMoney} -credit ${btoa(JSON.stringify(creditCard))}`;
+          moreString = `-auto50 -typeAcc clone -mainID ${mainAccount[0]} -auto50.changeMoney ${changeMoney} -credit ${btoa(JSON.stringify(cardInfo))} -numberThread ${checkThread} -totalThread ${numberThread}`;
         }
       } catch (error) {
-        alert("Lỗi thử lại");
+        console.log(error)
+        console.log(mainAccount)
       }
 
       //hide window options
@@ -513,6 +524,8 @@ $("#start").click(async function (e) {
         }
         checkChangeIP = 0;
       }
+
+     
       //check thread
       if (checkThread >= numberThread) {
         await new Promise(function (resolve, reject) {
@@ -520,7 +533,7 @@ $("#start").click(async function (e) {
           //wait callback_action
           ipcRenderer.on("CALLBACK_ACTION", function (event, arg) {
             arg = JSON.parse(arg);
-            console.log("data ne", arg.data);
+            
 
             if (arg.index) {
               try {

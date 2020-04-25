@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain, shell } = require("electron");
 const { exec } = require("child_process");
 
-require("electron-reload")(__dirname);
+// require("electron-reload")(__dirname);
 
 const fs = require("fs");
 var win;
@@ -102,7 +102,7 @@ ipcMain.on("CALL_ACTION", async (event, arg) => {
   const account = JSON.parse(arg);
   fs.writeFile(
     "./logs/" + new Date().getTime().toString() + "_logs.txt",
-    `buildAction.exe ${account.data}`,
+    `python buildAction.py ${account.data}`,
     function (err) {
       console.log(err);
     }

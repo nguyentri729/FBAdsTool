@@ -1,6 +1,14 @@
 
-import re
-url = 'https://www.facebook.com/ads/manager/account_settings/information/?act=3017526274992860&pid=p1&page=account_settings&tab=account_information'
-idCampRegex = r"https://www\.facebook\.com/ads/manager/account_settings/information/\?act=(.*?)&"
-idCamp = re.findall(idCampRegex, url)
-print(idCamp[0])
+from tinydb import TinyDB, Query
+#using tinydb
+db = TinyDB('cloneDB.json')
+# db.insert({
+#     'cloneUID': '1234',
+#     'mainUID' : '13445',
+#       'campID' : '1233213'
+#     'status' : 'ADDED'
+# })
+Clone = Query()
+#uid = db.search(Clone.mainUID == '1234' and  Clone.status== 'ADDED')
+db.update({'status' : 'DONE'}, Clone.status == 'ADDED' && )
+print(len(uid))
