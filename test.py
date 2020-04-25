@@ -1,14 +1,5 @@
-
-from tinydb import TinyDB, Query
-#using tinydb
-db = TinyDB('cloneDB.json')
-# db.insert({
-#     'cloneUID': '1234',
-#     'mainUID' : '13445',
-#       'campID' : '1233213'
-#     'status' : 'ADDED'
-# })
-Clone = Query()
-#uid = db.search(Clone.mainUID == '1234' and  Clone.status== 'ADDED')
-db.update({'status' : 'DONE'}, Clone.status == 'ADDED' && )
-print(len(uid))
+content = "document.querySelectorAll(\"input[data-testid='credit_card_number']\")[0].value='"+creditCard['cardNumber']+"';document.querySelectorAll(\"input[data-testid='credit_card_month']\")[0].value='"+cardExperied[0]+"';document.querySelectorAll(\"input[data-testid='credit_card_year']\")[0].value='" + \
+    cardExperied[0]+"';document.querySelectorAll(\"input[data-testid='credit_card_security_code']\")[0].value='" + \
+    creditCard['ccv'] + \
+    "';document.querySelectorAll(\"input[data-testid='zipCode']\")[0].value='" + \
+    creditCard['zipCode']+"';"

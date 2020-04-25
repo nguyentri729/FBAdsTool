@@ -41,7 +41,7 @@ class autofb:
             #     widthX = int(numberThread) * 150
             # option.add_argument("--window-position="+str(int(numberThread) * widthX)+","+str(heightY)+"")
             # print('goc ne')
-            option.add_argument("window-size=150,300")
+            option.add_argument("window-size=399,677")
             option.add_argument("--window-position=0,0")
         # Pass the argument 1 to allow and 2 to block
         option.add_experimental_option("prefs", {
@@ -182,38 +182,78 @@ class autofb:
         return cookieStr
 
     def addCredit(self, creditCard):
-        self.driver.get(
-            'https://www.facebook.com/ads/manager/account_settings/account_billing/')
-        # wait button show
-        addCreditButton = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//button[@data-testid='cm_add_pm_button']")))
-        addCreditButton.click()
+        try:
+            self.driver.get(
+                'https://www.facebook.com/ads/manager/account_settings/account_billing/')
+            # wait button show
+            addCreditButton = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//button[@data-testid='cm_add_pm_button']")))
+            addCreditButton.click()
 
-        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
-            (By.XPATH, "//input[@data-testid='credit_card_number']")))
+            credit_card_number = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+                (By.XPATH, "//input[@data-testid='credit_card_number']")))
+            
+            
+            credit_card_number.send_keys(creditCard['cardNumber'])
 
-        # cardName send
-        webdriver.ActionChains(self.driver).send_keys(Keys.TAB).send_keys(
-            Keys.TAB).send_keys(creditCard['cardName']).perform()
 
-        # cardNumber send
-        webdriver.ActionChains(self.driver).send_keys(
-            Keys.TAB).send_keys(creditCard['cardNumber']).perform()
+            # cardExperied send
+            cardExperied = creditCard['cardExperied'].split('/')
 
-        # cardExperied send
-        cardExperied = creditCard['cardExperied'].split('/')
-        webdriver.ActionChains(self.driver).send_keys(Keys.TAB).send_keys(
-            cardExperied[0]).send_keys(cardExperied[1]).perform()
+            credit_card_month = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+                (By.XPATH, "//input[@data-testid='credit_card_month']")))
+            credit_card_month.send_keys(cardExperied[0])
 
-        # CCV send
-        webdriver.ActionChains(self.driver).send_keys(
-            Keys.TAB).send_keys(creditCard['ccv']).perform()
+            credit_card_year = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+                (By.XPATH, "//input[@data-testid='credit_card_year']")))
+            credit_card_year.send_keys(cardExperied[1])
+            
+            credit_card_security_code = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(
+                (By.XPATH, "//input[@data-testid='credit_card_security_code']")))
+            credit_card_security_code.send_keys(creditCard['ccv'])
+            
 
-        # enter =)))
-        webdriver.ActionChains(self.driver).send_keys(
-            Keys.TAB + Keys.TAB + Keys.TAB + Keys.ENTER).perform()
+            #data-testid="credit_card_postal_code"
+            try:
+                credit_card_postal_code = WebDriverWait(self.driver, 1).until(EC.presence_of_element_located((By.XPATH, "//input[@data-testid='credit_card_postal_code']")))
+                credit_card_postal_code.send_keys(creditCard['zipCode'])
+            except:
+                pass
+                
 
-        time.sleep(4)
+            confirmButton = WebDriverWait(self.driver, 4).until(EC.presence_of_element_located((By.CLASS_NAME, "layerConfirm")))
+            confirmButton.click()
+
+            try:
+                WebDriverWait(self.driver, 15).until(EC.invisibility_of_element_located((By.XPATH, "//input[@data-testid='credit_card_month']")))
+            except:
+                pass
+
+        except:
+
+            try:
+                cardExperied = creditCard['cardExperied'].split('/')
+                if creditCard['zipCode']:
+                    creditCard['zipCode'] = creditCard['zipCode']
+                else:
+                    creditCard['zipCode'] = ''
+                script = "document.querySelectorAll(\"input[data-testid='credit_card_number']\")[0].value='"+creditCard['cardNumber']+"';document.querySelectorAll(\"input[data-testid='credit_card_month']\")[0].value='"+cardExperied[0]+"';document.querySelectorAll(\"input[data-testid='credit_card_year']\")[0].value='" + \
+                    cardExperied[0]+"';document.querySelectorAll(\"input[data-testid='credit_card_security_code']\")[0].value='" + \
+                    creditCard['ccv'] + \
+                    "';document.querySelectorAll(\"input[data-testid='zipCode']\")[0].value='" + \
+                    creditCard['zipCode']+"';"
+                self.driver.execute_script(script)
+                confirmButton = WebDriverWait(self.driver, 4).until(EC.presence_of_element_located((By.CLASS_NAME, "layerConfirm")))
+                confirmButton.click()
+            except:
+                pass
+
+        try:
+            WebDriverWait(self.driver, 7).until(EC.invisibility_of_element_located((By.XPATH, "//input[@data-testid='credit_card_month']")))
+        except:
+            pass
+
+        
 
     def addAdsAccount(self, moneyTypeIndex='16', timeIndex='61', countryIndex='13'):
         try:
@@ -523,7 +563,7 @@ class autofb:
             return False
     # import ads excel
     def importAdsExcel(self, idCamp='', excelPath = 'camp.csv'):
-        self.driver.get('https://www.facebook.com/adsmanager/manage/campaigns?act='+idCamp + '')
+        self.driver.get('https://www.facebook.com/adsmanager/manage/campaigns?act='+str(idCamp)+ '')
         try:
             campaign_group_tab = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//li[@data-testid='campaign_group_tab']")))

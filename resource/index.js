@@ -534,7 +534,7 @@ $("#start").click(async function (e) {
           ipcRenderer.on("CALLBACK_ACTION", function (event, arg) {
             arg = JSON.parse(arg);
             
-
+            console.log(arg)
             if (arg.index) {
               try {
                 if (arg.data.status == "success") {

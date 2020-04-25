@@ -118,9 +118,11 @@ if shareAccountAds:
                 
                 
                 waitingImport = cloneDB.search((where('mainID') == fbInfo['uid']) & (where('status')== 'WAITING_IMPORT'))
-                
-
+                print('wwaiting import')
+                print(waitingImport)
                 for cloneInfo in waitingImport:
+                    print('clone infor')
+                    print(cloneInfo)
                     fbMain.importAdsExcel(cloneInfo['campID'], pathExcel)
                     cloneDB.update({'status': 'DONE'}, (where('mainID') == fbInfo['uid']) & (where('cloneUID') == cloneInfo['cloneUID']))
                 time.sleep(3)
@@ -148,7 +150,6 @@ if shareAccountAds:
                     'status'  : 'WAITING'
                 })
                 while(True):
-                    print('repeat ')
                     cloneDB = TinyDB('cloneDB.json')
                     
                     checkAdded = cloneDB.search((where('cloneUID') == fbInfo['uid']) & (where('status') == 'ADDED') & (where('mainID') == mainID))
@@ -162,6 +163,8 @@ if shareAccountAds:
                         cloneDB.update({'status' : 'WAITING_IMPORT', 'campID': idCamp}, Clone.cloneUID == fbInfo['uid'])
                         break
                     time.sleep(1)
+                time.sleep(5)
+                fbClone.quit()
             # update message
             result['status'] = 'success'
             result['msg'] = ''
@@ -172,10 +175,101 @@ if shareAccountAds:
     exit()
 
 
+# share account Ads
+if auto50:
+    result = {
+        'status': 'fail',
+        'msg': 'unknown error',
+    }
+    if typeAcc == 'main':
+        fbMain = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'left')
+        fbMain.login(account)
+        fbInfo = fbMain.getInfo()
+        if fbInfo:
+            #add to database
+            mainDB = TinyDB('mainDB.json')
+            Main = Query()
+            checkUID = mainDB.search((where('uid') == fbInfo['uid']) & (where('name') ==  fbInfo['name']))
+
+            if len(checkUID) <= 0:
+                mainDB.insert({
+                    'uid': fbInfo['uid'],
+                    'name': fbInfo['name']
+                })
+            #find infor
+
+            while (True):
+                cloneDB = TinyDB('cloneDB.json')
+                
+                #add friends 
+                waitingList = cloneDB.search((where('mainID') == fbInfo['uid']) & (where('status') == 'WAITING'))
+                print('waiting add')
+                print(waitingList)
+                for cloneInfo in waitingList:
+                    #add friend to 
+                    print('add friend to ')
+                    print(cloneInfo)
+                    fbMain.addFriends(cloneInfo['cloneUID'])
+                    #update status 
+                    cloneDB.update({'status': 'ADDED'}, (where('mainID') == fbInfo['uid']) & (where('cloneUID') == cloneInfo['cloneUID']))
+                
+                
+                waitingImport = cloneDB.search((where('mainID') == fbInfo['uid']) & (where('status')== 'WAITING_IMPORT'))
+                
+
+                for cloneInfo in waitingImport:
+                    fbMain.importAdsExcel(cloneInfo['campID'], pathExcel)
+                    cloneDB.update({'status': 'DONE'}, (where('mainID') == fbInfo['uid']) & (where('cloneUID') == cloneInfo['cloneUID']))
+                time.sleep(3)
+                print('repeat---------')
+        else:
+            result['msg'] = 'login fail'
+    else:
+        fbClone = autofb(proxyIP, hideWindow, fakeURL, keyActive, 'right', numberThread, totalThread)
+        account['loginType'] = 'account'
+        fbClone.login(account)
+        fbInfo = fbClone.getInfo()
+        if fbInfo:
+            #fbClone.shareAccountAdsCloneAuto(fbInfo['uid'], moneyIndex, timeIndex, countryIndex)
+            #search info of main uid
+            mainDB = TinyDB('mainDB.json')
+            mainAccount = mainDB.search(where('uid') == mainID)
+            cloneDB = TinyDB('cloneDB.json')
+            Clone = Query()
+            if len(mainAccount) > 0:
+                cloneDB.insert({
+                    'cloneUID': fbInfo['uid'],
+                    'mainID'  : mainID,
+                    'campID'  : '',
+                    'status'  : 'WAITING'
+                })
+                while(True):
+                    cloneDB = TinyDB('cloneDB.json')
+                    
+                    checkAdded = cloneDB.search((where('cloneUID') == fbInfo['uid']) & (where('status') == 'ADDED') & (where('mainID') == mainID))
 
 
+                    if len(checkAdded) > 0:
+                        fbClone.acceptFriends(mainID)
+                        if auto50ChangeMoney:
+                            fbClone.addCredit(creditCard)
+                            idCamp = fbClone.addMainCloneAds(mainAccount[0]['name'])
+                        else:
+                            fbClone.addMainCloneAds(mainAccount[0]['name'])
+                            idCamp = fbClone.addCredit(creditCard)
+                        #update camp
+                        cloneDB.update({'status' : 'WAITING_IMPORT', 'campID': idCamp}, Clone.cloneUID == fbInfo['uid'])
+                        break
+                    time.sleep(1)
+                fbClone.quit()
+            # update message
+            result['status'] = 'success'
+            result['msg'] = ''
+        else:
+            result['msg'] = 'login fail'
 
-
+    print(json.dumps(result, indent=4, sort_keys=True))
+    exit()
 
 
 
