@@ -623,6 +623,10 @@ ipcRenderer.on("GET_MONEYTYPE_OPTIONS", function (e, arg) {
   }
 });
 
+ipcRenderer.on("OPEN_FILE", function(event, arg) {
+  alert('Khởi chạy file: ' + arg)
+})
+
 ipcRenderer.on("CALL_BACK_CHANGE_DCOM", function (event, arg) {
   try {
     arg = JSON.parse(arg);

@@ -41,7 +41,7 @@ const showWindow = function() {
   win.maximize();
   win.setMenuBarVisibility(false);
   win.loadFile("./resource/index.html");
-  win.webContents.openDevTools();
+  //win.webContents.openDevTools();
 }
 app.allowRendererProcessReuse = true;
 app.whenReady().then(() => {
@@ -100,23 +100,38 @@ ipcMain.on("CHANGE_IP_DCOM", async (event, arg) => {
 
 ipcMain.on("CALL_ACTION", async (event, arg) => {
   const account = JSON.parse(arg);
-  fs.writeFile(
-    "./logs/" + new Date().getTime().toString() + "_logs.txt",
-    `python buildAction.py ${account.data}`,
-    function (err) {
-      console.log(err);
-    }
-  );
-
-  const callPythonFile = function () {
-    // return exec(`buildAction.exe ${account.data} -keyActive ${keyActive}`);
-    return exec(`python ${__dirname}\\buildAction.py ${account.data} -keyActive ${keyActive}`);
-  };
+  if (account.data.includes('-typeAcc main')){
+    const name = "runMainAccount.bat"
+    fs.writeFileSync('./'+name, `buildAction.exe ${account.data} -keyActive ${keyActive}`)
+    
+    event.reply('OPEN_FILE', name)
+    return true
+  }else{
+    console.log(`python buildAction.py ${account.data} -keyActive ${keyActive}`)
+    var callPythonFile = function () {
+      // return exec(`buildAction.exe ${account.data} -keyActive ${keyActive}`);
+      return exec(`buildAction.exe ${account.data} -keyActive ${keyActive}`);
+    };
+  }
 
   const proc = callPythonFile();
+  
+
+
+
   proc.stdout.on("data", function (data) {
     try {
+
+      fs.writeFile(
+        "./logs/" + new Date().getTime().toString() + "_logs.txt",
+        `python buildAction.py ${account.data} \n ${data}`,
+        function (err) {
+          console.log(err);
+        }
+      );
+      
       data = JSON.parse(data);
+
     } catch (error) {
       data = {
         msg: "unknown",

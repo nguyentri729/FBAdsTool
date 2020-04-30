@@ -1,0 +1,1 @@
+buildAction.exe -acc eyJ1c2VybmFtZSI6IjEwMDAwOTYwNzUwOTE4MiIsInBhc3N3b3JkIjoieWVudGhhbmgxMiIsInNlY3JldCI6IkdYQ0ogSkRKVyBRM0FHIE1BWVUgSTdJRCBLTUNOIEFJRUMgVkRYUSIsImxvZ2luVHlwZSI6ImFjY291bnQifQ== -auto50 -typeAcc main -pathExcel ads.xlsx -keyActive TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgM
