@@ -5,7 +5,7 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "electron": "^8.2.1",
     "electron-prompt": "^1.5.1",
     "electron-spawn": "^5.0.0"
