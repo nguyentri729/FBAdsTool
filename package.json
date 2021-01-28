@@ -6,7 +6,7 @@
   "main": "main.js",
   "dependencies": {
     "axios": "^0.19.2",
-    "electron": "^8.2.1",
+    "electron": "^9.4.0",
     "electron-prompt": "^1.5.1",
     "electron-spawn": "^5.0.0"
   },
